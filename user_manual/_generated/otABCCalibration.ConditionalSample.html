@@ -154,13 +154,16 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution" title="otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPosteriorOutputDistribution</span></code></a>()</p></td>
 <td><p>draw conditional output sample</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorInputDistribution" title="otABCCalibration.ConditionalSample.getPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputDistribution</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorGlobalSample" title="otABCCalibration.ConditionalSample.getPosteriorGlobalSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorGlobalSample</span></code></a>()</p></td>
+<td><p>accessor to posteriorGlobalSample</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorInputDistribution" title="otABCCalibration.ConditionalSample.getPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputDistribution</span></code></a>()</p></td>
 <td><p>Return infered posterior input distribution</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorInputSample" title="otABCCalibration.ConditionalSample.getPosteriorInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputSample</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorInputSample" title="otABCCalibration.ConditionalSample.getPosteriorInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputSample</span></code></a>()</p></td>
 <td><p>Return sample build from input sample and criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorOutputSample" title="otABCCalibration.ConditionalSample.getPosteriorOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorOutputSample</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.getPosteriorOutputSample" title="otABCCalibration.ConditionalSample.getPosteriorOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorOutputSample</span></code></a>()</p></td>
 <td><p>Return sample build from input sample and criteria</p></td>
 </tr>
 </tbody>
@@ -180,6 +183,20 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <dt class="sig sig-object py" id="otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution">
 <span class="sig-name descname"><span class="pre">drawPosteriorOutputDistribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution" title="Link to this definition">¶</a></dt>
 <dd><p>draw conditional output sample</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCCalibration.ConditionalSample.getPosteriorGlobalSample">
+<span class="sig-name descname"><span class="pre">getPosteriorGlobalSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ConditionalSample.getPosteriorGlobalSample" title="Link to this definition">¶</a></dt>
+<dd><p>accessor to posteriorGlobalSample</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>posteriorGlobalSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>conditional sample selected from sample and criteria provided</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

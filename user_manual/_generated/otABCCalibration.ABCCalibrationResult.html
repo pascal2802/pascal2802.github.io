@@ -118,12 +118,12 @@
 <h1>ABCCalibrationResult<a class="headerlink" href="#abccalibrationresult" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="otABCCalibration.ABCCalibrationResult">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ABCCalibrationResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">posteriorGlobalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ABCCalibrationResult" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ABCCalibrationResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residualFunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputParametersPriorDistribution</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ABCCalibrationResult" title="Link to this definition">¶</a></dt>
 <dd><p>ABC calibration result storage and postprocessing</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>posteriorGlobalSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Empiric posterior sample</p>
+<dt><strong>GlobalSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample with and ABCcriteria evaluated from a prior input Sample</p>
 </dd>
 <dt><strong>sampleSelectionCriteria</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>selection criteria to build conditional Sample <a class="reference internal" href="otABCCalibration.ConditionalSample.html#otABCCalibration.ConditionalSample" title="otABCCalibration.ConditionalSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalSample</span></code></a></p>
 </dd>
@@ -133,108 +133,125 @@
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawObservationsVsInputs" title="otABCCalibration.ABCCalibrationResult.drawObservationsVsInputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsInputs</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.computeOptimalPoint" title="otABCCalibration.ABCCalibrationResult.computeOptimalPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeOptimalPoint</span></code></a>()</p></td>
+<td><p>method to compute optimal point using infered probabilistic function density of posterior input sample</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawObservationsVsInputs" title="otABCCalibration.ABCCalibrationResult.drawObservationsVsInputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsInputs</span></code></a>()</p></td>
 <td><p>Draw observations/inputs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawObservationsVsPredictions" title="otABCCalibration.ABCCalibrationResult.drawObservationsVsPredictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsPredictions</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawObservationsVsPredictions" title="otABCCalibration.ABCCalibrationResult.drawObservationsVsPredictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsPredictions</span></code></a>()</p></td>
 <td><p>Draw observations/predictions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawParameterDistributions" title="otABCCalibration.ABCCalibrationResult.drawParameterDistributions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawParameterDistributions</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawParameterDistributions" title="otABCCalibration.ABCCalibrationResult.drawParameterDistributions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawParameterDistributions</span></code></a>()</p></td>
 <td><p>Draw parameter prior/posterior.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawResiduals" title="otABCCalibration.ABCCalibrationResult.drawResiduals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResiduals</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawResiduals" title="otABCCalibration.ABCCalibrationResult.drawResiduals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResiduals</span></code></a>()</p></td>
 <td><p>Draw residuals.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawResidualsNormalPlot" title="otABCCalibration.ABCCalibrationResult.drawResidualsNormalPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResidualsNormalPlot</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.drawResidualsNormalPlot" title="otABCCalibration.ABCCalibrationResult.drawResidualsNormalPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResidualsNormalPlot</span></code></a>()</p></td>
 <td><p>Draw residuals normal plot.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getClassName" title="otABCCalibration.ABCCalibrationResult.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getClassName" title="otABCCalibration.ABCCalibrationResult.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</p></td>
 <td><p>Accessor to the object's name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getId" title="otABCCalibration.ABCCalibrationResult.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getId" title="otABCCalibration.ABCCalibrationResult.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</p></td>
 <td><p>Accessor to the object's id.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getInputObservations" title="otABCCalibration.ABCCalibrationResult.getInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputObservations</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getInputObservations" title="otABCCalibration.ABCCalibrationResult.getInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputObservations</span></code></a>()</p></td>
 <td><p>Accessor to the input observations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getName" title="otABCCalibration.ABCCalibrationResult.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getName" title="otABCCalibration.ABCCalibrationResult.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
 <td><p>Accessor to the object's name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getObservationsError" title="otABCCalibration.ABCCalibrationResult.getObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObservationsError</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getObservationsError" title="otABCCalibration.ABCCalibrationResult.getObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObservationsError</span></code></a>()</p></td>
 <td><p>Accessor to the observations error distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputAtPosteriorMean" title="otABCCalibration.ABCCalibrationResult.getOutputAtPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPosteriorMean</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputAtPosteriorMean" title="otABCCalibration.ABCCalibrationResult.getOutputAtPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPosteriorMean</span></code></a>()</p></td>
 <td><p>Accessor to the output observations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputAtPriorMean" title="otABCCalibration.ABCCalibrationResult.getOutputAtPriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPriorMean</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputAtPriorMean" title="otABCCalibration.ABCCalibrationResult.getOutputAtPriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPriorMean</span></code></a>()</p></td>
 <td><p>Accessor to the output observations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputObservations" title="otABCCalibration.ABCCalibrationResult.getOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputObservations</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getOutputObservations" title="otABCCalibration.ABCCalibrationResult.getOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputObservations</span></code></a>()</p></td>
 <td><p>Accessor to the output observations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterMAP" title="otABCCalibration.ABCCalibrationResult.getParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterMAP</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterMAP" title="otABCCalibration.ABCCalibrationResult.getParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterMAP</span></code></a>()</p></td>
 <td><p>Accessor to the maximum a posteriori parameter estimate.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterPosterior" title="otABCCalibration.ABCCalibrationResult.getParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPosterior</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterPosterior" title="otABCCalibration.ABCCalibrationResult.getParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPosterior</span></code></a>()</p></td>
 <td><p>Accessor to the parameter posterior distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterPrior" title="otABCCalibration.ABCCalibrationResult.getParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPrior</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getParameterPrior" title="otABCCalibration.ABCCalibrationResult.getParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPrior</span></code></a>()</p></td>
 <td><p>Accessor to the parameter prior distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getResidualFunction" title="otABCCalibration.ABCCalibrationResult.getResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualFunction</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getResidualFunction" title="otABCCalibration.ABCCalibrationResult.getResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualFunction</span></code></a>()</p></td>
 <td><p>Accessor to the residual function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getShadowedId" title="otABCCalibration.ABCCalibrationResult.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getShadowedId" title="otABCCalibration.ABCCalibrationResult.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</p></td>
 <td><p>Accessor to the object's shadowed id.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getVisibility" title="otABCCalibration.ABCCalibrationResult.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.getVisibility" title="otABCCalibration.ABCCalibrationResult.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</p></td>
 <td><p>Accessor to the object's visibility state.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.hasName" title="otABCCalibration.ABCCalibrationResult.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.hasName" title="otABCCalibration.ABCCalibrationResult.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</p></td>
 <td><p>Test if the object is named.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.hasVisibleName" title="otABCCalibration.ABCCalibrationResult.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.hasVisibleName" title="otABCCalibration.ABCCalibrationResult.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</p></td>
 <td><p>Test if the object has a distinguishable name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setInputObservations" title="otABCCalibration.ABCCalibrationResult.setInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputObservations</span></code></a>(inputObservations)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setInputObservations" title="otABCCalibration.ABCCalibrationResult.setInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputObservations</span></code></a>(inputObservations)</p></td>
 <td><p>Accessor to the input observations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setName" title="otABCCalibration.ABCCalibrationResult.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setName" title="otABCCalibration.ABCCalibrationResult.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</p></td>
 <td><p>Accessor to the object's name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setObservationsError" title="otABCCalibration.ABCCalibrationResult.setObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setObservationsError</span></code></a>(observationsError)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setObservationsError" title="otABCCalibration.ABCCalibrationResult.setObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setObservationsError</span></code></a>(observationsError)</p></td>
 <td><p>Accessor to the observations error distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setOutputAtPriorAndPosteriorMean" title="otABCCalibration.ABCCalibrationResult.setOutputAtPriorAndPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputAtPriorAndPosteriorMean</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setOutputAtPriorAndPosteriorMean" title="otABCCalibration.ABCCalibrationResult.setOutputAtPriorAndPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputAtPriorAndPosteriorMean</span></code></a>(...)</p></td>
 <td><p>Accessor to the output at prior/posterior mean.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setOutputObservations" title="otABCCalibration.ABCCalibrationResult.setOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputObservations</span></code></a>(outputObservations)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setOutputObservations" title="otABCCalibration.ABCCalibrationResult.setOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputObservations</span></code></a>(outputObservations)</p></td>
 <td><p>Accessor to the output observations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterMAP" title="otABCCalibration.ABCCalibrationResult.setParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterMAP</span></code></a>(parameterMAP)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterMAP" title="otABCCalibration.ABCCalibrationResult.setParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterMAP</span></code></a>(parameterMAP)</p></td>
 <td><p>Accessor to the maximum a posteriori parameter estimate.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterPosterior" title="otABCCalibration.ABCCalibrationResult.setParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPosterior</span></code></a>(parameterPosterior)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterPosterior" title="otABCCalibration.ABCCalibrationResult.setParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPosterior</span></code></a>(parameterPosterior)</p></td>
 <td><p>Accessor to the parameter posterior distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterPrior" title="otABCCalibration.ABCCalibrationResult.setParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPrior</span></code></a>(parameterPrior)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setParameterPrior" title="otABCCalibration.ABCCalibrationResult.setParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPrior</span></code></a>(parameterPrior)</p></td>
 <td><p>Accessor to the parameter prior distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setResidualFunction" title="otABCCalibration.ABCCalibrationResult.setResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResidualFunction</span></code></a>(residualFunction)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setResidualFunction" title="otABCCalibration.ABCCalibrationResult.setResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResidualFunction</span></code></a>(residualFunction)</p></td>
 <td><p>Accessor to the residual function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setShadowedId" title="otABCCalibration.ABCCalibrationResult.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setShadowedId" title="otABCCalibration.ABCCalibrationResult.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</p></td>
 <td><p>Accessor to the object's shadowed id.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setVisibility" title="otABCCalibration.ABCCalibrationResult.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ABCCalibrationResult.setVisibility" title="otABCCalibration.ABCCalibrationResult.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</p></td>
 <td><p>Accessor to the object's visibility state.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCCalibration.ABCCalibrationResult.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">posteriorGlobalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ABCCalibrationResult.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residualFunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputParametersPriorDistribution</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ABCCalibrationResult.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCCalibration.ABCCalibrationResult.computeOptimalPoint">
+<span class="sig-name descname"><span class="pre">computeOptimalPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ABCCalibrationResult.computeOptimalPoint" title="Link to this definition">¶</a></dt>
+<dd><p>method to compute optimal point using infered probabilistic function density of posterior input sample</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>optimalPoint</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></span></dt><dd><p>Point that maximise infered posterior input probabilistic density function</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCCalibration.ABCCalibrationResult.drawObservationsVsInputs">

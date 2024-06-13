@@ -38,6 +38,12 @@ imp.reload(otABCC)
 # %%
 # Define the Observations
 # ==================================================
+# In practice, we generally use a data set which has been obtained from
+# measurements.
+# This data set can be loaded using e.g. :meth:`~openturns.Sample.ImportFromCSVFile`.
+# Here we import the data from the
+# :class:`~openturns.usecases.chaboche_model.ChabocheModel`
+# class.
 cm = chaboche_model.ChabocheModel()
 print(cm.data)
 observedParameters = cm.data[:, 0]  # Strain
@@ -56,9 +62,9 @@ distributionUObsParameters.setDescription([r"$U_{\varepsilon}$"])
 # %%
 # Define the prior joint distribution of the parameter to calibrate :math:`\pi(\theta)`
 
-Rdistribution = ot.Uniform(700.0e6, 800.0e6)
-Cdistribution = ot.Uniform(1000.0e6, 4000.0e6)
-gammaDistribution = ot.Uniform(1.0, 10.0)
+Rdistribution = ot.Uniform(500.0e6, 800.0e6)
+Cdistribution = ot.Uniform(1000.0e6, 7000.0e6)
+gammaDistribution = ot.Uniform(1.0, 15.0)
 distributionParameters = ot.ComposedDistribution(
     [Rdistribution, Cdistribution, gammaDistribution]
 )
@@ -127,18 +133,20 @@ priorPrediction = mycf(observedParameters)
 priorCriteria = computeABCCriteria(priorPrediction, observedVariables)
 print(priorCriteria)
 
+
 # %%
 # Calibrate the model with ABC
 # --------------------------------------------------
 # The ABC method calibrate the model by sample conditioning
 observedParameterIndices = [0]
 toCalibrateParameterIndices = [1, 2, 3]
+observedOutputIndices = [0]
 doeSize = 15000  # Size of the prior MonteCarlo sample
 posteriorSampleTargetedSize = 100  # Targegeted size of the posterior conditional sample
 minCvRMSE = 0.0
-minNMBE = -0.003
-maxCvRMSE = 0.015
-maxNMBE = 0.003
+minNMBE = -0.005
+maxCvRMSE = 0.025
+maxNMBE = 0.005
 criteriaSelection = ot.Interval(
     [0, 0, minCvRMSE, minNMBE],
     [0, 0, maxCvRMSE, maxNMBE],
@@ -150,6 +158,7 @@ algo = otABCC.ABCCalibration(
     computeABCCriteria,
     observedParameterIndices,
     toCalibrateParameterIndices,
+    observedOutputIndices,
     observedParameters,
     observedVariables,
     distributionUObsParameters,
@@ -166,10 +175,24 @@ algo.run()
 
 # %%
 # Investigate the results
+result = algo.getResult()
 print(algo.getPriorDOE())
 
 # %%
 # draw posterior input distribution to analyse calibration
-grid = algo.result.conditionalSample.drawPosteriorInputDistribution()
+# it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with 
+# the two other parameters are present. 
+grid = result.conditionalSample.drawPosteriorInputDistribution()
 fig = otv.View(grid)
+fig.show()
+
+# %%
+# on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed. 
+# the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
+print(result.getParameterMAP())
+grid = result.drawResiduals()
+fig = otv.View(grid)
+fig.show()
+grid = result.drawObservationsVsPredictions()
+fig = otv.View(grid) 
 fig.show()

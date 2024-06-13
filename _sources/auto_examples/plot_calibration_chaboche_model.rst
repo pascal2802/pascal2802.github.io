@@ -72,12 +72,18 @@ where:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 39-47
 
 Define the Observations
 ==================================================
+In practice, we generally use a data set which has been obtained from
+measurements.
+This data set can be loaded using e.g. :meth:`~openturns.Sample.ImportFromCSVFile`.
+Here we import the data from the
+:class:`~openturns.usecases.chaboche_model.ChabocheModel`
+class.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-47
+.. GENERATED FROM PYTHON SOURCE LINES 47-53
 
 .. code-block:: Python
 
@@ -110,14 +116,14 @@ Define the Observations
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-52
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 Set Calibration prior distribution
 --------------------------------------------------
 The prior observed parameters uncertainty distribution parameter is set
 random uncertainty will be add to the observed parameters sample while evaluated ABC DOE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-56
+.. GENERATED FROM PYTHON SOURCE LINES 58-62
 
 .. code-block:: Python
 
@@ -132,18 +138,18 @@ random uncertainty will be add to the observed parameters sample while evaluated
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
 Define the prior joint distribution of the parameter to calibrate :math:`\pi(\theta)`
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-70
+.. GENERATED FROM PYTHON SOURCE LINES 64-76
 
 .. code-block:: Python
 
 
-    Rdistribution = ot.Uniform(700.0e6, 800.0e6)
-    Cdistribution = ot.Uniform(1000.0e6, 4000.0e6)
-    gammaDistribution = ot.Uniform(1.0, 10.0)
+    Rdistribution = ot.Uniform(500.0e6, 800.0e6)
+    Cdistribution = ot.Uniform(1000.0e6, 7000.0e6)
+    gammaDistribution = ot.Uniform(1.0, 15.0)
     distributionParameters = ot.ComposedDistribution(
         [Rdistribution, Cdistribution, gammaDistribution]
     )
@@ -160,16 +166,16 @@ Define the prior joint distribution of the parameter to calibrate :math:`\pi(\th
 
  .. code-block:: none
 
-    [7.5e+08,2.5e+09,5.5]
+    [6.5e+08,4e+09,8]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 77-78
 
 Build a joint distribution between parameters to calibrate prior and observed parameter uncertainty prior
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-79
+.. GENERATED FROM PYTHON SOURCE LINES 78-85
 
 .. code-block:: Python
 
@@ -187,13 +193,13 @@ Build a joint distribution between parameters to calibrate prior and observed pa
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-83
+.. GENERATED FROM PYTHON SOURCE LINES 86-89
 
 Set the calibration criteria
 ==================================================
 modeller need to define the computation of the criteria to define a calibrated model based on the returned sample by the evaluation of all the observation point
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-122
+.. GENERATED FROM PYTHON SOURCE LINES 89-128
 
 .. code-block:: Python
 
@@ -243,11 +249,11 @@ modeller need to define the computation of the criteria to define a calibrated m
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-124
+.. GENERATED FROM PYTHON SOURCE LINES 129-130
 
 test the function with the :math:`\theta_{prior}` computed above
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-130
+.. GENERATED FROM PYTHON SOURCE LINES 130-137
 
 .. code-block:: Python
 
@@ -261,33 +267,35 @@ test the function with the :math:`\theta_{prior}` computed above
 
 
 
+
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
-    [9.91815e+06,-227245,0.0119944,-0.000274815]
+    [6.5104e+07,-6.09803e+07,0.0787326,-0.0737456]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-134
+.. GENERATED FROM PYTHON SOURCE LINES 138-141
 
 Calibrate the model with ABC
 --------------------------------------------------
 The ABC method calibrate the model by sample conditioning
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-167
+.. GENERATED FROM PYTHON SOURCE LINES 141-176
 
 .. code-block:: Python
 
     observedParameterIndices = [0]
     toCalibrateParameterIndices = [1, 2, 3]
+    observedOutputIndices = [0]
     doeSize = 15000  # Size of the prior MonteCarlo sample
     posteriorSampleTargetedSize = 100  # Targegeted size of the posterior conditional sample
     minCvRMSE = 0.0
-    minNMBE = -0.003
-    maxCvRMSE = 0.015
-    maxNMBE = 0.003
+    minNMBE = -0.005
+    maxCvRMSE = 0.025
+    maxNMBE = 0.005
     criteriaSelection = ot.Interval(
         [0, 0, minCvRMSE, minNMBE],
         [0, 0, maxCvRMSE, maxNMBE],
@@ -299,6 +307,7 @@ The ABC method calibrate the model by sample conditioning
         computeABCCriteria,
         observedParameterIndices,
         toCalibrateParameterIndices,
+        observedOutputIndices,
         observedParameters,
         observedVariables,
         distributionUObsParameters,
@@ -320,14 +329,15 @@ The ABC method calibrate the model by sample conditioning
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-169
+.. GENERATED FROM PYTHON SOURCE LINES 177-178
 
 Investigate the results
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-171
+.. GENERATED FROM PYTHON SOURCE LINES 178-181
 
 .. code-block:: Python
 
+    result = algo.getResult()
     print(algo.getPriorDOE())
 
 
@@ -339,33 +349,36 @@ Investigate the results
  .. code-block:: none
 
             [ $U_{\varepsilon}$ R                 C                 $\gamma$          ]
-        0 : [  0.000608202       7.29261e+08       3.63531e+09       3.21978          ]
-        1 : [ -0.00126617        7.98908e+08       1.25791e+09       7.51201          ]
-        2 : [ -0.000438266       7.53989e+08       2.83859e+09       9.51469          ]
+        0 : [  0.000608202       5.87782e+08       6.27061e+09       4.45299          ]
+        1 : [ -0.00126617        7.96724e+08       1.51582e+09      11.1298           ]
+        2 : [ -0.000438266       6.61966e+08       4.67719e+09      14.2451           ]
     ...
-    14997 : [ -8.48901e-05       7.98416e+08       1.15237e+09       3.98828          ]
-    14998 : [  0.000363987       7.84281e+08       2.36053e+09       6.10189          ]
-    14999 : [  0.000211898       7.21996e+08       2.33355e+09       1.37144          ]
+    14997 : [ -8.48901e-05       7.95249e+08       1.30474e+09       5.64843          ]
+    14998 : [  0.000363987       7.52842e+08       3.72107e+09       8.93627          ]
+    14999 : [  0.000211898       5.65989e+08       3.66711e+09       1.57779          ]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-173
+.. GENERATED FROM PYTHON SOURCE LINES 182-185
 
 draw posterior input distribution to analyse calibration
+it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with 
+the two other parameters are present. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-176
+.. GENERATED FROM PYTHON SOURCE LINES 185-189
 
 .. code-block:: Python
 
-    grid = algo.result.conditionalSample.drawPosteriorInputDistribution()
+    grid = result.conditionalSample.drawPosteriorInputDistribution()
     fig = otv.View(grid)
     fig.show()
 
 
 
+
 .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
-   :alt: Conditional Sample : 211 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.015   -0.003 < $NMBE_{\sigma}$ < 0.003 , Spearman : -0.26, Spearman : 0.00, Spearman : -0.01, Spearman : -0.26, Spearman : -0.84, Spearman : -0.25, Spearman : 0.00, Spearman : -0.84, Spearman : 0.68, Spearman : -0.01, Spearman : -0.25, Spearman : 0.68
+   :alt: Conditional Sample : 160 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.10, Spearman : 0.02, Spearman : 0.08, Spearman : -0.10, Spearman : -0.92, Spearman : -0.20, Spearman : 0.02, Spearman : -0.92, Spearman : 0.51, Spearman : 0.08, Spearman : -0.20, Spearman : 0.51
    :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
    :class: sphx-glr-single-img
 
@@ -373,10 +386,56 @@ draw posterior input distribution to analyse calibration
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 190-192
+
+on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed. 
+the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
+
+.. GENERATED FROM PYTHON SOURCE LINES 192-199
+
+.. code-block:: Python
+
+    print(result.getParameterMAP())
+    grid = result.drawResiduals()
+    fig = otv.View(grid)
+    fig.show()
+    grid = result.drawObservationsVsPredictions()
+    fig = otv.View(grid) 
+    fig.show()
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_002.png
+         :alt: Residual analysis
+         :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_003.png
+         :alt: plot calibration chaboche model
+         :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_003.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    [-9.1923e-05,7.45749e+08,2.85587e+09,8.34902]
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.663 seconds)
+   **Total running time of the script:** (0 minutes 6.762 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_calibration_chaboche_model.py:
