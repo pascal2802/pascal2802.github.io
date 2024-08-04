@@ -123,13 +123,11 @@ Set Calibration prior distribution
 The prior observed parameters uncertainty distribution parameter is set
 random uncertainty will be add to the observed parameters sample while evaluated ABC DOE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 .. code-block:: Python
 
     StrainUdistribution = ot.Normal(0, 0.001)
-    distributionUObsParameters = ot.ComposedDistribution([StrainUdistribution])
-    distributionUObsParameters.setDescription([r"$U_{\varepsilon}$"])
 
 
 
@@ -138,11 +136,11 @@ random uncertainty will be add to the observed parameters sample while evaluated
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 61-62
 
 Define the prior joint distribution of the parameter to calibrate :math:`\pi(\theta)`
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-76
+.. GENERATED FROM PYTHON SOURCE LINES 62-74
 
 .. code-block:: Python
 
@@ -171,11 +169,11 @@ Define the prior joint distribution of the parameter to calibrate :math:`\pi(\th
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
 Build a joint distribution between parameters to calibrate prior and observed parameter uncertainty prior
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-85
+.. GENERATED FROM PYTHON SOURCE LINES 76-83
 
 .. code-block:: Python
 
@@ -193,13 +191,13 @@ Build a joint distribution between parameters to calibrate prior and observed pa
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-89
+.. GENERATED FROM PYTHON SOURCE LINES 84-87
 
 Set the calibration criteria
 ==================================================
 modeller need to define the computation of the criteria to define a calibrated model based on the returned sample by the evaluation of all the observation point
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-128
+.. GENERATED FROM PYTHON SOURCE LINES 87-126
 
 .. code-block:: Python
 
@@ -249,11 +247,11 @@ modeller need to define the computation of the criteria to define a calibrated m
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-130
+.. GENERATED FROM PYTHON SOURCE LINES 127-128
 
 test the function with the :math:`\theta_{prior}` computed above
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-137
+.. GENERATED FROM PYTHON SOURCE LINES 128-135
 
 .. code-block:: Python
 
@@ -277,13 +275,13 @@ test the function with the :math:`\theta_{prior}` computed above
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-141
+.. GENERATED FROM PYTHON SOURCE LINES 136-139
 
 Calibrate the model with ABC
 --------------------------------------------------
 The ABC method calibrate the model by sample conditioning
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-176
+.. GENERATED FROM PYTHON SOURCE LINES 139-174
 
 .. code-block:: Python
 
@@ -296,6 +294,7 @@ The ABC method calibrate the model by sample conditioning
     minNMBE = -0.005
     maxCvRMSE = 0.025
     maxNMBE = 0.005
+    n_cpus = 10
     criteriaSelection = ot.Interval(
         [0, 0, minCvRMSE, minNMBE],
         [0, 0, maxCvRMSE, maxNMBE],
@@ -310,12 +309,11 @@ The ABC method calibrate the model by sample conditioning
         observedOutputIndices,
         observedParameters,
         observedVariables,
-        distributionUObsParameters,
-        distributionParameters,
         distributionInputs,
         doeSize,
         posteriorSampleTargetedSize,
         criteriaSelection,
+        n_cpus,
     )
     algo.setABCCriteriaDescription(
         [r"$RMSE_{\sigma}$", r"$MBE_{\sigma}$", r"$CvRMSE_{\sigma}$", r"$NMBE_{\sigma}$"]
@@ -329,11 +327,11 @@ The ABC method calibrate the model by sample conditioning
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-178
+.. GENERATED FROM PYTHON SOURCE LINES 175-176
 
 Investigate the results
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-181
+.. GENERATED FROM PYTHON SOURCE LINES 176-179
 
 .. code-block:: Python
 
@@ -360,13 +358,13 @@ Investigate the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-185
+.. GENERATED FROM PYTHON SOURCE LINES 180-183
 
 draw posterior input distribution to analyse calibration
 it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with 
 the two other parameters are present. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-189
+.. GENERATED FROM PYTHON SOURCE LINES 183-187
 
 .. code-block:: Python
 
@@ -386,12 +384,12 @@ the two other parameters are present.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-192
+.. GENERATED FROM PYTHON SOURCE LINES 188-190
 
 on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed. 
 the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-199
+.. GENERATED FROM PYTHON SOURCE LINES 190-197
 
 .. code-block:: Python
 
@@ -435,7 +433,7 @@ the figure suggets that the discrepencies between model prediction and observed 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.762 seconds)
+   **Total running time of the script:** (0 minutes 9.251 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_calibration_chaboche_model.py:

@@ -148,8 +148,8 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.drawPosteriorInputDistribution" title="otABCCalibration.ConditionalSample.drawPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPosteriorInputDistribution</span></code></a>()</p></td>
-<td><p>draw conditional sample</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.drawPosteriorInputDistribution" title="otABCCalibration.ConditionalSample.drawPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPosteriorInputDistribution</span></code></a>([index])</p></td>
+<td><p>draw conditional sample posterior input distribution.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution" title="otABCCalibration.ConditionalSample.drawPosteriorOutputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPosteriorOutputDistribution</span></code></a>()</p></td>
 <td><p>draw conditional output sample</p></td>
@@ -175,8 +175,22 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCCalibration.ConditionalSample.drawPosteriorInputDistribution">
-<span class="sig-name descname"><span class="pre">drawPosteriorInputDistribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ConditionalSample.drawPosteriorInputDistribution" title="Link to this definition">¶</a></dt>
-<dd><p>draw conditional sample</p>
+<span class="sig-name descname"><span class="pre">drawPosteriorInputDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCCalibration.ConditionalSample.drawPosteriorInputDistribution" title="Link to this definition">¶</a></dt>
+<dd><p>draw conditional sample posterior input distribution. Marginal are plotted (prior and posterior distribution) on the diagonal of the grid, bi-dimensional iso-PDF are displayed on the grid extra-diagonal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int</span></dt><dd><p>index of prior distribution marginals to be included on the plot, default = None, all marginals are displayed</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">ot.GridLayout(dimension, dimension)</span></dt><dd><p>The grid of plots.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

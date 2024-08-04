@@ -56,8 +56,6 @@ numberOfObservations = cm.data.getSize()
 # The prior observed parameters uncertainty distribution parameter is set
 # random uncertainty will be add to the observed parameters sample while evaluated ABC DOE.
 StrainUdistribution = ot.Normal(0, 0.001)
-distributionUObsParameters = ot.ComposedDistribution([StrainUdistribution])
-distributionUObsParameters.setDescription([r"$U_{\varepsilon}$"])
 
 # %%
 # Define the prior joint distribution of the parameter to calibrate :math:`\pi(\theta)`
@@ -147,6 +145,7 @@ minCvRMSE = 0.0
 minNMBE = -0.005
 maxCvRMSE = 0.025
 maxNMBE = 0.005
+n_cpus = 10
 criteriaSelection = ot.Interval(
     [0, 0, minCvRMSE, minNMBE],
     [0, 0, maxCvRMSE, maxNMBE],
@@ -161,12 +160,11 @@ algo = otABCC.ABCCalibration(
     observedOutputIndices,
     observedParameters,
     observedVariables,
-    distributionUObsParameters,
-    distributionParameters,
     distributionInputs,
     doeSize,
     posteriorSampleTargetedSize,
     criteriaSelection,
+    n_cpus,
 )
 algo.setABCCriteriaDescription(
     [r"$RMSE_{\sigma}$", r"$MBE_{\sigma}$", r"$CvRMSE_{\sigma}$", r"$NMBE_{\sigma}$"]
