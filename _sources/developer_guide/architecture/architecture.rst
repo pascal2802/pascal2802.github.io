@@ -14,7 +14,7 @@ Compilation
 
 .. code-block:: bash
 
-    cd otABCCalibration
+    cd otABCalibration
     mkdir -p build && cd build
     cmake \
       -DCMAKE_INSTALL_PREFIX=$PWD/install \

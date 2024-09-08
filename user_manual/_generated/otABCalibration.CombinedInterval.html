@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CombinedInterval &#8212; otABCalibration 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ABCalibration" href="otABCalibration.ABCalibration.html" />
+    <link rel="prev" title="ConditionalSample" href="otABCalibration.ConditionalSample.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../user_manual.html">Doc</a></li>
+    <li><a href="../../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otABCalibration
+    </h1>
+    <h2> Module otABCalibration </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otABCalibration.ABCalibration.html" title="ABCalibration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="otABCalibration.ConditionalSample.html" title="ConditionalSample"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CombinedInterval</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.MyClass.html">MyClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.ConditionalSample.html">ConditionalSample</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CombinedInterval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibration.html">ABCalibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.Func.html">Func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibrationResult.html">ABCalibrationResult</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="otABCalibration.ConditionalSample.html"
+                          title="previous chapter">ConditionalSample</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="otABCalibration.ABCalibration.html"
+                          title="next chapter">ABCalibration</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otABCalibration.CombinedInterval.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="combinedinterval">
+<h1>CombinedInterval<a class="headerlink" href="#combinedinterval" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CombinedInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">intervals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval" title="Link to this definition">¶</a></dt>
+<dd><p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.computeDistance" title="otABCalibration.CombinedInterval.computeDistance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDistance</span></code></a>(*args)</p></td>
+<td><p>Compute the Euclidean distance of a given point to the domain.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.contains" title="otABCalibration.CombinedInterval.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(*args)</p></td>
+<td><p>Check if the given point is inside of the domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getClassName" title="otABCalibration.CombinedInterval.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getDimension" title="otABCalibration.CombinedInterval.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</p></td>
+<td><p>Get the dimension of the domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getFiniteLowerBound" title="otABCalibration.CombinedInterval.getFiniteLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFiniteLowerBound</span></code></a>()</p></td>
+<td><p>Tell for each component of the lower bound whether it is finite or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getFiniteUpperBound" title="otABCalibration.CombinedInterval.getFiniteUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFiniteUpperBound</span></code></a>()</p></td>
+<td><p>Tell for each component of the upper bound whether it is finite or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getLowerBound" title="otABCalibration.CombinedInterval.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</p></td>
+<td><p>Get the lower bound.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getMarginal" title="otABCalibration.CombinedInterval.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</p></td>
+<td><p>Marginal accessor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getName" title="otABCalibration.CombinedInterval.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getUpperBound" title="otABCalibration.CombinedInterval.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</p></td>
+<td><p>Get the upper bound.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.getVolume" title="otABCalibration.CombinedInterval.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</p></td>
+<td><p>Get the volume of the interval.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.hasName" title="otABCalibration.CombinedInterval.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</p></td>
+<td><p>Test if the object is named.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.intersect" title="otABCalibration.CombinedInterval.intersect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersect</span></code></a>(other)</p></td>
+<td><p>Get the intersection with another interval.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.isEmpty" title="otABCalibration.CombinedInterval.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</p></td>
+<td><p>Check if the interval is empty.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.isNumericallyEmpty" title="otABCalibration.CombinedInterval.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</p></td>
+<td><p>Check if the interval is numerically empty.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.join" title="otABCalibration.CombinedInterval.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(other)</p></td>
+<td><p>Get the smallest interval containing both the current interval and another one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.numericallyContains" title="otABCalibration.CombinedInterval.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</p></td>
+<td><p>Check if the given point is inside of the discretization of the interval.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.setFiniteLowerBound" title="otABCalibration.CombinedInterval.setFiniteLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFiniteLowerBound</span></code></a>(finiteLowerBound)</p></td>
+<td><p>Tell for each component of the lower bound whether it is finite or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.setFiniteUpperBound" title="otABCalibration.CombinedInterval.setFiniteUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFiniteUpperBound</span></code></a>(finiteUpperBound)</p></td>
+<td><p>Tell for each component of the upper bound whether it is finite or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.setLowerBound" title="otABCalibration.CombinedInterval.setLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLowerBound</span></code></a>(lowerBound)</p></td>
+<td><p>Set the lower bound.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.setName" title="otABCalibration.CombinedInterval.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.CombinedInterval.setUpperBound" title="otABCalibration.CombinedInterval.setUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpperBound</span></code></a>(upperBound)</p></td>
+<td><p>Set the upper bound.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">intervals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>class constructor to combine several OpenTURSN interval</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.computeDistance">
+<span class="sig-name descname"><span class="pre">computeDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.computeDistance" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the Euclidean distance of a given point to the domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>point or sample</strong><span class="classifier">sequence of float or 2-d sequence of float</span></dt><dd><p>Point or Sample with the same dimension as the current domain’s dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>distance</strong><span class="classifier">float or Sample</span></dt><dd><p>Euclidean distance of the point to the domain.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.contains" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the given point is inside of the domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>point or sample</strong><span class="classifier">sequence of float or 2-d sequence of float</span></dt><dd><p>Point or Sample with the same dimension as the current domain’s dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>isInside</strong><span class="classifier">bool or sequence of bool</span></dt><dd><p>Flag telling whether the given point is inside of the domain.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getClassName">
+<span class="sig-name descname"><span class="pre">getClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getClassName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getDimension">
+<span class="sig-name descname"><span class="pre">getDimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getDimension" title="Link to this definition">¶</a></dt>
+<dd><p>Get the dimension of the domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>Dimension of the domain.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getFiniteLowerBound">
+<span class="sig-name descname"><span class="pre">getFiniteLowerBound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getFiniteLowerBound" title="Link to this definition">¶</a></dt>
+<dd><p>Tell for each component of the lower bound whether it is finite or not.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>flags</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.BoolCollection.html#openturns.BoolCollection" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoolCollection</span></code></a></span></dt><dd><p>If the <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScxMS45MzEzNjJwdCcgaGVpZ2h0PSc5Ljg3MzIzOHB0JyB2aWV3Qm94PScwIC05Ljg3MzIzOCAxMS45MzEzNjIgOS44NzMyMzgnPgo8ZGVmcz4KPHBhdGggaWQ9J2cwLTEwNCcgZD0nTTIuMzI3MjczLTUuMjkyMTU0QzIuMzM1MjQzLTUuMzA4MDk1IDIuMzU5MTUzLTUuNDExNzA2IDIuMzU5MTUzLTUuNDE5Njc2QzIuMzU5MTUzLTUuNDU5NTI3IDIuMzI3MjczLTUuNTMxMjU4IDIuMjMxNjMxLTUuNTMxMjU4QzIuMTk5NzUxLTUuNTMxMjU4IDEuOTUyNjc3LTUuNTA3MzQ3IDEuNzY5MzY1LTUuNDkxNDA3TDEuMzIzMDM5LTUuNDU5NTI3QzEuMTQ3Njk2LTUuNDQzNTg3IDEuMDY3OTk1LTUuNDM1NjE2IDEuMDY3OTk1LTUuMjkyMTU0QzEuMDY3OTk1LTUuMTgwNTczIDEuMTc5NTc3LTUuMTgwNTczIDEuMjc1MjE4LTUuMTgwNTczQzEuNjU3NzgzLTUuMTgwNTczIDEuNjU3NzgzLTUuMTMyNzUyIDEuNjU3NzgzLTUuMDYxMDIxQzEuNjU3NzgzLTUuMDM3MTExIDEuNjU3NzgzLTUuMDIxMTcxIDEuNjE3OTMzLTQuODc3NzA5TC40ODYxNzctLjM0MjcxNUMuNDU0Mjk2LS4yMjMxNjMgLjQ1NDI5Ni0uMTc1MzQyIC40NTQyOTYtLjE2NzM3MkMuNDU0Mjk2LS4wMzE4OCAuNTY1ODc4IC4wNzk3MDEgLjcxNzMxIC4wNzk3MDFDLjg0NDgzMiAuMDc5NzAxIC45NTY0MTMgMCAxLjAyMDE3NC0uMTAzNjExQzEuMDQ0MDg1LS4xNTE0MzIgMS4xMDc4NDYtLjQwNjQ3NiAxLjE0NzY5Ni0uNTY1ODc4TDEuMzMxMDA5LTEuMjc1MjE4QzEuMzU0OTE5LTEuMzk0NzcgMS40MzQ2Mi0xLjY5NzYzNCAxLjQ1ODUzMS0xLjgxNzE4NkMxLjU3ODA4Mi0yLjI3OTQ1MiAxLjU3ODA4Mi0yLjI5NTM5MiAxLjc1MzQyNS0yLjU1MDQzNkMyLjAyNDQwOC0yLjk0MDk3MSAyLjM5OTAwNC0zLjI5MTY1NiAyLjkzMzAwMS0zLjI5MTY1NkMzLjIxOTkyNS0zLjI5MTY1NiAzLjM4NzI5OC0zLjEyNDI4NCAzLjM4NzI5OC0yLjc0OTY4OUMzLjM4NzI5OC0yLjMxMTMzMyAzLjA1MjU1My0xLjQwMjc0IDIuOTAxMTIxLTEuMDEyMjA0QzIuNzk3NTA5LS43NDkxOTEgMi43OTc1MDktLjcwMTM3IDIuNzk3NTA5LS41OTc3NThDMi43OTc1MDktLjE0MzQ2MiAzLjE3MjEwNSAuMDc5NzAxIDMuNTE0ODE5IC4wNzk3MDFDNC4yOTU4OSAuMDc5NzAxIDQuNjIyNjY1LTEuMDM2MTE1IDQuNjIyNjY1LTEuMTM5NzI2QzQuNjIyNjY1LTEuMjE5NDI3IDQuNTU4OTA0LTEuMjQzMzM3IDQuNTAzMTEzLTEuMjQzMzM3QzQuNDA3NDcyLTEuMjQzMzM3IDQuMzkxNTMyLTEuMTg3NTQ3IDQuMzY3NjIxLTEuMTA3ODQ2QzQuMTc2MzM5LS40NTQyOTYgMy44NDE1OTQtLjE0MzQ2MiAzLjUzODczLS4xNDM0NjJDMy40MTEyMDgtLjE0MzQ2MiAzLjM0NzQ0Ny0uMjIzMTYzIDMuMzQ3NDQ3LS40MDY0NzZTMy40MTEyMDgtLjc2NTEzMSAzLjQ5MDkwOS0uOTY0Mzg0QzMuNjEwNDYxLTEuMjY3MjQ4IDMuOTYxMTQ2LTIuMTgzODExIDMuOTYxMTQ2LTIuNjMwMTM3QzMuOTYxMTQ2LTMuMjI3ODk1IDMuNTQ2Ny0zLjUxNDgxOSAyLjk3Mjg1Mi0zLjUxNDgxOUMyLjUyNjUyNi0zLjUxNDgxOSAyLjEwNDExLTMuMzIzNTM3IDEuNzM3NDg0LTIuOTAxMTIxTDIuMzI3MjczLTUuMjkyMTU0WicvPgo8cGF0aCBpZD0nZzAtMTE2JyBkPSdNMS43NjEzOTUtMy4xNzIxMDVIMi41NDI0NjZDMi42OTM4OTgtMy4xNzIxMDUgMi43ODk1MzktMy4xNzIxMDUgMi43ODk1MzktMy4zMjM1MzdDMi43ODk1MzktMy40MzUxMTggMi42ODU5MjgtMy40MzUxMTggMi41NTA0MzYtMy40MzUxMThIMS44MjUxNTZMMi4xMTIwOC00LjU2Njg3NEMyLjE0Mzk2LTQuNjg2NDI2IDIuMTQzOTYtNC43MjYyNzYgMi4xNDM5Ni00LjczNDI0N0MyLjE0Mzk2LTQuOTAxNjE5IDIuMDE2NDM4LTQuOTgxMzIgMS44ODA5NDYtNC45ODEzMkMxLjYwOTk2My00Ljk4MTMyIDEuNTU0MTcyLTQuNzY2MTI3IDEuNDY2NTAxLTQuNDA3NDcyTDEuMjE5NDI3LTMuNDM1MTE4SC40NTQyOTZDLjMwMjg2NC0zLjQzNTExOCAuMTk5MjUzLTMuNDM1MTE4IC4xOTkyNTMtMy4yODM2ODZDLjE5OTI1My0zLjE3MjEwNSAuMzAyODY0LTMuMTcyMTA1IC40MzgzNTYtMy4xNzIxMDVIMS4xNTU2NjZMLjY3NzQ2LTEuMjU5Mjc4Qy42Mjk2MzktMS4wNjAwMjUgLjU1NzkwOC0uNzgxMDcxIC41NTc5MDgtLjY2OTQ4OUMuNTU3OTA4LS4xOTEyODMgLjk0ODQ0MyAuMDc5NzAxIDEuMzcwODU5IC4wNzk3MDFDMi4yMjM2NjEgLjA3OTcwMSAyLjcwOTgzOC0xLjA0NDA4NSAyLjcwOTgzOC0xLjEzOTcyNkMyLjcwOTgzOC0xLjIyNzM5NyAyLjYzODEwNy0xLjI0MzMzNyAyLjU5MDI4Ni0xLjI0MzMzN0MyLjUwMjYxNS0xLjI0MzMzNyAyLjQ5NDY0NS0xLjIxMTQ1NyAyLjQzODg1NC0xLjA5MTkwNUMyLjI3OTQ1Mi0uNzA5MzQgMS44ODA5NDYtLjE0MzQ2MiAxLjM5NDc3LS4xNDM0NjJDMS4yMjczOTctLjE0MzQ2MiAxLjEzMTc1Ni0uMjU1MDQ0IDEuMTMxNzU2LS41MTgwNTdDMS4xMzE3NTYtLjY2OTQ4OSAxLjE1NTY2Ni0uNzU3MTYxIDEuMTc5NTc3LS44NjA3NzJMMS43NjEzOTUtMy4xNzIxMDVaJy8+CjxwYXRoIGlkPSdnMS0xMDUnIGQ9J00zLjM4MzMxMy0xLjcwOTU4OUMzLjM4MzMxMy0xLjc2OTM2NSAzLjMzNTQ5Mi0xLjgxNzE4NiAzLjI2Mzc2MS0xLjgxNzE4NkMzLjE1NjE2NC0xLjgxNzE4NiAzLjE0NDIwOS0xLjc4MTMyIDMuMDg0NDMzLTEuNTc4MDgyQzIuNzczNTk5LS40OTAxNjIgMi4yODM0MzctLjExOTU1MiAxLjg4ODkxNy0uMTE5NTUyQzEuNzQ1NDU1LS4xMTk1NTIgMS41NzgwODItLjE1NTQxNyAxLjU3ODA4Mi0uNTE0MDcyQzEuNTc4MDgyLS44MzY4NjIgMS43MjE1NDQtMS4xOTU1MTcgMS44NTMwNTEtMS41NTQxNzJMMi42ODk5MTMtMy43Nzc4MzNDMi43MjU3NzgtMy44NzM0NzQgMi44MDk0NjUtNC4wODg2NjcgMi44MDk0NjUtNC4zMTU4MTZDMi44MDk0NjUtNC44MTc5MzMgMi40NTA4MDktNS4yNzIyMjkgMS44NjUwMDYtNS4yNzIyMjlDLjc2NTEzMS01LjI3MjIyOSAuMzIyNzktMy41Mzg3MyAuMzIyNzktMy40NDMwODhDLjMyMjc5LTMuMzk1MjY4IC4zNzA2MS0zLjMzNTQ5MiAuNDU0Mjk2LTMuMzM1NDkyQy41NjE4OTMtMy4zMzU0OTIgLjU3Mzg0OC0zLjM4MzMxMyAuNjIxNjY5LTMuNTUwNjg1Qy45MDg1OTMtNC41NTQ5MTkgMS4zNjI4ODktNS4wMzMxMjYgMS44MjkxNDEtNS4wMzMxMjZDMS45MzY3MzctNS4wMzMxMjYgMi4xMzk5NzUtNS4wMjExNzEgMi4xMzk5NzUtNC42Mzg2MDVDMi4xMzk5NzUtNC4zMjc3NzEgMS45ODQ1NTgtMy45MzMyNSAxLjg4ODkxNy0zLjY3MDIzN0wxLjA1MjA1NS0xLjQ0NjU3NUMuOTgwMzI0LTEuMjU1MjkzIC45MDg1OTMtMS4wNjQwMSAuOTA4NTkzLS44NDg4MTdDLjkwODU5My0uMzEwODM0IDEuMjc5MjAzIC4xMTk1NTIgMS44NTMwNTEgLjExOTU1MkMyLjk1MjkyNyAuMTE5NTUyIDMuMzgzMzEzLTEuNjI1OTAzIDMuMzgzMzEzLTEuNzA5NTg5Wk0zLjI4NzY3MS03LjQ2MDAyNUMzLjI4NzY3MS03LjYzOTM1MiAzLjE0NDIwOS03Ljg1NDU0NSAyLjg4MTE5Ni03Ljg1NDU0NUMyLjYwNjIyNy03Ljg1NDU0NSAyLjI5NTM5Mi03LjU5MTUzMiAyLjI5NTM5Mi03LjI4MDY5N0MyLjI5NTM5Mi02Ljk4MTgxOCAyLjU0NjQ1MS02Ljg4NjE3NyAyLjY4OTkxMy02Ljg4NjE3N0MzLjAxMjcwMi02Ljg4NjE3NyAzLjI4NzY3MS03LjE5NzAxMSAzLjI4NzY3MS03LjQ2MDAyNVonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMS0xMDUnLz4KPHVzZSB4PSczLjk5MzQzMicgeT0nLTQuMzM4NDM3JyB4bGluazpocmVmPScjZzAtMTE2Jy8+Cjx1c2UgeD0nNy4wNTE0NTMnIHk9Jy00LjMzODQzNycgeGxpbms6aHJlZj0nI2cwLTEwNCcvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTAgLS0+" alt="i^{th}" style="vertical-align: 0px"/> element is <em>False</em>, the corresponding component of
+the lower bound is infinite. Otherwise, it is finite.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getFiniteLowerBound</span><span class="p">())</span>
+<span class="go">[1,0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getFiniteUpperBound">
+<span class="sig-name descname"><span class="pre">getFiniteUpperBound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getFiniteUpperBound" title="Link to this definition">¶</a></dt>
+<dd><p>Tell for each component of the upper bound whether it is finite or not.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>flags</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.BoolCollection.html#openturns.BoolCollection" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoolCollection</span></code></a></span></dt><dd><p>If the <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScxMS45MzEzNjJwdCcgaGVpZ2h0PSc5Ljg3MzIzOHB0JyB2aWV3Qm94PScwIC05Ljg3MzIzOCAxMS45MzEzNjIgOS44NzMyMzgnPgo8ZGVmcz4KPHBhdGggaWQ9J2cwLTEwNCcgZD0nTTIuMzI3MjczLTUuMjkyMTU0QzIuMzM1MjQzLTUuMzA4MDk1IDIuMzU5MTUzLTUuNDExNzA2IDIuMzU5MTUzLTUuNDE5Njc2QzIuMzU5MTUzLTUuNDU5NTI3IDIuMzI3MjczLTUuNTMxMjU4IDIuMjMxNjMxLTUuNTMxMjU4QzIuMTk5NzUxLTUuNTMxMjU4IDEuOTUyNjc3LTUuNTA3MzQ3IDEuNzY5MzY1LTUuNDkxNDA3TDEuMzIzMDM5LTUuNDU5NTI3QzEuMTQ3Njk2LTUuNDQzNTg3IDEuMDY3OTk1LTUuNDM1NjE2IDEuMDY3OTk1LTUuMjkyMTU0QzEuMDY3OTk1LTUuMTgwNTczIDEuMTc5NTc3LTUuMTgwNTczIDEuMjc1MjE4LTUuMTgwNTczQzEuNjU3NzgzLTUuMTgwNTczIDEuNjU3NzgzLTUuMTMyNzUyIDEuNjU3NzgzLTUuMDYxMDIxQzEuNjU3NzgzLTUuMDM3MTExIDEuNjU3NzgzLTUuMDIxMTcxIDEuNjE3OTMzLTQuODc3NzA5TC40ODYxNzctLjM0MjcxNUMuNDU0Mjk2LS4yMjMxNjMgLjQ1NDI5Ni0uMTc1MzQyIC40NTQyOTYtLjE2NzM3MkMuNDU0Mjk2LS4wMzE4OCAuNTY1ODc4IC4wNzk3MDEgLjcxNzMxIC4wNzk3MDFDLjg0NDgzMiAuMDc5NzAxIC45NTY0MTMgMCAxLjAyMDE3NC0uMTAzNjExQzEuMDQ0MDg1LS4xNTE0MzIgMS4xMDc4NDYtLjQwNjQ3NiAxLjE0NzY5Ni0uNTY1ODc4TDEuMzMxMDA5LTEuMjc1MjE4QzEuMzU0OTE5LTEuMzk0NzcgMS40MzQ2Mi0xLjY5NzYzNCAxLjQ1ODUzMS0xLjgxNzE4NkMxLjU3ODA4Mi0yLjI3OTQ1MiAxLjU3ODA4Mi0yLjI5NTM5MiAxLjc1MzQyNS0yLjU1MDQzNkMyLjAyNDQwOC0yLjk0MDk3MSAyLjM5OTAwNC0zLjI5MTY1NiAyLjkzMzAwMS0zLjI5MTY1NkMzLjIxOTkyNS0zLjI5MTY1NiAzLjM4NzI5OC0zLjEyNDI4NCAzLjM4NzI5OC0yLjc0OTY4OUMzLjM4NzI5OC0yLjMxMTMzMyAzLjA1MjU1My0xLjQwMjc0IDIuOTAxMTIxLTEuMDEyMjA0QzIuNzk3NTA5LS43NDkxOTEgMi43OTc1MDktLjcwMTM3IDIuNzk3NTA5LS41OTc3NThDMi43OTc1MDktLjE0MzQ2MiAzLjE3MjEwNSAuMDc5NzAxIDMuNTE0ODE5IC4wNzk3MDFDNC4yOTU4OSAuMDc5NzAxIDQuNjIyNjY1LTEuMDM2MTE1IDQuNjIyNjY1LTEuMTM5NzI2QzQuNjIyNjY1LTEuMjE5NDI3IDQuNTU4OTA0LTEuMjQzMzM3IDQuNTAzMTEzLTEuMjQzMzM3QzQuNDA3NDcyLTEuMjQzMzM3IDQuMzkxNTMyLTEuMTg3NTQ3IDQuMzY3NjIxLTEuMTA3ODQ2QzQuMTc2MzM5LS40NTQyOTYgMy44NDE1OTQtLjE0MzQ2MiAzLjUzODczLS4xNDM0NjJDMy40MTEyMDgtLjE0MzQ2MiAzLjM0NzQ0Ny0uMjIzMTYzIDMuMzQ3NDQ3LS40MDY0NzZTMy40MTEyMDgtLjc2NTEzMSAzLjQ5MDkwOS0uOTY0Mzg0QzMuNjEwNDYxLTEuMjY3MjQ4IDMuOTYxMTQ2LTIuMTgzODExIDMuOTYxMTQ2LTIuNjMwMTM3QzMuOTYxMTQ2LTMuMjI3ODk1IDMuNTQ2Ny0zLjUxNDgxOSAyLjk3Mjg1Mi0zLjUxNDgxOUMyLjUyNjUyNi0zLjUxNDgxOSAyLjEwNDExLTMuMzIzNTM3IDEuNzM3NDg0LTIuOTAxMTIxTDIuMzI3MjczLTUuMjkyMTU0WicvPgo8cGF0aCBpZD0nZzAtMTE2JyBkPSdNMS43NjEzOTUtMy4xNzIxMDVIMi41NDI0NjZDMi42OTM4OTgtMy4xNzIxMDUgMi43ODk1MzktMy4xNzIxMDUgMi43ODk1MzktMy4zMjM1MzdDMi43ODk1MzktMy40MzUxMTggMi42ODU5MjgtMy40MzUxMTggMi41NTA0MzYtMy40MzUxMThIMS44MjUxNTZMMi4xMTIwOC00LjU2Njg3NEMyLjE0Mzk2LTQuNjg2NDI2IDIuMTQzOTYtNC43MjYyNzYgMi4xNDM5Ni00LjczNDI0N0MyLjE0Mzk2LTQuOTAxNjE5IDIuMDE2NDM4LTQuOTgxMzIgMS44ODA5NDYtNC45ODEzMkMxLjYwOTk2My00Ljk4MTMyIDEuNTU0MTcyLTQuNzY2MTI3IDEuNDY2NTAxLTQuNDA3NDcyTDEuMjE5NDI3LTMuNDM1MTE4SC40NTQyOTZDLjMwMjg2NC0zLjQzNTExOCAuMTk5MjUzLTMuNDM1MTE4IC4xOTkyNTMtMy4yODM2ODZDLjE5OTI1My0zLjE3MjEwNSAuMzAyODY0LTMuMTcyMTA1IC40MzgzNTYtMy4xNzIxMDVIMS4xNTU2NjZMLjY3NzQ2LTEuMjU5Mjc4Qy42Mjk2MzktMS4wNjAwMjUgLjU1NzkwOC0uNzgxMDcxIC41NTc5MDgtLjY2OTQ4OUMuNTU3OTA4LS4xOTEyODMgLjk0ODQ0MyAuMDc5NzAxIDEuMzcwODU5IC4wNzk3MDFDMi4yMjM2NjEgLjA3OTcwMSAyLjcwOTgzOC0xLjA0NDA4NSAyLjcwOTgzOC0xLjEzOTcyNkMyLjcwOTgzOC0xLjIyNzM5NyAyLjYzODEwNy0xLjI0MzMzNyAyLjU5MDI4Ni0xLjI0MzMzN0MyLjUwMjYxNS0xLjI0MzMzNyAyLjQ5NDY0NS0xLjIxMTQ1NyAyLjQzODg1NC0xLjA5MTkwNUMyLjI3OTQ1Mi0uNzA5MzQgMS44ODA5NDYtLjE0MzQ2MiAxLjM5NDc3LS4xNDM0NjJDMS4yMjczOTctLjE0MzQ2MiAxLjEzMTc1Ni0uMjU1MDQ0IDEuMTMxNzU2LS41MTgwNTdDMS4xMzE3NTYtLjY2OTQ4OSAxLjE1NTY2Ni0uNzU3MTYxIDEuMTc5NTc3LS44NjA3NzJMMS43NjEzOTUtMy4xNzIxMDVaJy8+CjxwYXRoIGlkPSdnMS0xMDUnIGQ9J00zLjM4MzMxMy0xLjcwOTU4OUMzLjM4MzMxMy0xLjc2OTM2NSAzLjMzNTQ5Mi0xLjgxNzE4NiAzLjI2Mzc2MS0xLjgxNzE4NkMzLjE1NjE2NC0xLjgxNzE4NiAzLjE0NDIwOS0xLjc4MTMyIDMuMDg0NDMzLTEuNTc4MDgyQzIuNzczNTk5LS40OTAxNjIgMi4yODM0MzctLjExOTU1MiAxLjg4ODkxNy0uMTE5NTUyQzEuNzQ1NDU1LS4xMTk1NTIgMS41NzgwODItLjE1NTQxNyAxLjU3ODA4Mi0uNTE0MDcyQzEuNTc4MDgyLS44MzY4NjIgMS43MjE1NDQtMS4xOTU1MTcgMS44NTMwNTEtMS41NTQxNzJMMi42ODk5MTMtMy43Nzc4MzNDMi43MjU3NzgtMy44NzM0NzQgMi44MDk0NjUtNC4wODg2NjcgMi44MDk0NjUtNC4zMTU4MTZDMi44MDk0NjUtNC44MTc5MzMgMi40NTA4MDktNS4yNzIyMjkgMS44NjUwMDYtNS4yNzIyMjlDLjc2NTEzMS01LjI3MjIyOSAuMzIyNzktMy41Mzg3MyAuMzIyNzktMy40NDMwODhDLjMyMjc5LTMuMzk1MjY4IC4zNzA2MS0zLjMzNTQ5MiAuNDU0Mjk2LTMuMzM1NDkyQy41NjE4OTMtMy4zMzU0OTIgLjU3Mzg0OC0zLjM4MzMxMyAuNjIxNjY5LTMuNTUwNjg1Qy45MDg1OTMtNC41NTQ5MTkgMS4zNjI4ODktNS4wMzMxMjYgMS44MjkxNDEtNS4wMzMxMjZDMS45MzY3MzctNS4wMzMxMjYgMi4xMzk5NzUtNS4wMjExNzEgMi4xMzk5NzUtNC42Mzg2MDVDMi4xMzk5NzUtNC4zMjc3NzEgMS45ODQ1NTgtMy45MzMyNSAxLjg4ODkxNy0zLjY3MDIzN0wxLjA1MjA1NS0xLjQ0NjU3NUMuOTgwMzI0LTEuMjU1MjkzIC45MDg1OTMtMS4wNjQwMSAuOTA4NTkzLS44NDg4MTdDLjkwODU5My0uMzEwODM0IDEuMjc5MjAzIC4xMTk1NTIgMS44NTMwNTEgLjExOTU1MkMyLjk1MjkyNyAuMTE5NTUyIDMuMzgzMzEzLTEuNjI1OTAzIDMuMzgzMzEzLTEuNzA5NTg5Wk0zLjI4NzY3MS03LjQ2MDAyNUMzLjI4NzY3MS03LjYzOTM1MiAzLjE0NDIwOS03Ljg1NDU0NSAyLjg4MTE5Ni03Ljg1NDU0NUMyLjYwNjIyNy03Ljg1NDU0NSAyLjI5NTM5Mi03LjU5MTUzMiAyLjI5NTM5Mi03LjI4MDY5N0MyLjI5NTM5Mi02Ljk4MTgxOCAyLjU0NjQ1MS02Ljg4NjE3NyAyLjY4OTkxMy02Ljg4NjE3N0MzLjAxMjcwMi02Ljg4NjE3NyAzLjI4NzY3MS03LjE5NzAxMSAzLjI4NzY3MS03LjQ2MDAyNVonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMS0xMDUnLz4KPHVzZSB4PSczLjk5MzQzMicgeT0nLTQuMzM4NDM3JyB4bGluazpocmVmPScjZzAtMTE2Jy8+Cjx1c2UgeD0nNy4wNTE0NTMnIHk9Jy00LjMzODQzNycgeGxpbms6aHJlZj0nI2cwLTEwNCcvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTAgLS0+" alt="i^{th}" style="vertical-align: 0px"/> element is <em>False</em>, the corresponding component of
+the upper bound is infinite. Otherwise, it is finite.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getFiniteUpperBound</span><span class="p">())</span>
+<span class="go">[1,1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getLowerBound">
+<span class="sig-name descname"><span class="pre">getLowerBound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getLowerBound" title="Link to this definition">¶</a></dt>
+<dd><p>Get the lower bound.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>lowerBound</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Value of the lower bound.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getLowerBound</span><span class="p">())</span>
+<span class="go">[2,3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getMarginal">
+<span class="sig-name descname"><span class="pre">getMarginal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getMarginal" title="Link to this definition">¶</a></dt>
+<dd><p>Marginal accessor.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int or sequence of int</span></dt><dd><p>Index or indices of the selected components.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>interval</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>The marginal interval.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getUpperBound">
+<span class="sig-name descname"><span class="pre">getUpperBound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getUpperBound" title="Link to this definition">¶</a></dt>
+<dd><p>Get the upper bound.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>upperBound</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Value of the upper bound.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getUpperBound</span><span class="p">())</span>
+<span class="go">[4,5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.getVolume" title="Link to this definition">¶</a></dt>
+<dd><p>Get the volume of the interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>volume</strong><span class="classifier">float</span></dt><dd><p>Volume contained within interval bounds.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getVolume</span><span class="p">())</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.hasName">
+<span class="sig-name descname"><span class="pre">hasName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.hasName" title="Link to this definition">¶</a></dt>
+<dd><p>Test if the object is named.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>hasName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.intersect">
+<span class="sig-name descname"><span class="pre">intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.intersect" title="Link to this definition">¶</a></dt>
+<dd><p>Get the intersection with another interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>otherInterval</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>Interval of the same dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>interval</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>An interval corresponding to the intersection of the current interval with
+<em>otherInterval</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">interval2</span><span class="p">))</span>
+<span class="go">[2, 5]</span>
+<span class="go">[4, 8]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.isEmpty">
+<span class="sig-name descname"><span class="pre">isEmpty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.isEmpty" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the interval is empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>isEmpty</strong><span class="classifier">bool</span></dt><dd><p><em>True</em> if the interior of the interval is empty.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setFiniteLowerBound</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.isNumericallyEmpty">
+<span class="sig-name descname"><span class="pre">isNumericallyEmpty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.isNumericallyEmpty" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the interval is numerically empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>isEmpty</strong><span class="classifier">bool</span></dt><dd><p>Flag telling whether the interval is numerically empty, i.e. if its numerical
+volume is inferior or equal to <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPSc0LjcyNjY3NXB0JyBoZWlnaHQ9JzUuMTQ3MzczcHQnIHZpZXdCb3g9JzAgLTUuMTQ3MzczIDQuNzI2Njc1IDUuMTQ3MzczJz4KPGRlZnM+CjxwYXRoIGlkPSdnMC0xNScgZD0nTTMuNDc4OTU0LTIuNzEzODIzQzMuNjU4MjgxLTIuNzEzODIzIDMuODYxNTE5LTIuNzEzODIzIDMuODYxNTE5LTIuOTA1MTA2QzMuODYxNTE5LTMuMDYwNTIzIDMuNzQxOTY4LTMuMDYwNTIzIDMuNTI2Nzc1LTMuMDYwNTIzSDEuNTkwMDM3QzEuODg4OTE3LTQuMTQ4NDQzIDIuNTk0MjcxLTQuODA1OTc4IDMuNjU4MjgxLTQuODA1OTc4SDQuMDA0OTgxQzQuMjA4MjE5LTQuODA1OTc4IDQuMzg3NTQ3LTQuODA1OTc4IDQuMzg3NTQ3LTQuOTk3MjZDNC4zODc1NDctNS4xNTI2NzcgNC4yNTYwNC01LjE1MjY3NyA0LjA0MDg0Ny01LjE1MjY3N0gzLjYzNDM3MUMyLjE2Mzg4NS01LjE1MjY3NyAuNTQ5OTM4LTMuOTgxMDcxIC41NDk5MzgtMi4xMDQxMUMuNTQ5OTM4LS43NzcwODYgMS40NDY1NzUgLjExOTU1MiAyLjYzMDEzNyAuMTE5NTUyQzMuMzk1MjY4IC4xMTk1NTIgNC4xNDg0NDMtLjM1ODY1NSA0LjE0ODQ0My0uNDc4MjA3QzQuMTQ4NDQzLS41NDk5MzggNC4xMTI1NzgtLjYyMTY2OSA0LjA0MDg0Ny0uNjIxNjY5QzQuMDA0OTgxLS42MjE2NjkgMy45ODEwNzEtLjYwOTcxNCAzLjkyMTI5NS0uNTYxODkzQzMuNDY2OTk5LS4yNjMwMTQgMy4wMjQ2NTgtLjExOTU1MiAyLjY2NjAwMi0uMTE5NTUyQzIuMDMyMzc5LS4xMTk1NTIgMS4zNjI4ODktLjUzNzk4MyAxLjM2Mjg4OS0xLjY5NzYzNEMxLjM2Mjg4OS0xLjkyNDc4MiAxLjM4NjgtMi4yMzU2MTYgMS40OTQzOTYtMi43MTM4MjNIMy40Nzg5NTRaJy8+CjwvZGVmcz4KPGcgaWQ9J3BhZ2UxJz4KPHVzZSB4PScwJyB5PScwJyB4bGluazpocmVmPScjZzAtMTUnLz4KPC9nPgo8L3N2Zz4KPCEtLSBERVBUSD0wIC0tPg==" alt="\epsilon" style="vertical-align: 0px"/> (defined in the
+<a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.ResourceMap.html#openturns.ResourceMap" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
+<img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPSc0LjcyNjY3NXB0JyBoZWlnaHQ9JzUuMTQ3MzczcHQnIHZpZXdCb3g9JzAgLTUuMTQ3MzczIDQuNzI2Njc1IDUuMTQ3MzczJz4KPGRlZnM+CjxwYXRoIGlkPSdnMC0xNScgZD0nTTMuNDc4OTU0LTIuNzEzODIzQzMuNjU4MjgxLTIuNzEzODIzIDMuODYxNTE5LTIuNzEzODIzIDMuODYxNTE5LTIuOTA1MTA2QzMuODYxNTE5LTMuMDYwNTIzIDMuNzQxOTY4LTMuMDYwNTIzIDMuNTI2Nzc1LTMuMDYwNTIzSDEuNTkwMDM3QzEuODg4OTE3LTQuMTQ4NDQzIDIuNTk0MjcxLTQuODA1OTc4IDMuNjU4MjgxLTQuODA1OTc4SDQuMDA0OTgxQzQuMjA4MjE5LTQuODA1OTc4IDQuMzg3NTQ3LTQuODA1OTc4IDQuMzg3NTQ3LTQuOTk3MjZDNC4zODc1NDctNS4xNTI2NzcgNC4yNTYwNC01LjE1MjY3NyA0LjA0MDg0Ny01LjE1MjY3N0gzLjYzNDM3MUMyLjE2Mzg4NS01LjE1MjY3NyAuNTQ5OTM4LTMuOTgxMDcxIC41NDk5MzgtMi4xMDQxMUMuNTQ5OTM4LS43NzcwODYgMS40NDY1NzUgLjExOTU1MiAyLjYzMDEzNyAuMTE5NTUyQzMuMzk1MjY4IC4xMTk1NTIgNC4xNDg0NDMtLjM1ODY1NSA0LjE0ODQ0My0uNDc4MjA3QzQuMTQ4NDQzLS41NDk5MzggNC4xMTI1NzgtLjYyMTY2OSA0LjA0MDg0Ny0uNjIxNjY5QzQuMDA0OTgxLS42MjE2NjkgMy45ODEwNzEtLjYwOTcxNCAzLjkyMTI5NS0uNTYxODkzQzMuNDY2OTk5LS4yNjMwMTQgMy4wMjQ2NTgtLjExOTU1MiAyLjY2NjAwMi0uMTE5NTUyQzIuMDMyMzc5LS4xMTk1NTIgMS4zNjI4ODktLjUzNzk4MyAxLjM2Mjg4OS0xLjY5NzYzNEMxLjM2Mjg4OS0xLjkyNDc4MiAxLjM4NjgtMi4yMzU2MTYgMS40OTQzOTYtMi43MTM4MjNIMy40Nzg5NTRaJy8+CjwvZGVmcz4KPGcgaWQ9J3BhZ2UxJz4KPHVzZSB4PScwJyB5PScwJyB4bGluazpocmVmPScjZzAtMTUnLz4KPC9nPgo8L3N2Zz4KPCEtLSBERVBUSD0wIC0tPg==" alt="\epsilon" style="vertical-align: 0px"/> = Domain-SmallVolume).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.join" title="Link to this definition">¶</a></dt>
+<dd><p>Get the smallest interval containing both the current interval and another one.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>otherInterval</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>Interval of the same dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>interval</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>Smallest interval containing both the current interval and
+<em>otherInterval</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">interval2</span><span class="p">))</span>
+<span class="go">[1, 6]</span>
+<span class="go">[3, 13]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.numericallyContains">
+<span class="sig-name descname"><span class="pre">numericallyContains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.numericallyContains" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the given point is inside of the discretization of the interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>point</strong><span class="classifier">sequence of float</span></dt><dd><p>Point with the same dimension as the current domain’s dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>isInside</strong><span class="classifier">bool</span></dt><dd><p>Flag telling whether the point is inside the interval bounds, not taking
+into account whether bounds are finite or not.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.setFiniteLowerBound">
+<span class="sig-name descname"><span class="pre">setFiniteLowerBound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finiteLowerBound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.setFiniteLowerBound" title="Link to this definition">¶</a></dt>
+<dd><p>Tell for each component of the lower bound whether it is finite or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>flags</strong><span class="classifier">sequence of bool</span></dt><dd><p>If the <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScxMS45MzEzNjJwdCcgaGVpZ2h0PSc5Ljg3MzIzOHB0JyB2aWV3Qm94PScwIC05Ljg3MzIzOCAxMS45MzEzNjIgOS44NzMyMzgnPgo8ZGVmcz4KPHBhdGggaWQ9J2cwLTEwNCcgZD0nTTIuMzI3MjczLTUuMjkyMTU0QzIuMzM1MjQzLTUuMzA4MDk1IDIuMzU5MTUzLTUuNDExNzA2IDIuMzU5MTUzLTUuNDE5Njc2QzIuMzU5MTUzLTUuNDU5NTI3IDIuMzI3MjczLTUuNTMxMjU4IDIuMjMxNjMxLTUuNTMxMjU4QzIuMTk5NzUxLTUuNTMxMjU4IDEuOTUyNjc3LTUuNTA3MzQ3IDEuNzY5MzY1LTUuNDkxNDA3TDEuMzIzMDM5LTUuNDU5NTI3QzEuMTQ3Njk2LTUuNDQzNTg3IDEuMDY3OTk1LTUuNDM1NjE2IDEuMDY3OTk1LTUuMjkyMTU0QzEuMDY3OTk1LTUuMTgwNTczIDEuMTc5NTc3LTUuMTgwNTczIDEuMjc1MjE4LTUuMTgwNTczQzEuNjU3NzgzLTUuMTgwNTczIDEuNjU3NzgzLTUuMTMyNzUyIDEuNjU3NzgzLTUuMDYxMDIxQzEuNjU3NzgzLTUuMDM3MTExIDEuNjU3NzgzLTUuMDIxMTcxIDEuNjE3OTMzLTQuODc3NzA5TC40ODYxNzctLjM0MjcxNUMuNDU0Mjk2LS4yMjMxNjMgLjQ1NDI5Ni0uMTc1MzQyIC40NTQyOTYtLjE2NzM3MkMuNDU0Mjk2LS4wMzE4OCAuNTY1ODc4IC4wNzk3MDEgLjcxNzMxIC4wNzk3MDFDLjg0NDgzMiAuMDc5NzAxIC45NTY0MTMgMCAxLjAyMDE3NC0uMTAzNjExQzEuMDQ0MDg1LS4xNTE0MzIgMS4xMDc4NDYtLjQwNjQ3NiAxLjE0NzY5Ni0uNTY1ODc4TDEuMzMxMDA5LTEuMjc1MjE4QzEuMzU0OTE5LTEuMzk0NzcgMS40MzQ2Mi0xLjY5NzYzNCAxLjQ1ODUzMS0xLjgxNzE4NkMxLjU3ODA4Mi0yLjI3OTQ1MiAxLjU3ODA4Mi0yLjI5NTM5MiAxLjc1MzQyNS0yLjU1MDQzNkMyLjAyNDQwOC0yLjk0MDk3MSAyLjM5OTAwNC0zLjI5MTY1NiAyLjkzMzAwMS0zLjI5MTY1NkMzLjIxOTkyNS0zLjI5MTY1NiAzLjM4NzI5OC0zLjEyNDI4NCAzLjM4NzI5OC0yLjc0OTY4OUMzLjM4NzI5OC0yLjMxMTMzMyAzLjA1MjU1My0xLjQwMjc0IDIuOTAxMTIxLTEuMDEyMjA0QzIuNzk3NTA5LS43NDkxOTEgMi43OTc1MDktLjcwMTM3IDIuNzk3NTA5LS41OTc3NThDMi43OTc1MDktLjE0MzQ2MiAzLjE3MjEwNSAuMDc5NzAxIDMuNTE0ODE5IC4wNzk3MDFDNC4yOTU4OSAuMDc5NzAxIDQuNjIyNjY1LTEuMDM2MTE1IDQuNjIyNjY1LTEuMTM5NzI2QzQuNjIyNjY1LTEuMjE5NDI3IDQuNTU4OTA0LTEuMjQzMzM3IDQuNTAzMTEzLTEuMjQzMzM3QzQuNDA3NDcyLTEuMjQzMzM3IDQuMzkxNTMyLTEuMTg3NTQ3IDQuMzY3NjIxLTEuMTA3ODQ2QzQuMTc2MzM5LS40NTQyOTYgMy44NDE1OTQtLjE0MzQ2MiAzLjUzODczLS4xNDM0NjJDMy40MTEyMDgtLjE0MzQ2MiAzLjM0NzQ0Ny0uMjIzMTYzIDMuMzQ3NDQ3LS40MDY0NzZTMy40MTEyMDgtLjc2NTEzMSAzLjQ5MDkwOS0uOTY0Mzg0QzMuNjEwNDYxLTEuMjY3MjQ4IDMuOTYxMTQ2LTIuMTgzODExIDMuOTYxMTQ2LTIuNjMwMTM3QzMuOTYxMTQ2LTMuMjI3ODk1IDMuNTQ2Ny0zLjUxNDgxOSAyLjk3Mjg1Mi0zLjUxNDgxOUMyLjUyNjUyNi0zLjUxNDgxOSAyLjEwNDExLTMuMzIzNTM3IDEuNzM3NDg0LTIuOTAxMTIxTDIuMzI3MjczLTUuMjkyMTU0WicvPgo8cGF0aCBpZD0nZzAtMTE2JyBkPSdNMS43NjEzOTUtMy4xNzIxMDVIMi41NDI0NjZDMi42OTM4OTgtMy4xNzIxMDUgMi43ODk1MzktMy4xNzIxMDUgMi43ODk1MzktMy4zMjM1MzdDMi43ODk1MzktMy40MzUxMTggMi42ODU5MjgtMy40MzUxMTggMi41NTA0MzYtMy40MzUxMThIMS44MjUxNTZMMi4xMTIwOC00LjU2Njg3NEMyLjE0Mzk2LTQuNjg2NDI2IDIuMTQzOTYtNC43MjYyNzYgMi4xNDM5Ni00LjczNDI0N0MyLjE0Mzk2LTQuOTAxNjE5IDIuMDE2NDM4LTQuOTgxMzIgMS44ODA5NDYtNC45ODEzMkMxLjYwOTk2My00Ljk4MTMyIDEuNTU0MTcyLTQuNzY2MTI3IDEuNDY2NTAxLTQuNDA3NDcyTDEuMjE5NDI3LTMuNDM1MTE4SC40NTQyOTZDLjMwMjg2NC0zLjQzNTExOCAuMTk5MjUzLTMuNDM1MTE4IC4xOTkyNTMtMy4yODM2ODZDLjE5OTI1My0zLjE3MjEwNSAuMzAyODY0LTMuMTcyMTA1IC40MzgzNTYtMy4xNzIxMDVIMS4xNTU2NjZMLjY3NzQ2LTEuMjU5Mjc4Qy42Mjk2MzktMS4wNjAwMjUgLjU1NzkwOC0uNzgxMDcxIC41NTc5MDgtLjY2OTQ4OUMuNTU3OTA4LS4xOTEyODMgLjk0ODQ0MyAuMDc5NzAxIDEuMzcwODU5IC4wNzk3MDFDMi4yMjM2NjEgLjA3OTcwMSAyLjcwOTgzOC0xLjA0NDA4NSAyLjcwOTgzOC0xLjEzOTcyNkMyLjcwOTgzOC0xLjIyNzM5NyAyLjYzODEwNy0xLjI0MzMzNyAyLjU5MDI4Ni0xLjI0MzMzN0MyLjUwMjYxNS0xLjI0MzMzNyAyLjQ5NDY0NS0xLjIxMTQ1NyAyLjQzODg1NC0xLjA5MTkwNUMyLjI3OTQ1Mi0uNzA5MzQgMS44ODA5NDYtLjE0MzQ2MiAxLjM5NDc3LS4xNDM0NjJDMS4yMjczOTctLjE0MzQ2MiAxLjEzMTc1Ni0uMjU1MDQ0IDEuMTMxNzU2LS41MTgwNTdDMS4xMzE3NTYtLjY2OTQ4OSAxLjE1NTY2Ni0uNzU3MTYxIDEuMTc5NTc3LS44NjA3NzJMMS43NjEzOTUtMy4xNzIxMDVaJy8+CjxwYXRoIGlkPSdnMS0xMDUnIGQ9J00zLjM4MzMxMy0xLjcwOTU4OUMzLjM4MzMxMy0xLjc2OTM2NSAzLjMzNTQ5Mi0xLjgxNzE4NiAzLjI2Mzc2MS0xLjgxNzE4NkMzLjE1NjE2NC0xLjgxNzE4NiAzLjE0NDIwOS0xLjc4MTMyIDMuMDg0NDMzLTEuNTc4MDgyQzIuNzczNTk5LS40OTAxNjIgMi4yODM0MzctLjExOTU1MiAxLjg4ODkxNy0uMTE5NTUyQzEuNzQ1NDU1LS4xMTk1NTIgMS41NzgwODItLjE1NTQxNyAxLjU3ODA4Mi0uNTE0MDcyQzEuNTc4MDgyLS44MzY4NjIgMS43MjE1NDQtMS4xOTU1MTcgMS44NTMwNTEtMS41NTQxNzJMMi42ODk5MTMtMy43Nzc4MzNDMi43MjU3NzgtMy44NzM0NzQgMi44MDk0NjUtNC4wODg2NjcgMi44MDk0NjUtNC4zMTU4MTZDMi44MDk0NjUtNC44MTc5MzMgMi40NTA4MDktNS4yNzIyMjkgMS44NjUwMDYtNS4yNzIyMjlDLjc2NTEzMS01LjI3MjIyOSAuMzIyNzktMy41Mzg3MyAuMzIyNzktMy40NDMwODhDLjMyMjc5LTMuMzk1MjY4IC4zNzA2MS0zLjMzNTQ5MiAuNDU0Mjk2LTMuMzM1NDkyQy41NjE4OTMtMy4zMzU0OTIgLjU3Mzg0OC0zLjM4MzMxMyAuNjIxNjY5LTMuNTUwNjg1Qy45MDg1OTMtNC41NTQ5MTkgMS4zNjI4ODktNS4wMzMxMjYgMS44MjkxNDEtNS4wMzMxMjZDMS45MzY3MzctNS4wMzMxMjYgMi4xMzk5NzUtNS4wMjExNzEgMi4xMzk5NzUtNC42Mzg2MDVDMi4xMzk5NzUtNC4zMjc3NzEgMS45ODQ1NTgtMy45MzMyNSAxLjg4ODkxNy0zLjY3MDIzN0wxLjA1MjA1NS0xLjQ0NjU3NUMuOTgwMzI0LTEuMjU1MjkzIC45MDg1OTMtMS4wNjQwMSAuOTA4NTkzLS44NDg4MTdDLjkwODU5My0uMzEwODM0IDEuMjc5MjAzIC4xMTk1NTIgMS44NTMwNTEgLjExOTU1MkMyLjk1MjkyNyAuMTE5NTUyIDMuMzgzMzEzLTEuNjI1OTAzIDMuMzgzMzEzLTEuNzA5NTg5Wk0zLjI4NzY3MS03LjQ2MDAyNUMzLjI4NzY3MS03LjYzOTM1MiAzLjE0NDIwOS03Ljg1NDU0NSAyLjg4MTE5Ni03Ljg1NDU0NUMyLjYwNjIyNy03Ljg1NDU0NSAyLjI5NTM5Mi03LjU5MTUzMiAyLjI5NTM5Mi03LjI4MDY5N0MyLjI5NTM5Mi02Ljk4MTgxOCAyLjU0NjQ1MS02Ljg4NjE3NyAyLjY4OTkxMy02Ljg4NjE3N0MzLjAxMjcwMi02Ljg4NjE3NyAzLjI4NzY3MS03LjE5NzAxMSAzLjI4NzY3MS03LjQ2MDAyNVonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMS0xMDUnLz4KPHVzZSB4PSczLjk5MzQzMicgeT0nLTQuMzM4NDM3JyB4bGluazpocmVmPScjZzAtMTE2Jy8+Cjx1c2UgeD0nNy4wNTE0NTMnIHk9Jy00LjMzODQzNycgeGxpbms6aHJlZj0nI2cwLTEwNCcvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTAgLS0+" alt="i^{th}" style="vertical-align: 0px"/> element is <em>False</em>, the corresponding component of
+the lower bound is infinite. Otherwise, it is finite.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setFiniteLowerBound</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+<span class="go">[0, 1]</span>
+<span class="go">]-inf (0), 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.setFiniteUpperBound">
+<span class="sig-name descname"><span class="pre">setFiniteUpperBound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finiteUpperBound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.setFiniteUpperBound" title="Link to this definition">¶</a></dt>
+<dd><p>Tell for each component of the upper bound whether it is finite or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>flags</strong><span class="classifier">sequence of bool</span></dt><dd><p>If the <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScxMS45MzEzNjJwdCcgaGVpZ2h0PSc5Ljg3MzIzOHB0JyB2aWV3Qm94PScwIC05Ljg3MzIzOCAxMS45MzEzNjIgOS44NzMyMzgnPgo8ZGVmcz4KPHBhdGggaWQ9J2cwLTEwNCcgZD0nTTIuMzI3MjczLTUuMjkyMTU0QzIuMzM1MjQzLTUuMzA4MDk1IDIuMzU5MTUzLTUuNDExNzA2IDIuMzU5MTUzLTUuNDE5Njc2QzIuMzU5MTUzLTUuNDU5NTI3IDIuMzI3MjczLTUuNTMxMjU4IDIuMjMxNjMxLTUuNTMxMjU4QzIuMTk5NzUxLTUuNTMxMjU4IDEuOTUyNjc3LTUuNTA3MzQ3IDEuNzY5MzY1LTUuNDkxNDA3TDEuMzIzMDM5LTUuNDU5NTI3QzEuMTQ3Njk2LTUuNDQzNTg3IDEuMDY3OTk1LTUuNDM1NjE2IDEuMDY3OTk1LTUuMjkyMTU0QzEuMDY3OTk1LTUuMTgwNTczIDEuMTc5NTc3LTUuMTgwNTczIDEuMjc1MjE4LTUuMTgwNTczQzEuNjU3NzgzLTUuMTgwNTczIDEuNjU3NzgzLTUuMTMyNzUyIDEuNjU3NzgzLTUuMDYxMDIxQzEuNjU3NzgzLTUuMDM3MTExIDEuNjU3NzgzLTUuMDIxMTcxIDEuNjE3OTMzLTQuODc3NzA5TC40ODYxNzctLjM0MjcxNUMuNDU0Mjk2LS4yMjMxNjMgLjQ1NDI5Ni0uMTc1MzQyIC40NTQyOTYtLjE2NzM3MkMuNDU0Mjk2LS4wMzE4OCAuNTY1ODc4IC4wNzk3MDEgLjcxNzMxIC4wNzk3MDFDLjg0NDgzMiAuMDc5NzAxIC45NTY0MTMgMCAxLjAyMDE3NC0uMTAzNjExQzEuMDQ0MDg1LS4xNTE0MzIgMS4xMDc4NDYtLjQwNjQ3NiAxLjE0NzY5Ni0uNTY1ODc4TDEuMzMxMDA5LTEuMjc1MjE4QzEuMzU0OTE5LTEuMzk0NzcgMS40MzQ2Mi0xLjY5NzYzNCAxLjQ1ODUzMS0xLjgxNzE4NkMxLjU3ODA4Mi0yLjI3OTQ1MiAxLjU3ODA4Mi0yLjI5NTM5MiAxLjc1MzQyNS0yLjU1MDQzNkMyLjAyNDQwOC0yLjk0MDk3MSAyLjM5OTAwNC0zLjI5MTY1NiAyLjkzMzAwMS0zLjI5MTY1NkMzLjIxOTkyNS0zLjI5MTY1NiAzLjM4NzI5OC0zLjEyNDI4NCAzLjM4NzI5OC0yLjc0OTY4OUMzLjM4NzI5OC0yLjMxMTMzMyAzLjA1MjU1My0xLjQwMjc0IDIuOTAxMTIxLTEuMDEyMjA0QzIuNzk3NTA5LS43NDkxOTEgMi43OTc1MDktLjcwMTM3IDIuNzk3NTA5LS41OTc3NThDMi43OTc1MDktLjE0MzQ2MiAzLjE3MjEwNSAuMDc5NzAxIDMuNTE0ODE5IC4wNzk3MDFDNC4yOTU4OSAuMDc5NzAxIDQuNjIyNjY1LTEuMDM2MTE1IDQuNjIyNjY1LTEuMTM5NzI2QzQuNjIyNjY1LTEuMjE5NDI3IDQuNTU4OTA0LTEuMjQzMzM3IDQuNTAzMTEzLTEuMjQzMzM3QzQuNDA3NDcyLTEuMjQzMzM3IDQuMzkxNTMyLTEuMTg3NTQ3IDQuMzY3NjIxLTEuMTA3ODQ2QzQuMTc2MzM5LS40NTQyOTYgMy44NDE1OTQtLjE0MzQ2MiAzLjUzODczLS4xNDM0NjJDMy40MTEyMDgtLjE0MzQ2MiAzLjM0NzQ0Ny0uMjIzMTYzIDMuMzQ3NDQ3LS40MDY0NzZTMy40MTEyMDgtLjc2NTEzMSAzLjQ5MDkwOS0uOTY0Mzg0QzMuNjEwNDYxLTEuMjY3MjQ4IDMuOTYxMTQ2LTIuMTgzODExIDMuOTYxMTQ2LTIuNjMwMTM3QzMuOTYxMTQ2LTMuMjI3ODk1IDMuNTQ2Ny0zLjUxNDgxOSAyLjk3Mjg1Mi0zLjUxNDgxOUMyLjUyNjUyNi0zLjUxNDgxOSAyLjEwNDExLTMuMzIzNTM3IDEuNzM3NDg0LTIuOTAxMTIxTDIuMzI3MjczLTUuMjkyMTU0WicvPgo8cGF0aCBpZD0nZzAtMTE2JyBkPSdNMS43NjEzOTUtMy4xNzIxMDVIMi41NDI0NjZDMi42OTM4OTgtMy4xNzIxMDUgMi43ODk1MzktMy4xNzIxMDUgMi43ODk1MzktMy4zMjM1MzdDMi43ODk1MzktMy40MzUxMTggMi42ODU5MjgtMy40MzUxMTggMi41NTA0MzYtMy40MzUxMThIMS44MjUxNTZMMi4xMTIwOC00LjU2Njg3NEMyLjE0Mzk2LTQuNjg2NDI2IDIuMTQzOTYtNC43MjYyNzYgMi4xNDM5Ni00LjczNDI0N0MyLjE0Mzk2LTQuOTAxNjE5IDIuMDE2NDM4LTQuOTgxMzIgMS44ODA5NDYtNC45ODEzMkMxLjYwOTk2My00Ljk4MTMyIDEuNTU0MTcyLTQuNzY2MTI3IDEuNDY2NTAxLTQuNDA3NDcyTDEuMjE5NDI3LTMuNDM1MTE4SC40NTQyOTZDLjMwMjg2NC0zLjQzNTExOCAuMTk5MjUzLTMuNDM1MTE4IC4xOTkyNTMtMy4yODM2ODZDLjE5OTI1My0zLjE3MjEwNSAuMzAyODY0LTMuMTcyMTA1IC40MzgzNTYtMy4xNzIxMDVIMS4xNTU2NjZMLjY3NzQ2LTEuMjU5Mjc4Qy42Mjk2MzktMS4wNjAwMjUgLjU1NzkwOC0uNzgxMDcxIC41NTc5MDgtLjY2OTQ4OUMuNTU3OTA4LS4xOTEyODMgLjk0ODQ0MyAuMDc5NzAxIDEuMzcwODU5IC4wNzk3MDFDMi4yMjM2NjEgLjA3OTcwMSAyLjcwOTgzOC0xLjA0NDA4NSAyLjcwOTgzOC0xLjEzOTcyNkMyLjcwOTgzOC0xLjIyNzM5NyAyLjYzODEwNy0xLjI0MzMzNyAyLjU5MDI4Ni0xLjI0MzMzN0MyLjUwMjYxNS0xLjI0MzMzNyAyLjQ5NDY0NS0xLjIxMTQ1NyAyLjQzODg1NC0xLjA5MTkwNUMyLjI3OTQ1Mi0uNzA5MzQgMS44ODA5NDYtLjE0MzQ2MiAxLjM5NDc3LS4xNDM0NjJDMS4yMjczOTctLjE0MzQ2MiAxLjEzMTc1Ni0uMjU1MDQ0IDEuMTMxNzU2LS41MTgwNTdDMS4xMzE3NTYtLjY2OTQ4OSAxLjE1NTY2Ni0uNzU3MTYxIDEuMTc5NTc3LS44NjA3NzJMMS43NjEzOTUtMy4xNzIxMDVaJy8+CjxwYXRoIGlkPSdnMS0xMDUnIGQ9J00zLjM4MzMxMy0xLjcwOTU4OUMzLjM4MzMxMy0xLjc2OTM2NSAzLjMzNTQ5Mi0xLjgxNzE4NiAzLjI2Mzc2MS0xLjgxNzE4NkMzLjE1NjE2NC0xLjgxNzE4NiAzLjE0NDIwOS0xLjc4MTMyIDMuMDg0NDMzLTEuNTc4MDgyQzIuNzczNTk5LS40OTAxNjIgMi4yODM0MzctLjExOTU1MiAxLjg4ODkxNy0uMTE5NTUyQzEuNzQ1NDU1LS4xMTk1NTIgMS41NzgwODItLjE1NTQxNyAxLjU3ODA4Mi0uNTE0MDcyQzEuNTc4MDgyLS44MzY4NjIgMS43MjE1NDQtMS4xOTU1MTcgMS44NTMwNTEtMS41NTQxNzJMMi42ODk5MTMtMy43Nzc4MzNDMi43MjU3NzgtMy44NzM0NzQgMi44MDk0NjUtNC4wODg2NjcgMi44MDk0NjUtNC4zMTU4MTZDMi44MDk0NjUtNC44MTc5MzMgMi40NTA4MDktNS4yNzIyMjkgMS44NjUwMDYtNS4yNzIyMjlDLjc2NTEzMS01LjI3MjIyOSAuMzIyNzktMy41Mzg3MyAuMzIyNzktMy40NDMwODhDLjMyMjc5LTMuMzk1MjY4IC4zNzA2MS0zLjMzNTQ5MiAuNDU0Mjk2LTMuMzM1NDkyQy41NjE4OTMtMy4zMzU0OTIgLjU3Mzg0OC0zLjM4MzMxMyAuNjIxNjY5LTMuNTUwNjg1Qy45MDg1OTMtNC41NTQ5MTkgMS4zNjI4ODktNS4wMzMxMjYgMS44MjkxNDEtNS4wMzMxMjZDMS45MzY3MzctNS4wMzMxMjYgMi4xMzk5NzUtNS4wMjExNzEgMi4xMzk5NzUtNC42Mzg2MDVDMi4xMzk5NzUtNC4zMjc3NzEgMS45ODQ1NTgtMy45MzMyNSAxLjg4ODkxNy0zLjY3MDIzN0wxLjA1MjA1NS0xLjQ0NjU3NUMuOTgwMzI0LTEuMjU1MjkzIC45MDg1OTMtMS4wNjQwMSAuOTA4NTkzLS44NDg4MTdDLjkwODU5My0uMzEwODM0IDEuMjc5MjAzIC4xMTk1NTIgMS44NTMwNTEgLjExOTU1MkMyLjk1MjkyNyAuMTE5NTUyIDMuMzgzMzEzLTEuNjI1OTAzIDMuMzgzMzEzLTEuNzA5NTg5Wk0zLjI4NzY3MS03LjQ2MDAyNUMzLjI4NzY3MS03LjYzOTM1MiAzLjE0NDIwOS03Ljg1NDU0NSAyLjg4MTE5Ni03Ljg1NDU0NUMyLjYwNjIyNy03Ljg1NDU0NSAyLjI5NTM5Mi03LjU5MTUzMiAyLjI5NTM5Mi03LjI4MDY5N0MyLjI5NTM5Mi02Ljk4MTgxOCAyLjU0NjQ1MS02Ljg4NjE3NyAyLjY4OTkxMy02Ljg4NjE3N0MzLjAxMjcwMi02Ljg4NjE3NyAzLjI4NzY3MS03LjE5NzAxMSAzLjI4NzY3MS03LjQ2MDAyNVonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMS0xMDUnLz4KPHVzZSB4PSczLjk5MzQzMicgeT0nLTQuMzM4NDM3JyB4bGluazpocmVmPScjZzAtMTE2Jy8+Cjx1c2UgeD0nNy4wNTE0NTMnIHk9Jy00LjMzODQzNycgeGxpbms6aHJlZj0nI2cwLTEwNCcvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTAgLS0+" alt="i^{th}" style="vertical-align: 0px"/> element is <em>False</em>, the corresponding component of
+the upper bound is infinite. Otherwise, it is finite.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setFiniteUpperBound</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+<span class="go">[0, 1]</span>
+<span class="go">[0, (1) +inf[</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.setLowerBound">
+<span class="sig-name descname"><span class="pre">setLowerBound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowerBound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.setLowerBound" title="Link to this definition">¶</a></dt>
+<dd><p>Set the lower bound.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lowerBound</strong><span class="classifier">sequence of float</span></dt><dd><p>Value of the lower bound.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setLowerBound</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+<span class="go">[-4, 1]</span>
+<span class="go">[-5, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.setName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.CombinedInterval.setUpperBound">
+<span class="sig-name descname"><span class="pre">setUpperBound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upperBound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.CombinedInterval.setUpperBound" title="Link to this definition">¶</a></dt>
+<dd><p>Set the upper bound.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>upperBound</strong><span class="classifier">sequence of float</span></dt><dd><p>Value of the upper bound.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setUpperBound</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+<span class="go">[0, 4]</span>
+<span class="go">[0, 5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otABCalibration.ABCalibration.html" title="ABCalibration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="otABCalibration.ConditionalSample.html" title="ConditionalSample"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">CombinedInterval</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

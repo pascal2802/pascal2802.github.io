@@ -12,7 +12,7 @@ Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example : Using otABCCalibrationpython module">
+    <div class="sphx-glr-thumbcontainer" tooltip="Example : Using otABCalibrationpython module">
 
 .. only:: html
 
@@ -23,13 +23,13 @@ Examples
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example : Using otABCCalibrationpython module</div>
+      <div class="sphx-glr-thumbnail-title">Example : Using otABCalibrationpython module</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Calibrate Chaboche model using ABCCalibration Class">
+    <div class="sphx-glr-thumbcontainer" tooltip="Calibrate Chaboche model using ABCalibration Class">
 
 .. only:: html
 
@@ -40,7 +40,7 @@ Examples
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Calibrate Chaboche model using ABCCalibration Class</div>
+      <div class="sphx-glr-thumbnail-title">Calibrate Chaboche model using ABCalibration Class</div>
     </div>
 
 

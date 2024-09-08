@@ -1,7 +1,7 @@
 API Reference
 =============
 
-.. currentmodule:: otABCCalibration
+.. currentmodule:: otABCalibration
 
 .. autosummary::
     :toctree: _generated/
@@ -10,6 +10,6 @@ API Reference
     MyClass
     ConditionalSample
     CombinedInterval
-    ABCCalibration
+    ABCalibration
     Func
-    ABCCalibrationResult
+    ABCalibrationResult

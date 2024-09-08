@@ -1,5 +1,5 @@
 """
-Example : Using otABCCalibrationpython module
+Example : Using otABCalibrationpython module
 ----------------------------------------------
 """
 
@@ -13,16 +13,16 @@ Example : Using otABCCalibrationpython module
 import openturns as ot
 from openturns.viewer import View
 import numpy as np
-import otABCCalibration
+import otABCalibration
 
 # %%
 # | Using the module to compute power
-print(otABCCalibration.MyClass(3).power(2))
+print(otABCalibration.MyClass(3).power(2))
 
 # %%
 # | Compute power using arrays
 array = np.linspace(-5, 5, 101)
-values = otABCCalibration.MyClass(array).power(2.0)
+values = otABCalibration.MyClass(array).power(2.0)
 
 # %%
 # | Use of graph objects

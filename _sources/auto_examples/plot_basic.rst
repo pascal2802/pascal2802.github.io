@@ -18,7 +18,7 @@
 .. _sphx_glr_auto_examples_plot_basic.py:
 
 
-Example : Using otABCCalibrationpython module
+Example : Using otABCalibrationpython module
 ----------------------------------------------
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-8
@@ -36,7 +36,7 @@ This example aims to illustrate how to use the module.
     import openturns as ot
     from openturns.viewer import View
     import numpy as np
-    import otABCCalibration
+    import otABCalibration
 
 
 
@@ -53,7 +53,7 @@ This example aims to illustrate how to use the module.
 
 .. code-block:: Python
 
-    print(otABCCalibration.MyClass(3).power(2))
+    print(otABCalibration.MyClass(3).power(2))
 
 
 
@@ -77,7 +77,7 @@ This example aims to illustrate how to use the module.
 .. code-block:: Python
 
     array = np.linspace(-5, 5, 101)
-    values = otABCCalibration.MyClass(array).power(2.0)
+    values = otABCalibration.MyClass(array).power(2.0)
 
 
 
@@ -112,7 +112,7 @@ This example aims to illustrate how to use the module.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.042 seconds)
+   **Total running time of the script:** (0 minutes 0.076 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_basic.py:
@@ -128,3 +128,7 @@ This example aims to illustrate how to use the module.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_basic.py <plot_basic.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_basic.zip <plot_basic.zip>`

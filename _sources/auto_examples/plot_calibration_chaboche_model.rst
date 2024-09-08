@@ -18,12 +18,12 @@
 .. _sphx_glr_auto_examples_plot_calibration_chaboche_model.py:
 
 
-Calibrate Chaboche model using ABCCalibration Class
+Calibrate Chaboche model using ABCalibration Class
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-18
 
-This example aims to illustrate the use of the ABCCalibration class with the Chaboche model
+This example aims to illustrate the use of the ABCalibration class with the Chaboche model
 We recall that the Chaboche model is the following :
 
 .. math::
@@ -47,7 +47,7 @@ where:
     from openturns.usecases import chaboche_model
     import math
     import imp
-    import otABCCalibration.ABC_ClassProto as otABCC
+    import otABCalibration.ABC_ClassProto as otABCC
     import openturns.viewer as otv
     import matplotlib.pyplot as plt
     import openturns.viewer as otv
@@ -65,10 +65,10 @@ where:
 
  .. code-block:: none
 
-    /home/d54380/Logiciels/OpenTURNS/otABCCalibration/doc/examples/plot_calibration_chaboche_model.py:27: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+    /home/d54380/Logiciels/OpenTURNS/otABCCalibration/doc/examples/plot_calibration_chaboche_model.py:27: DeprecationWarning: the imp module is deprecated in favour of importlib and slated for removal in Python 3.12; see the module's documentation for alternative uses
       import imp
 
-    <module 'otABCCalibration.ABC_ClassProto' from '/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCCalibration/ABC_ClassProto.py'>
+    <module 'otABCalibration.ABC_ClassProto' from '/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/ABC_ClassProto.py'>
 
 
 
@@ -301,7 +301,7 @@ The ABC method calibrate the model by sample conditioning
         [False, False, True, True],
         [False, False, True, True],
     )
-    algo = otABCC.ABCCalibration(
+    algo = otABCC.ABCalibration(
         cm.model,
         computeABCCriteria,
         observedParameterIndices,
@@ -433,7 +433,7 @@ the figure suggets that the discrepencies between model prediction and observed 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.251 seconds)
+   **Total running time of the script:** (0 minutes 8.793 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_calibration_chaboche_model.py:
@@ -449,3 +449,7 @@ the figure suggets that the discrepencies between model prediction and observed 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_calibration_chaboche_model.py <plot_calibration_chaboche_model.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_calibration_chaboche_model.zip <plot_calibration_chaboche_model.zip>`

@@ -1,10 +1,10 @@
 """
-Calibrate Chaboche model using ABCCalibration Class
+Calibrate Chaboche model using ABCalibration Class
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 """
 
 # %%
-# This example aims to illustrate the use of the ABCCalibration class with the Chaboche model
+# This example aims to illustrate the use of the ABCalibration class with the Chaboche model
 # We recall that the Chaboche model is the following :
 #
 # .. math::
@@ -25,7 +25,7 @@ import openturns as ot
 from openturns.usecases import chaboche_model
 import math
 import imp
-import otABCCalibration.ABC_ClassProto as otABCC
+import otABCalibration.ABC_ClassProto as otABCC
 import openturns.viewer as otv
 import matplotlib.pyplot as plt
 import openturns.viewer as otv
@@ -152,7 +152,7 @@ criteriaSelection = ot.Interval(
     [False, False, True, True],
     [False, False, True, True],
 )
-algo = otABCC.ABCCalibration(
+algo = otABCC.ABCalibration(
     cm.model,
     computeABCCriteria,
     observedParameterIndices,

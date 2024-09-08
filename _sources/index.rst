@@ -1,4 +1,4 @@
-otABCCalibration documentation
+otABCalibration documentation
 ==============================
 
 User documentation

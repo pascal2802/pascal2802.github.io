@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ABCalibrationResult &#8212; otABCalibration 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="../../auto_examples/index.html" />
+    <link rel="prev" title="Func" href="otABCalibration.Func.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../user_manual.html">Doc</a></li>
+    <li><a href="../../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otABCalibration
+    </h1>
+    <h2> Module otABCalibration </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../auto_examples/index.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="otABCalibration.Func.html" title="Func"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ABCalibrationResult</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.MyClass.html">MyClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.ConditionalSample.html">ConditionalSample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.CombinedInterval.html">CombinedInterval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibration.html">ABCalibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.Func.html">Func</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ABCalibrationResult</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="otABCalibration.Func.html"
+                          title="previous chapter">Func</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../auto_examples/index.html"
+                          title="next chapter">Examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otABCalibration.ABCalibrationResult.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="abcalibrationresult">
+<h1>ABCalibrationResult<a class="headerlink" href="#abcalibrationresult" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ABCalibrationResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residualFunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult" title="Link to this definition">¶</a></dt>
+<dd><p>ABC calibration result storage and postprocessing</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>GlobalSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample with and ABCcriteria evaluated from a prior input Sample</p>
+</dd>
+<dt><strong>sampleSelectionCriteria</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>selection criteria to build conditional Sample <a class="reference internal" href="otABCalibration.ConditionalSample.html#otABCalibration.ConditionalSample" title="otABCalibration.ConditionalSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalSample</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.computeOptimalPoint" title="otABCalibration.ABCalibrationResult.computeOptimalPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeOptimalPoint</span></code></a>()</p></td>
+<td><p>method to compute optimal point using infered probabilistic function density of posterior input sample</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawObservationsVsInputs" title="otABCalibration.ABCalibrationResult.drawObservationsVsInputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsInputs</span></code></a>()</p></td>
+<td><p>Draw observations/inputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawObservationsVsPredictions" title="otABCalibration.ABCalibrationResult.drawObservationsVsPredictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawObservationsVsPredictions</span></code></a>()</p></td>
+<td><p>Draw observations/predictions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawPairMarginalsResiduals" title="otABCalibration.ABCalibrationResult.drawPairMarginalsResiduals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPairMarginalsResiduals</span></code></a>()</p></td>
+<td><p>draw the residuals of the posterior inputSample, 1-D and 2-D marginals with Spearman correlation indices</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawParameterDistributions" title="otABCalibration.ABCalibrationResult.drawParameterDistributions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawParameterDistributions</span></code></a>()</p></td>
+<td><p>Draw parameter prior/posterior.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawResiduals" title="otABCalibration.ABCalibrationResult.drawResiduals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResiduals</span></code></a>()</p></td>
+<td><p>Draw residuals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.drawResidualsNormalPlot" title="otABCalibration.ABCalibrationResult.drawResidualsNormalPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawResidualsNormalPlot</span></code></a>()</p></td>
+<td><p>Draw residuals normal plot.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getABCResidualsSample" title="otABCalibration.ABCalibrationResult.getABCResidualsSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getABCResidualsSample</span></code></a>()</p></td>
+<td><p>Accessor to ABC residuals sample build on all point retained as calibrated given the ABC criteria provided</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getABCResidualsSampleWithObservationsAndParameters" title="otABCalibration.ABCalibrationResult.getABCResidualsSampleWithObservationsAndParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getABCResidualsSampleWithObservationsAndParameters</span></code></a>()</p></td>
+<td><p>Accessor to ABC residuals sample build on all point retained as calibrated given the ABC criteria provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getClassName" title="otABCalibration.ABCalibrationResult.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getConditionalSample" title="otABCalibration.ABCalibrationResult.getConditionalSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConditionalSample</span></code></a>()</p></td>
+<td><p>accessor to conditionalSample</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getInputObservations" title="otABCalibration.ABCalibrationResult.getInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputObservations</span></code></a>()</p></td>
+<td><p>Accessor to the input observations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getName" title="otABCalibration.ABCalibrationResult.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getObservationsError" title="otABCalibration.ABCalibrationResult.getObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObservationsError</span></code></a>()</p></td>
+<td><p>Accessor to the observations error distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getOutputAtPosteriorMean" title="otABCalibration.ABCalibrationResult.getOutputAtPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPosteriorMean</span></code></a>()</p></td>
+<td><p>Accessor to the output observations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getOutputAtPriorMean" title="otABCalibration.ABCalibrationResult.getOutputAtPriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputAtPriorMean</span></code></a>()</p></td>
+<td><p>Accessor to the output observations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getOutputObservations" title="otABCalibration.ABCalibrationResult.getOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputObservations</span></code></a>()</p></td>
+<td><p>Accessor to the output observations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getParameterMAP" title="otABCalibration.ABCalibrationResult.getParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterMAP</span></code></a>()</p></td>
+<td><p>Accessor to the maximum a posteriori parameter estimate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getParameterPosterior" title="otABCalibration.ABCalibrationResult.getParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPosterior</span></code></a>()</p></td>
+<td><p>Accessor to the parameter posterior distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getParameterPrior" title="otABCalibration.ABCalibrationResult.getParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterPrior</span></code></a>()</p></td>
+<td><p>Accessor to the parameter prior distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getResidualFunction" title="otABCalibration.ABCalibrationResult.getResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualFunction</span></code></a>()</p></td>
+<td><p>Accessor to the residual function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.getThetaMAPAsDataFrame" title="otABCalibration.ABCalibrationResult.getThetaMAPAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getThetaMAPAsDataFrame</span></code></a>([alpha])</p></td>
+<td><p>get the value of the parameter computed as optimal and the associated confidence interval computed from the posterior input distribution deduced from the conditional sample</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.hasName" title="otABCalibration.ABCalibrationResult.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</p></td>
+<td><p>Test if the object is named.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setABCResidualsDescription" title="otABCalibration.ABCalibrationResult.setABCResidualsDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setABCResidualsDescription</span></code></a>(Desciption)</p></td>
+<td><p>Accessor to the description of the ABC Residuals Sample</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setInputObservations" title="otABCalibration.ABCalibrationResult.setInputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputObservations</span></code></a>(inputObservations)</p></td>
+<td><p>Accessor to the input observations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setName" title="otABCalibration.ABCalibrationResult.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</p></td>
+<td><p>Accessor to the object's name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setObservationsError" title="otABCalibration.ABCalibrationResult.setObservationsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setObservationsError</span></code></a>(observationsError)</p></td>
+<td><p>Accessor to the observations error distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setOutputAtPriorAndPosteriorMean" title="otABCalibration.ABCalibrationResult.setOutputAtPriorAndPosteriorMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputAtPriorAndPosteriorMean</span></code></a>(...)</p></td>
+<td><p>Accessor to the output at prior/posterior mean.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setOutputObservations" title="otABCalibration.ABCalibrationResult.setOutputObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputObservations</span></code></a>(outputObservations)</p></td>
+<td><p>Accessor to the output observations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setParameterMAP" title="otABCalibration.ABCalibrationResult.setParameterMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterMAP</span></code></a>(parameterMAP)</p></td>
+<td><p>Accessor to the maximum a posteriori parameter estimate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setParameterPosterior" title="otABCalibration.ABCalibrationResult.setParameterPosterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPosterior</span></code></a>(parameterPosterior)</p></td>
+<td><p>Accessor to the parameter posterior distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setParameterPrior" title="otABCalibration.ABCalibrationResult.setParameterPrior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterPrior</span></code></a>(parameterPrior)</p></td>
+<td><p>Accessor to the parameter prior distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibrationResult.setResidualFunction" title="otABCalibration.ABCalibrationResult.setResidualFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResidualFunction</span></code></a>(residualFunction)</p></td>
+<td><p>Accessor to the residual function.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globalSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampleSelectionCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distributionPriorInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputColumnsId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residualFunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.computeOptimalPoint">
+<span class="sig-name descname"><span class="pre">computeOptimalPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.computeOptimalPoint" title="Link to this definition">¶</a></dt>
+<dd><p>method to compute optimal point using infered probabilistic function density of posterior input sample</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>optimalPoint</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></span></dt><dd><p>Point that maximise infered posterior input probabilistic density function</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawObservationsVsInputs">
+<span class="sig-name descname"><span class="pre">drawObservationsVsInputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawObservationsVsInputs" title="Link to this definition">¶</a></dt>
+<dd><p>Draw observations/inputs.</p>
+<p>Plot the observed output of the model depending on the observed input before
+and after calibration.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>Graph array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawObservationsVsPredictions">
+<span class="sig-name descname"><span class="pre">drawObservationsVsPredictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawObservationsVsPredictions" title="Link to this definition">¶</a></dt>
+<dd><p>Draw observations/predictions.</p>
+<p>Plots the output of the model depending on the output observations before and
+after calibration.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>Graph array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawPairMarginalsResiduals">
+<span class="sig-name descname"><span class="pre">drawPairMarginalsResiduals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawPairMarginalsResiduals" title="Link to this definition">¶</a></dt>
+<dd><p>draw the residuals of the posterior inputSample, 1-D and 2-D marginals with Spearman correlation indices</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>The grid of plots.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawParameterDistributions">
+<span class="sig-name descname"><span class="pre">drawParameterDistributions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawParameterDistributions" title="Link to this definition">¶</a></dt>
+<dd><p>Draw parameter prior/posterior.</p>
+<p>Plots the prior and posterior distribution of the calibrated parameter theta.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>Graph array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawResiduals">
+<span class="sig-name descname"><span class="pre">drawResiduals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawResiduals" title="Link to this definition">¶</a></dt>
+<dd><p>Draw residuals.</p>
+<p>Plot the distribution of the sample residuals before and after calibration 
+using kernel smoothing and the distribution of the observation errors.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>Graph array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.drawResidualsNormalPlot">
+<span class="sig-name descname"><span class="pre">drawResidualsNormalPlot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.drawResidualsNormalPlot" title="Link to this definition">¶</a></dt>
+<dd><p>Draw residuals normal plot.</p>
+<p>Plots the quantile-quantile graphs of the empirical residual 
+after calibration vs the Gaussian distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>grid</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.GridLayout.html#openturns.GridLayout" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridLayout</span></code></a></span></dt><dd><p>Graph array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getABCResidualsSample">
+<span class="sig-name descname"><span class="pre">getABCResidualsSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getABCResidualsSample" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to ABC residuals sample build on all point retained as calibrated given the ABC criteria provided</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>residualsABCSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getABCResidualsSampleWithObservationsAndParameters">
+<span class="sig-name descname"><span class="pre">getABCResidualsSampleWithObservationsAndParameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getABCResidualsSampleWithObservationsAndParameters" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to ABC residuals sample build on all point retained as calibrated given the ABC criteria provided. First columns of the return sample contains observed parameters and output variables as well as parameters to calibrate.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>residualsABCSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getClassName">
+<span class="sig-name descname"><span class="pre">getClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getClassName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getConditionalSample">
+<span class="sig-name descname"><span class="pre">getConditionalSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getConditionalSample" title="Link to this definition">¶</a></dt>
+<dd><p>accessor to conditionalSample</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>conditionalSample</strong><span class="classifier"><a class="reference internal" href="otABCalibration.ConditionalSample.html#otABCalibration.ConditionalSample" title="otABCalibration.ConditionalSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalSample</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getInputObservations">
+<span class="sig-name descname"><span class="pre">getInputObservations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getInputObservations" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the input observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>inputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of input observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getObservationsError">
+<span class="sig-name descname"><span class="pre">getObservationsError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getObservationsError" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the observations error distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>observationsError</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The observations error distribution.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getOutputAtPosteriorMean">
+<span class="sig-name descname"><span class="pre">getOutputAtPosteriorMean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getOutputAtPosteriorMean" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the output observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>outputAtPosterior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Output at posterior mean.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getOutputAtPriorMean">
+<span class="sig-name descname"><span class="pre">getOutputAtPriorMean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getOutputAtPriorMean" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the output observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>outputAtPrior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Output at prior mean.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getOutputObservations">
+<span class="sig-name descname"><span class="pre">getOutputObservations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getOutputObservations" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the output observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>outputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of output observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getParameterMAP">
+<span class="sig-name descname"><span class="pre">getParameterMAP</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getParameterMAP" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the maximum a posteriori parameter estimate.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>parameterPosterior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>The maximum a posteriori parameter estimate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getParameterPosterior">
+<span class="sig-name descname"><span class="pre">getParameterPosterior</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getParameterPosterior" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter posterior distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>parameterPosterior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The posterior distribution of the parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getParameterPrior">
+<span class="sig-name descname"><span class="pre">getParameterPrior</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getParameterPrior" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter prior distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>parameterPrior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The prior distribution of the parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getResidualFunction">
+<span class="sig-name descname"><span class="pre">getResidualFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getResidualFunction" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the residual function.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>residualFunction</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>The residual function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.getThetaMAPAsDataFrame">
+<span class="sig-name descname"><span class="pre">getThetaMAPAsDataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.getThetaMAPAsDataFrame" title="Link to this definition">¶</a></dt>
+<dd><p>get the value of the parameter computed as optimal and the associated confidence interval computed from the posterior input distribution deduced from the conditional sample</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">float - default = 0.95</span></dt><dd><p>Interval confidence level</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas DataFrame</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.hasName">
+<span class="sig-name descname"><span class="pre">hasName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.hasName" title="Link to this definition">¶</a></dt>
+<dd><p>Test if the object is named.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>hasName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setABCResidualsDescription">
+<span class="sig-name descname"><span class="pre">setABCResidualsDescription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Desciption</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setABCResidualsDescription" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the description of the ABC Residuals Sample</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>Description</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt><dd><p>Description of the ABC Residuals sample</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setInputObservations">
+<span class="sig-name descname"><span class="pre">setInputObservations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setInputObservations" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the input observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>inputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of input observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setName" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setObservationsError">
+<span class="sig-name descname"><span class="pre">setObservationsError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observationsError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setObservationsError" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the observations error distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>observationsError</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The observations error distribution.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setOutputAtPriorAndPosteriorMean">
+<span class="sig-name descname"><span class="pre">setOutputAtPriorAndPosteriorMean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputAtPriorMean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputAtPosteriorMean</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setOutputAtPriorAndPosteriorMean" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the output at prior/posterior mean.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>outputAtPrior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of output at prior mean.</p>
+</dd>
+<dt><strong>outputAtPosterior</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of output at posterior mean.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setOutputObservations">
+<span class="sig-name descname"><span class="pre">setOutputObservations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setOutputObservations" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the output observations.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>outputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The sample of output observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setParameterMAP">
+<span class="sig-name descname"><span class="pre">setParameterMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameterMAP</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setParameterMAP" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the maximum a posteriori parameter estimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>parameterPosterior</strong><span class="classifier">sequence of float</span></dt><dd><p>The maximum a posteriori parameter estimate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setParameterPosterior">
+<span class="sig-name descname"><span class="pre">setParameterPosterior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameterPosterior</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setParameterPosterior" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter posterior distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>parameterPosterior</strong><span class="classifier">: <a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The posterior distribution of the parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setParameterPrior">
+<span class="sig-name descname"><span class="pre">setParameterPrior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameterPrior</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setParameterPrior" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter prior distribution.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>parameterPrior</strong><span class="classifier">: <a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>The prior distribution of the parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibrationResult.setResidualFunction">
+<span class="sig-name descname"><span class="pre">setResidualFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">residualFunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibrationResult.setResidualFunction" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the residual function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>residualFunction</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>The residual function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../auto_examples/index.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="otABCalibration.Func.html" title="Func"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ABCalibrationResult</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
