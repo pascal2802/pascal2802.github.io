@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DataReconciliationOM &#8212; otDataReconciliation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=62cba654" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Distribution" href="otDataReconciliation.Distribution.html" />
+    <link rel="prev" title="API Reference" href="../user_manual.html" />
+<link
+  href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+  rel="stylesheet"
+  type="text/css"
+/>
+  
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../user_manual.html">Doc</a></li>
+    <li><a href="../../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img
+        src="../../_static/logo-openturns-wo-bg.png"
+        alt=""
+        width="100px"
+        height="100px"
+      />
+      otDataReconciliation
+    </h1>
+    <h2>Module otDataReconciliation</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otDataReconciliation.Distribution.html" title="Distribution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../user_manual.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DataReconciliationOM</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DataReconciliationOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otDataReconciliation.Distribution.html">Distribution</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../user_manual.html"
+                          title="previous chapter">API Reference</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="otDataReconciliation.Distribution.html"
+                          title="next chapter">Distribution</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otDataReconciliation.DataReconciliationOM.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="datareconciliationom">
+<h1>DataReconciliationOM<a class="headerlink" href="#datareconciliationom" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataReconciliationOM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM" title="Link to this definition">¶</a></dt>
+<dd><p>Base class for data Reconciliation OM model based</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>modelName</strong><span class="classifier">str</span></dt><dd><p>name of the model, must be the same the OpenModelicaModelName</p>
+</dd>
+<dt><strong>variableNamesToReconcile</strong><span class="classifier">openturns.Description</span></dt><dd><p>list with variable name to be reconciled</p>
+</dd>
+<dt><strong>priorMeasurements</strong><span class="classifier">openturns.Point</span></dt><dd><p>measurements values to be reconciled</p>
+</dd>
+<dt><strong>priorCovarianceMatrix</strong><span class="classifier">openturns.CovarianceMatrix</span></dt><dd><p>covariance matrix of measurements</p>
+</dd>
+<dt><strong>casePath</strong><span class="classifier">str</span></dt><dd><p>Path to case root dir</p>
+</dd>
+<dt><strong>simuMatPath</strong><span class="classifier">str</span></dt><dd><p>Path to directory storing simulation files (om binary and auxiliary files)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution" title="otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPriorPosteriorMarginalsDistribution</span></code></a>([index])</p></td>
+<td><p>Draw measurement prior ans posterior (reconciled) marginals distribution on a line</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovarianceMatrixAsDataFrame</span></code></a>()</p></td>
+<td><p>Accessor to posterior covariance Matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLocalResultsAsDataFrame</span></code></a>()</p></td>
+<td><p>Accessor to results of the reconciliation as dataFrame</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorCovarianceMatrix</span></code></a>()</p></td>
+<td><p>Accessor to posterior Covariance matrix (Sx reconciled)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPosteriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorDistribution</span></code></a>()</p></td>
+<td><p>accessor to prior normal distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorMeasurementAsPoint</span></code></a>()</p></td>
+<td><p>Accessor to reconciled posterior measurements</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriorDistribution</span></code></a>()</p></td>
+<td><p>accessor to prior normal distribution</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>reconcileData</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>All results will be written in casePath/RESU</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution">
+<span class="sig-name descname"><span class="pre">drawPriorPosteriorMarginalsDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution" title="Link to this definition">¶</a></dt>
+<dd><p>Draw measurement prior ans posterior (reconciled) marginals distribution on a line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int</span></dt><dd><p>index of marginals to be included on the plot, default = None, all marginals are displayed</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">ot.GridLayout(dimension, dimension)</span></dt><dd><p>The grid of plots.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame">
+<span class="sig-name descname"><span class="pre">getCovarianceMatrixAsDataFrame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to posterior covariance Matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>resultDF</strong><span class="classifier">pandas DataFrame</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame">
+<span class="sig-name descname"><span class="pre">getLocalResultsAsDataFrame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to results of the reconciliation as dataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>resultDF</strong><span class="classifier">pandas DataFrame</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix">
+<span class="sig-name descname"><span class="pre">getPosteriorCovarianceMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to posterior Covariance matrix (Sx reconciled)</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>posteriorCovarianceMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorDistribution">
+<span class="sig-name descname"><span class="pre">getPosteriorDistribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="Link to this definition">¶</a></dt>
+<dd><p>accessor to prior normal distribution</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>priorDistribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint">
+<span class="sig-name descname"><span class="pre">getPosteriorMeasurementAsPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to reconciled posterior measurements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>posteriorMeasurement</strong><span class="classifier">:class`~openturns.Point`</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPriorDistribution">
+<span class="sig-name descname"><span class="pre">getPriorDistribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPriorDistribution" title="Link to this definition">¶</a></dt>
+<dd><p>accessor to prior normal distribution</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>priorDistribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otDataReconciliation.Distribution.html" title="Distribution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../user_manual.html" title="API Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DataReconciliationOM</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".toggle > *").hide();
+    $(".toggle .header").show();
+    $(".toggle .header").click(function () {
+      $(this).parent().children().not(".header").toggle(400);
+      $(this).parent().children(".header").toggleClass("open");
+    });
+  });
+</script>
+
+  </body>
+</html>

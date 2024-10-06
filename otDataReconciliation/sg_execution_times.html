@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>otDataReconciliation documentation &#8212; otDataReconciliation 0.1 documentation</title>
+    <title>Computation times &#8212; otDataReconciliation 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
     <link rel="stylesheet" type="text/css" href="_static/openturns.css?v=62cba654" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css?v=7f9a90b1" />
@@ -19,7 +19,6 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Reference" href="user_manual/user_manual.html" />
 <link
   href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
   rel="stylesheet"
@@ -29,11 +28,11 @@
   </head><body>
 <div class="pageheader">
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="user_manual/user_manual.html">Doc</a></li>
     <li><a href="examples/examples.html">Examples</a></li>
   </ul>
-  <a href="#">
+  <a href="index.html">
     <h1>
       <img
         src="_static/logo-openturns-wo-bg.png"
@@ -53,16 +52,13 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="user_manual/user_manual.html" title="API Reference"
-             accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">otDataReconciliation 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">otDataReconciliation documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Computation times</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-<h3><a href="#">Table of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_manual/user_manual.html">API Reference</a></li>
 </ul>
@@ -73,15 +69,10 @@
 <li class="toctree-l1"><a class="reference internal" href="developer_guide/developer_guide.html">Developer guide</a></li>
 </ul>
 
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="user_manual/user_manual.html"
-                          title="next chapter">API Reference</a></p>
-  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst"
+      <li><a href="_sources/sg_execution_times.rst"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -103,43 +94,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="otdatareconciliation-documentation">
-<h1>otDataReconciliation documentation<a class="headerlink" href="#otdatareconciliation-documentation" title="Link to this heading">¶</a></h1>
-<section id="user-documentation">
-<h2>User documentation<a class="headerlink" href="#user-documentation" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/user_manual.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_manual/_generated/otDataReconciliation.DataReconciliationOM.html">DataReconciliationOM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_manual/_generated/otDataReconciliation.Distribution.html">Distribution</a></li>
-</ul>
-</li>
-</ul>
+  <section id="computation-times">
+<span id="sphx-glr-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Link to this heading">¶</a></h1>
+<p><strong>00:04.978</strong> total execution time for 1 file <strong>from all galleries</strong>:</p>
+<div class="docutils container">
+<style scoped>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+</style>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+    $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+} );
+</script><table class="table table-striped sg-datatable docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p>Mem (MB)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/plot_HVACSplitter.html#sphx-glr-auto-examples-plot-hvacsplitter-py"><span class="std std-ref">Reconcile data for the HVAC Splitter</span></a> (<code class="docutils literal notranslate"><span class="pre">examples/plot_HVACSplitter.py</span></code>)</p></td>
+<td><p>00:04.978</p></td>
+<td><p>0.0</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
-</ul>
-</div>
-</section>
-<section id="developer-guide">
-<h2>Developer guide<a class="headerlink" href="#developer-guide" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="developer_guide/developer_guide.html">Developer guide</a></li>
-</ul>
-</div>
-</section>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </section>
 
 
@@ -155,11 +139,8 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="user_manual/user_manual.html" title="API Reference"
-             >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">otDataReconciliation 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">otDataReconciliation documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Computation times</a></li> 
       </ul>
     </div>
 <script type="text/javascript">

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reconcile data for the HVAC Splitter &#8212; otDataReconciliation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=62cba654" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer guide" href="../developer_guide/developer_guide.html" />
+    <link rel="prev" title="Examples" href="index.html" />
+<link
+  href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+  rel="stylesheet"
+  type="text/css"
+/>
+  
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img
+        src="../_static/logo-openturns-wo-bg.png"
+        alt=""
+        width="100px"
+        height="100px"
+      />
+      otDataReconciliation
+    </h1>
+    <h2>Module otDataReconciliation</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../developer_guide/developer_guide.html" title="Developer guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Reconcile data for the HVAC Splitter</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/user_manual.html">API Reference</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Examples</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../developer_guide/developer_guide.html"
+                          title="next chapter">Developer guide</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_examples/plot_HVACSplitter.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plot-hvacsplitter-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="reconcile-data-for-the-hvac-splitter">
+<span id="sphx-glr-auto-examples-plot-hvacsplitter-py"></span><h1>Reconcile data for the HVAC Splitter<a class="headerlink" href="#reconcile-data-for-the-hvac-splitter" title="Link to this heading">¶</a></h1>
+<ul class="sphx-glr-horizontal">
+<li><img src="../_images/sphx_glr_plot_HVACSplitter_001.png" srcset="../_images/sphx_glr_plot_HVACSplitter_001.png" alt="Iso-PDF values" class = "sphx-glr-multi-img"/></li>
+<li><img src="../_images/sphx_glr_plot_HVACSplitter_002.png" srcset="../_images/sphx_glr_plot_HVACSplitter_002.png" alt="Iso-PDF values" class = "sphx-glr-multi-img"/></li>
+<li><img src="../_images/sphx_glr_plot_HVACSplitter_003.png" srcset="../_images/sphx_glr_plot_HVACSplitter_003.png" alt="plot HVACSplitter" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  Variable to be Estimated   ...  Local Quality
+0                        Q1  ...          3.66521
+1                        Q2  ...          2.12716
+2                        Q3  ...          1.75720
+3                        T1  ...          3.26845
+4                        T2  ...          5.57239
+5                        T3  ...          4.89078
+
+[6 rows x 7 columns]
+             Q1          Q2          Q3        T1        T2        T3
+Sxij
+Q1    71.894900   -7.653470   64.241500  0.412516  0.351214 -0.763730
+Q2    -7.653470  142.572000  134.918000 -0.893073 -0.760360  1.653430
+Q3    64.241500  134.918000  199.160000 -0.480558 -0.409145  0.889703
+T1     0.412516   -0.893073   -0.480558  0.079987 -0.008525  0.018539
+T2     0.351214   -0.760360   -0.409145 -0.008525  0.082741  0.015784
+T3    -0.763730    1.653430    0.889703  0.018539  0.015784  0.055677
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Reconciliation de donnée avec OpenModelica et OpenTURNS</span>
+<span class="c1"># L&#39;objet est de tester la classe DataReconciliationOM fournissant un wrapper python de la reconciliation de donnée réalisée dans OpenModelica.</span>
+<span class="c1"># Les résultats de la réconciliation de données sont accessibles au format OpenTURNS (distribution, matrices) pour être visualisées et utilisées dans des études d&#39;incertitudes (propagation, calage par exemple).</span>
+
+<span class="c1"># Import des modules nécessaires</span>
+
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="kn">import</span> <span class="nn">openturns.viewer</span> <span class="k">as</span> <span class="nn">otv</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="kn">import</span> <span class="nn">otDataReconciliation</span> <span class="k">as</span> <span class="nn">otDataR</span>
+
+<span class="c1"># Affichage graphiques en ligne si utilisation Ipython</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span> <span class="s2">&quot;inline&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Le modèle jouet est ici l&#39;exemple d&#39;un gaine de ventilation se séparant</span>
+<span class="c1"># $$ Q_3 = Q_1 + Q_2 $$</span>
+<span class="c1"># $$ Q_3 c_p T_3 = Q_1 c_p T_1 + Q_2 c_p T_2 $$</span>
+<span class="c1"># Les débits sont ici en $m^3.h^{-1}$ et les températures en $degC$</span>
+<span class="n">modelName</span> <span class="o">=</span> <span class="s2">&quot;TestDataR_HVACSplitter&quot;</span>
+
+<span class="c1"># Construction de la classe réconciliation de donnée</span>
+<span class="n">VarNames</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">([</span><span class="s2">&quot;Q1&quot;</span><span class="p">,</span> <span class="s2">&quot;Q2&quot;</span><span class="p">,</span> <span class="s2">&quot;Q3&quot;</span><span class="p">,</span> <span class="s2">&quot;T1&quot;</span><span class="p">,</span> <span class="s2">&quot;T2&quot;</span><span class="p">,</span> <span class="s2">&quot;T3&quot;</span><span class="p">])</span>
+<span class="n">priorMeasurements</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">covM</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">casePath</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
+<span class="n">simuMatPath</span> <span class="o">=</span> <span class="s2">&quot;SIMU_MAT_0&quot;</span>
+<span class="n">dataR</span> <span class="o">=</span> <span class="n">otDataR</span><span class="o">.</span><span class="n">DataReconciliationOM</span><span class="p">(</span><span class="n">modelName</span><span class="p">,</span> <span class="n">VarNames</span><span class="p">,</span> <span class="n">priorMeasurements</span><span class="p">,</span> <span class="n">covM</span><span class="p">,</span> <span class="n">casePath</span><span class="p">,</span> <span class="n">simuMatPath</span><span class="p">)</span>
+
+<span class="c1"># Visualisation de la distribution multivariée des mesures avant réconciliation</span>
+<span class="n">priorDistribution</span> <span class="o">=</span> <span class="n">dataR</span><span class="o">.</span><span class="n">getPriorDistribution</span><span class="p">()</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">priorDistribution</span><span class="o">.</span><span class="n">drawDistributionGridPDF</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">otv</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+
+<span class="c1"># Lancer la réconciliation de données</span>
+<span class="n">dataR</span><span class="o">.</span><span class="n">reconcileData</span><span class="p">()</span>
+
+<span class="c1"># # Analyse des résultats</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dataR</span><span class="o">.</span><span class="n">getLocalResultsAsDataFrame</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Visualisation de la distribution multivariée des mesures réconciliées, marginales 1D et 2D (visualisation de la dépendance à posteriori)</span>
+<span class="n">posteriorDistribution</span> <span class="o">=</span> <span class="n">dataR</span><span class="o">.</span><span class="n">getPosteriorDistribution</span><span class="p">()</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">posteriorDistribution</span><span class="o">.</span><span class="n">drawDistributionGridPDF</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">otv</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+
+<span class="c1"># Il est également possible de récupérer la matrice de covariance à posteriori</span>
+<span class="n">posteriorCovM</span> <span class="o">=</span> <span class="n">dataR</span><span class="o">.</span><span class="n">getCovarianceMatrixAsDataFrame</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">posteriorCovM</span><span class="p">)</span>
+
+<span class="c1"># Simulation de l&#39;effet de la réconciliation de donnée sur les marginales</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">dataR</span><span class="o">.</span><span class="n">drawPriorPosteriorMarginalsDistribution</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">otv</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.978 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-hvacsplitter-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/8991594b8ba460d4dcce6c87d23cfcc8/plot_HVACSplitter.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_HVACSplitter.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/144be1b77a94574d816c536b8c5f6f37/plot_HVACSplitter.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_HVACSplitter.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/6667e9ebd2280788cd8ce871579adf80/plot_HVACSplitter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_HVACSplitter.zip</span></code></a></p>
+</div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../developer_guide/developer_guide.html" title="Developer guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Examples"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otDataReconciliation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Reconcile data for the HVAC Splitter</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".toggle > *").hide();
+    $(".toggle .header").show();
+    $(".toggle .header").click(function () {
+      $(this).parent().children().not(".header").toggle(400);
+      $(this).parent().children(".header").toggleClass("open");
+    });
+  });
+</script>
+
+  </body>
+</html>
