@@ -121,7 +121,7 @@
 <h1>DataReconciliationOM<a class="headerlink" href="#datareconciliationom" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataReconciliationOM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataReconciliationOM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeOut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM" title="Link to this definition">¶</a></dt>
 <dd><p>Base class for data Reconciliation OM model based</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -138,39 +138,46 @@
 </dd>
 <dt><strong>simuMatPath</strong><span class="classifier">str</span></dt><dd><p>Path to directory storing simulation files (om binary and auxiliary files)</p>
 </dd>
+<dt><strong>timeOut</strong><span class="classifier">float, optional</span></dt><dd><p>maximum time allowed for one call to OpenModelica model binary, default : 120s</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution" title="otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPriorPosteriorMarginalsDistribution</span></code></a>([index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.computeCorrelationMatrix" title="otDataReconciliation.DataReconciliationOM.computeCorrelationMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCorrelationMatrix</span></code></a>(covarianceMatrix)</p></td>
+<td><p>static  method to compute Correlation Matrix from CovarianceMatrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution" title="otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPriorPosteriorMarginalsDistribution</span></code></a>([index])</p></td>
 <td><p>Draw measurement prior ans posterior (reconciled) marginals distribution on a line</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovarianceMatrixAsDataFrame</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getCovarianceMatrixAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovarianceMatrixAsDataFrame</span></code></a>()</p></td>
 <td><p>Accessor to posterior covariance Matrix</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLocalResultsAsDataFrame</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getLocalResultsAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLocalResultsAsDataFrame</span></code></a>()</p></td>
 <td><p>Accessor to results of the reconciliation as dataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorCovarianceMatrix</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrix" title="otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorCorrelationMatrix</span></code></a>([index])</p></td>
+<td><p>Accessor to posterior Correlation matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrixAsDataFrame" title="otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrixAsDataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorCorrelationMatrixAsDataFrame</span></code></a>([index])</p></td>
+<td><p>Accessor to posterior Correlation matrix as a DataFrame</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorCovarianceMatrix</span></code></a>([index])</p></td>
 <td><p>Accessor to posterior Covariance matrix (Sx reconciled)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPosteriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorDistribution</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPosteriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorDistribution</span></code></a>([index])</p></td>
 <td><p>accessor to prior normal distribution</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorMeasurementAsPoint</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorMeasurementAsPoint</span></code></a>([index])</p></td>
 <td><p>Accessor to reconciled posterior measurements</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriorDistribution</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.getPriorDistribution" title="otDataReconciliation.DataReconciliationOM.getPriorDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriorDistribution</span></code></a>()</p></td>
 <td><p>accessor to prior normal distribution</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>reconcileData</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otDataReconciliation.DataReconciliationOM.reconcileData" title="otDataReconciliation.DataReconciliationOM.reconcileData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reconcileData</span></code></a>()</p></td>
+<td><p>main method to launch dataReconciliation based on OpenModelica binary</p></td>
 </tr>
 </tbody>
 </table>
@@ -178,8 +185,26 @@
 <p>All results will be written in casePath/RESU</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeOut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.computeCorrelationMatrix">
+<span class="sig-name descname"><span class="pre">computeCorrelationMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">covarianceMatrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.computeCorrelationMatrix" title="Link to this definition">¶</a></dt>
+<dd><p>static  method to compute Correlation Matrix from CovarianceMatrix</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>covarianceMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>correlationMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.drawPriorPosteriorMarginalsDistribution">
@@ -228,12 +253,56 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrix">
+<span class="sig-name descname"><span class="pre">getPosteriorCorrelationMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrix" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to posterior Correlation matrix</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int, optional</span></dt><dd><p>index of the marginals to be included in the posterior Matrix, default = None, all marginals included</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>correlationMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrixAsDataFrame">
+<span class="sig-name descname"><span class="pre">getPosteriorCorrelationMatrixAsDataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCorrelationMatrixAsDataFrame" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to posterior Correlation matrix as a DataFrame</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int, optional</span></dt><dd><p>index of the marginals to be included in the posterior Matrix, default = None, all marginals included</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>correlationMatrix df</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix">
-<span class="sig-name descname"><span class="pre">getPosteriorCovarianceMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">getPosteriorCovarianceMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorCovarianceMatrix" title="Link to this definition">¶</a></dt>
 <dd><p>Accessor to posterior Covariance matrix (Sx reconciled)</p>
 <dl class="field-list">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int, optional</span></dt><dd><p>index of the marginals to be included in the posterior Matrix, default = None, all marginals included</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
 <dt><strong>posteriorCovarianceMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd></dd>
 </dl>
 </dd>
@@ -242,12 +311,18 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorDistribution">
-<span class="sig-name descname"><span class="pre">getPosteriorDistribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">getPosteriorDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorDistribution" title="Link to this definition">¶</a></dt>
 <dd><p>accessor to prior normal distribution</p>
 <dl class="field-list">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>priorDistribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd></dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">list of int, optional</span></dt><dd><p>index of the marginals to be included in the posterior Distribution, default = None, all marginals included</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>posteriorDistribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -255,12 +330,18 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint">
-<span class="sig-name descname"><span class="pre">getPosteriorMeasurementAsPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">getPosteriorMeasurementAsPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.getPosteriorMeasurementAsPoint" title="Link to this definition">¶</a></dt>
 <dd><p>Accessor to reconciled posterior measurements</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>posteriorMeasurement</strong><span class="classifier">:class`~openturns.Point`</span></dt><dd></dd>
+<dt><strong>index</strong><span class="classifier">list of int, optional</span></dt><dd><p>index of the marginals to be included in the reconciled measurements point, default = None, all marginals included</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>posteriorMeasurement</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -277,6 +358,14 @@
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM.reconcileData">
+<span class="sig-name descname"><span class="pre">reconcileData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM.reconcileData" title="Link to this definition">¶</a></dt>
+<dd><p>main method to launch dataReconciliation based on OpenModelica binary</p>
+<p class="rubric">Notes</p>
+<p>Mandatory step to population result members.</p>
 </dd></dl>
 
 </dd></dl>
