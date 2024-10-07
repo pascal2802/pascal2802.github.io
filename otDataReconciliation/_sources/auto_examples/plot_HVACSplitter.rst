@@ -21,7 +21,7 @@
 Reconcile data for the HVAC Splitter
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 5-87
+.. GENERATED FROM PYTHON SOURCE LINES 5-89
 
 
 
@@ -61,13 +61,15 @@ Reconcile data for the HVAC Splitter
      [ 0   0   0   1   0   0   ]
      [ 0   0   0   0   1   0   ]
      [ 0   0   0   0   0   1   ]]
-      Variable to be Estimated   Initial Measured Value   Estimated Value   Initial Uncertainty   Estimated Uncertainty  Result of Local Test   Local Quality  
-    0                        Q1                      130          168.0840                19.600              16.619000                  False          3.66521
-    1                        Q2                      210          143.1060                39.200              23.403100                  False          2.12716
-    2                        Q3                      360          311.1910                39.200              27.660300                  False          1.75720
-    3                        T1                       20           19.3590                 0.588               0.554325                  False          3.26845
-    4                        T2                       30           28.9639                 0.588               0.563790                  False          5.57239
-    5                        T3                       22           23.7759                 0.588               0.462481                  False          4.89078
+      Variable to be Estimated   Initial Measured Value   ...  Result of Local Test   Local Quality  
+    0                        Q1                      130  ...                  False          3.66521
+    1                        Q2                      210  ...                  False          2.12716
+    2                        Q3                      360  ...                  False          1.75720
+    3                        T1                       20  ...                  False          3.26845
+    4                        T2                       30  ...                  False          5.57239
+    5                        T3                       22  ...                  False          4.89078
+
+    [6 rows x 7 columns]
                  Q1          Q2          Q3        T1        T2        T3
     Sxij                                                                 
     Q1    71.894900   -7.653470   64.241500  0.412516  0.351214 -0.763730
@@ -173,10 +175,12 @@ Reconcile data for the HVAC Splitter
     grid = dataR.drawPriorPosteriorMarginalsDistribution()
     fig = otv.View(grid)
 
+    #Fin
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.192 seconds)
+   **Total running time of the script:** (0 minutes 3.055 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_HVACSplitter.py:

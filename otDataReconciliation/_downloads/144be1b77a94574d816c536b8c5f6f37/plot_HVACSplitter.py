@@ -84,3 +84,5 @@ display(posteriorCorrelationMatrixDF)
 # Visualisation de l'effet de la réconciliation de données sur les marginales
 grid = dataR.drawPriorPosteriorMarginalsDistribution()
 fig = otv.View(grid)
+
+#Fin
