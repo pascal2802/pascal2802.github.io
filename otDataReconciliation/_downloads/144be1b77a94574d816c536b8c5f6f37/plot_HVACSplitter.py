@@ -3,7 +3,6 @@ Reconcile data for the HVAC Splitter
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 """
 
-
 # # Reconciliation de donnée avec OpenModelica et OpenTURNS
 # L'objet est de tester la classe DataReconciliationOM fournissant un wrapper python de la reconciliation de donnée réalisée dans OpenModelica.
 # Les résultats de la réconciliation de données sont accessibles au format OpenTURNS (distribution, matrices) pour être visualisés et utilisés dans des études d'incertitudes (propagation, calage par exemple).

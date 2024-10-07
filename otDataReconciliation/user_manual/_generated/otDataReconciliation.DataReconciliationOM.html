@@ -123,16 +123,16 @@
 <dt class="sig sig-object py" id="otDataReconciliation.DataReconciliationOM">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataReconciliationOM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variableNamesToReconcile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorMeasurements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorCovarianceMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simuMatPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeOut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otDataReconciliation.DataReconciliationOM" title="Link to this definition">¶</a></dt>
 <dd><p>Base class for data Reconciliation OM model based</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>modelName</strong><span class="classifier">str</span></dt><dd><p>name of the model, must be the same the OpenModelicaModelName</p>
 </dd>
-<dt><strong>variableNamesToReconcile</strong><span class="classifier">openturns.Description</span></dt><dd><p>list with variable name to be reconciled</p>
+<dt><strong>variableNamesToReconcile</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt><dd><p>list with variable name to be reconciled</p>
 </dd>
-<dt><strong>priorMeasurements</strong><span class="classifier">openturns.Point</span></dt><dd><p>measurements values to be reconciled</p>
+<dt><strong>priorMeasurements</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>measurements values to be reconciled</p>
 </dd>
-<dt><strong>priorCovarianceMatrix</strong><span class="classifier">openturns.CovarianceMatrix</span></dt><dd><p>covariance matrix of measurements</p>
+<dt><strong>priorCovarianceMatrix</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd><p>covariance matrix of measurements</p>
 </dd>
 <dt><strong>casePath</strong><span class="classifier">str</span></dt><dd><p>Path to case root dir</p>
 </dd>

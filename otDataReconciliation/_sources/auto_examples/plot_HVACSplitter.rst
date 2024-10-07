@@ -21,7 +21,7 @@
 Reconcile data for the HVAC Splitter
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 5-88
+.. GENERATED FROM PYTHON SOURCE LINES 5-87
 
 
 
@@ -89,7 +89,6 @@ Reconcile data for the HVAC Splitter
 |
 
 .. code-block:: Python
-
 
 
     # # Reconciliation de donnée avec OpenModelica et OpenTURNS
@@ -177,7 +176,7 @@ Reconcile data for the HVAC Splitter
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.099 seconds)
+   **Total running time of the script:** (0 minutes 3.192 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_HVACSplitter.py:
