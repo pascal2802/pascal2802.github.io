@@ -85,4 +85,4 @@ display(posteriorCorrelationMatrixDF)
 grid = dataR.drawPriorPosteriorMarginalsDistribution()
 fig = otv.View(grid)
 
-#Fin
+# Fin
