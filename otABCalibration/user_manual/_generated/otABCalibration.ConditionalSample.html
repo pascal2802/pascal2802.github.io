@@ -8,7 +8,7 @@
     <title>ConditionalSample &#8212; otABCalibration 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="CombinedInterval" href="otABCalibration.CombinedInterval.html" />
-    <link rel="prev" title="MyClass" href="otABCalibration.MyClass.html" />
+    <link rel="prev" title="API Reference" href="../user_manual.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -51,7 +51,7 @@
           <a href="otABCalibration.CombinedInterval.html" title="CombinedInterval"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="otABCalibration.MyClass.html" title="MyClass"
+          <a href="../user_manual.html" title="API Reference"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API Reference</a> &#187;</li>
@@ -63,12 +63,11 @@
 <h3><a href="../../index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="otABCalibration.MyClass.html">MyClass</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ConditionalSample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.CombinedInterval.html">CombinedInterval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibration.html">ABCalibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="otABCalibration.Func.html">Func</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibrationResult.html">ABCalibrationResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.FuncResidualFunctionOptimalPoint.html">FuncResidualFunctionOptimalPoint</a></li>
 </ul>
 </li>
 </ul>
@@ -81,8 +80,8 @@
 
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="otABCalibration.MyClass.html"
-                          title="previous chapter">MyClass</a></p>
+    <p class="topless"><a href="../user_manual.html"
+                          title="previous chapter">API Reference</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -158,10 +157,10 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <td><p>Draw posterior output sample.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getNanPointSample" title="otABCalibration.ConditionalSample.getNanPointSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNanPointSample</span></code></a>()</p></td>
-<td><p>accessor to points with at least one Nan value in the provided Sample</p></td>
+<td><p>Accessor to points with at least one Nan value in the provided Sample</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorGlobalSample" title="otABCalibration.ConditionalSample.getPosteriorGlobalSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorGlobalSample</span></code></a>()</p></td>
-<td><p>accessor to posteriorGlobalSample</p></td>
+<td><p>Accessor to posteriorGlobalSample</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorInputDistribution" title="otABCalibration.ConditionalSample.getPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputDistribution</span></code></a>()</p></td>
 <td><p>Return infered posterior input distribution</p></td>
@@ -242,7 +241,7 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getNanPointSample">
 <span class="sig-name descname"><span class="pre">getNanPointSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getNanPointSample" title="Link to this definition">¶</a></dt>
-<dd><p>accessor to points with at least one Nan value in the provided Sample</p>
+<dd><p>Accessor to points with at least one Nan value in the provided Sample</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
@@ -255,7 +254,7 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getPosteriorGlobalSample">
 <span class="sig-name descname"><span class="pre">getPosteriorGlobalSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getPosteriorGlobalSample" title="Link to this definition">¶</a></dt>
-<dd><p>accessor to posteriorGlobalSample</p>
+<dd><p>Accessor to posteriorGlobalSample</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
@@ -312,7 +311,7 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
           <a href="otABCalibration.CombinedInterval.html" title="CombinedInterval"
              >next</a> |</li>
         <li class="right" >
-          <a href="otABCalibration.MyClass.html" title="MyClass"
+          <a href="../user_manual.html" title="API Reference"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >API Reference</a> &#187;</li>

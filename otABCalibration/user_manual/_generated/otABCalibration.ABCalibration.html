@@ -8,7 +8,7 @@
     <title>ABCalibration &#8212; otABCalibration 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
@@ -19,7 +19,7 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Func" href="otABCalibration.Func.html" />
+    <link rel="next" title="ABCalibrationResult" href="otABCalibration.ABCalibrationResult.html" />
     <link rel="prev" title="CombinedInterval" href="otABCalibration.CombinedInterval.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -48,7 +48,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="otABCalibration.Func.html" title="Func"
+          <a href="otABCalibration.ABCalibrationResult.html" title="ABCalibrationResult"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="otABCalibration.CombinedInterval.html" title="CombinedInterval"
@@ -63,12 +63,11 @@
 <h3><a href="../../index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="otABCalibration.MyClass.html">MyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.ConditionalSample.html">ConditionalSample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.CombinedInterval.html">CombinedInterval</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ABCalibration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="otABCalibration.Func.html">Func</a></li>
 <li class="toctree-l2"><a class="reference internal" href="otABCalibration.ABCalibrationResult.html">ABCalibrationResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otABCalibration.FuncResidualFunctionOptimalPoint.html">FuncResidualFunctionOptimalPoint</a></li>
 </ul>
 </li>
 </ul>
@@ -86,8 +85,8 @@
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="otABCalibration.Func.html"
-                          title="next chapter">Func</a></p>
+    <p class="topless"><a href="otABCalibration.ABCalibrationResult.html"
+                          title="next chapter">ABCalibrationResult</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -118,7 +117,7 @@
 <h1>ABCalibration<a class="headerlink" href="#abcalibration" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ABCalibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computeABCCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputPriorDistribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posteriorSampleTargetedSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criteriaSelection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeEvalSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">referenceValuesYobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ABCalibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputPriorDistribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posteriorSampleTargetedSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criteriaSelection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computeABCCriteria</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeEvalSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">referenceValuesYobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration" title="Link to this definition">¶</a></dt>
 <dd><p>ABC calibration algorithm</p>
 <dl class="simple">
 <dt>Available constructors:</dt><dd><p>ABCalibration(model)</p>
@@ -162,41 +161,59 @@ This function returns a point (<a class="reference external" href="http://opentu
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.buildDoeToEvaluateForModel" title="otABCalibration.ABCalibration.buildDoeToEvaluateForModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildDoeToEvaluateForModel</span></code></a>(X[, indexTrain])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.buildAdditionalModelOutputFunction" title="otABCalibration.ABCalibration.buildAdditionalModelOutputFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAdditionalModelOutputFunction</span></code></a>(...)</p></td>
+<td><p>Builds an additional output function for the model based on specified indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.buildDoeToEvaluateForModel" title="otABCalibration.ABCalibration.buildDoeToEvaluateForModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildDoeToEvaluateForModel</span></code></a>(X[, indexTrain])</p></td>
 <td><p>generate the Design of experiment to be evaluated by the model required to evaluate the ABC criteria associate the candidate sample (uncertainty on observation + prior values of parameter to calibrate)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeAdditionalModelOutput" title="otABCalibration.ABCalibration.computeAdditionalModelOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeAdditionalModelOutput</span></code></a>(inputSample, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.buildResidualFunctionOptimalPoint" title="otABCalibration.ABCalibration.buildResidualFunctionOptimalPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildResidualFunctionOptimalPoint</span></code></a>([indexTrain])</p></td>
+<td><p>Builds a residual function for model calibration based on specified training indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeABCCriteriaDefault" title="otABCalibration.ABCalibration.computeABCCriteriaDefault"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeABCCriteriaDefault</span></code></a>(samplePrediction, ...)</p></td>
+<td><p>function to compute criteria that will be used for ABC calibration Here a default function is proposed to compute for each observedVaraible a RMSE and NMBE criteriaSelection The dimension of the criteria is thus twice the dimension of the observedVariableSample</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeAdditionalModelOutput" title="otABCalibration.ABCalibration.computeAdditionalModelOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeAdditionalModelOutput</span></code></a>(inputSample, ...)</p></td>
 <td><p>Compute additional model output for each point of a provided posterior inputSample.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeAdditionalModelOutputWithObservations" title="otABCalibration.ABCalibration.computeAdditionalModelOutputWithObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeAdditionalModelOutputWithObservations</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeAdditionalModelOutputWithObservations" title="otABCalibration.ABCalibration.computeAdditionalModelOutputWithObservations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeAdditionalModelOutputWithObservations</span></code></a>(...)</p></td>
 <td><p>compute additional model output and gather them in a sample containing also model observations and provided input sample.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeGlobalABCCriteria" title="otABCalibration.ABCalibration.computeGlobalABCCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGlobalABCCriteria</span></code></a>(X[, indexTrain])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeGlobalABCCriteria" title="otABCalibration.ABCalibration.computeGlobalABCCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGlobalABCCriteria</span></code></a>(X[, indexTrain])</p></td>
 <td><p>compute ABC criteria for an evaluated model Sample</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeModelOutputForOneObservation" title="otABCalibration.ABCalibration.computeModelOutputForOneObservation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeModelOutputForOneObservation</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.computeModelOutputForOneObservation" title="otABCalibration.ABCalibration.computeModelOutputForOneObservation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeModelOutputForOneObservation</span></code></a>(...)</p></td>
 <td><p>compute model outputs for for each point of a provided inputSample for a given observation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.crossValidationABC" title="otABCalibration.ABCalibration.crossValidationABC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crossValidationABC</span></code></a>(indexTrain)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.crossValidationABC" title="otABCalibration.ABCalibration.crossValidationABC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crossValidationABC</span></code></a>(indexTrain)</p></td>
 <td><p>adjust the model using only a part of available observations and use specified observations for validation</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.drawCrossValidationObvservationsVsPrediciton" title="otABCalibration.ABCalibration.drawCrossValidationObvservationsVsPrediciton"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawCrossValidationObvservationsVsPrediciton</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.drawCrossValidationObvservationsVsPrediciton" title="otABCalibration.ABCalibration.drawCrossValidationObvservationsVsPrediciton"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawCrossValidationObvservationsVsPrediciton</span></code></a>(...)</p></td>
 <td><p>draw cross validation prediction versus observations using posterior input sample provided from a specified result class</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.exportCalibrationWithPickle" title="otABCalibration.ABCalibration.exportCalibrationWithPickle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exportCalibrationWithPickle</span></code></a>(fileName)</p></td>
+<td><p>This enables future reloading, as the object inherits from an OpenTURNS class that lacks native pickle support - a common issue when Python classes inherit from OpenTURNS classes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.generateDOE" title="otABCalibration.ABCalibration.generateDOE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generateDOE</span></code></a>()</p></td>
 <td><p>method to generate a candidate set sample with a monteCarlo Expriment of <cite>doeSize</cite></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getEvaluatedSample" title="otABCalibration.ABCalibration.getEvaluatedSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluatedSample</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getDefaultABCriteria" title="otABCalibration.ABCalibration.getDefaultABCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDefaultABCriteria</span></code></a>()</p></td>
+<td><p>Acessor to default ABCCriteria associated to default ABCCriteria computation function</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getEvaluatedSample" title="otABCalibration.ABCalibration.getEvaluatedSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluatedSample</span></code></a>()</p></td>
 <td><p>Accessor to the evaluated candite sample :</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getPriorDOE" title="otABCalibration.ABCalibration.getPriorDOE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriorDOE</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getPriorDOE" title="otABCalibration.ABCalibration.getPriorDOE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriorDOE</span></code></a>()</p></td>
 <td><p>Accessor to the DOE used calibrate the model</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getResult" title="otABCalibration.ABCalibration.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.getResult" title="otABCalibration.ABCalibration.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</p></td>
 <td><p>Acessor to the calibration result object</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.run" title="otABCalibration.ABCalibration.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.run" title="otABCalibration.ABCalibration.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
 <td><p>method to analyse the provided sample and populate the class CalibrationResult</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.setABCCriteria" title="otABCalibration.ABCalibration.setABCCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setABCCriteria</span></code></a>(criteria)</p></td>
+<td><p>Acessor to ABC Criteria threshold to be used with current ABCCriteria function criteria dimension must be equal to the dimension of the Point dimension return by the ABCCriteriaCompute function.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.setABCCriteriaDescription" title="otABCalibration.ABCalibration.setABCCriteriaDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setABCCriteriaDescription</span></code></a>(ABCDescription)</p></td>
 <td><p>Accessor to the description of the ABCCriteria vector</p></td>
@@ -204,28 +221,45 @@ This function returns a point (<a class="reference external" href="http://opentu
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.setDOE" title="otABCalibration.ABCalibration.setDOE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDOE</span></code></a>(doeSample)</p></td>
 <td><p>Accessor to the Design of experiment used to evaluate ABC Criteria</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>buildABCexecFunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>buildAdditionalModelOutputFunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>buildResidualFunctionABC</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>buildResidualFunctionOptimalPoint</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ABCalibration.testABCCriteriaFunction" title="otABCalibration.ABCalibration.testABCCriteriaFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testABCCriteriaFunction</span></code></a>()</p></td>
+<td><p>Test the current ABCCriteria function with prior point taken as the mean of the prior distribution marginal</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computeABCCriteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputPriorDistribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posteriorSampleTargetedSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criteriaSelection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeEvalSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">referenceValuesYobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputPriorDistribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posteriorSampleTargetedSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criteriaSelection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computeABCCriteria</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doeEvalSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">referenceValuesYobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.buildAdditionalModelOutputFunction">
+<span class="sig-name descname"><span class="pre">buildAdditionalModelOutputFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">additionalOutputIndices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.buildAdditionalModelOutputFunction" title="Link to this definition">¶</a></dt>
+<dd><p>Builds an additional output function for the model based on specified indices.</p>
+<p>This method constructs and returns an OpenTURNS function that computes
+additional outputs from the model’s standard output. The additional outputs
+are specified by the <cite>additionalOutputIndices</cite> parameter, which should be
+indices of outputs already present in the model’s standard output.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>additionalOutputIndices</strong><span class="classifier">list of int</span></dt><dd><p>A list of indices specifying which components of the model’s standard output
+should be included in the additional output function. Each index must correspond
+to a valid output in the model’s standard output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>f</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Function</span></code></a></span></dt><dd><p>An OpenTURNS function that takes the model’s inputs and returns the specified
+additional outputs from the model’s standard output.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The indices provided in <cite>additionalOutputIndices</cite> must be valid indices of the
+model’s standard output. Invalid indices will result in an error.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.buildDoeToEvaluateForModel">
@@ -249,6 +283,62 @@ This function returns a point (<a class="reference external" href="http://opentu
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.buildResidualFunctionOptimalPoint">
+<span class="sig-name descname"><span class="pre">buildResidualFunctionOptimalPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexTrain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.buildResidualFunctionOptimalPoint" title="Link to this definition">¶</a></dt>
+<dd><p>Builds a residual function for model calibration based on specified training indices.</p>
+<p>This method constructs and returns an OpenTURNS function that computes residuals
+between model predictions and observed outputs for ABC calibration purposes.
+The function takes observed parameters and parameters to calibrate as input and
+returns residuals. The training indices parameter allows to specify which
+observations should be used for building the residual function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>indexTrain</strong><span class="classifier">list of int, optional</span></dt><dd><p>Indices of observations to be used for building the residual function.
+If None, all observations will be used. Default is None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>f</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.PythonFunction.html#openturns.PythonFunction" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonFunction</span></code></a></span></dt><dd><p>An OpenTURNS function that computes residuals between model predictions
+and observed outputs for the specified training observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The indices provided in <cite>indexTrain</cite> must be valid indices of the
+observations available in the output observations. Invalid indices
+will result in an error.</p>
+<p>The residual function is built using the <a class="reference internal" href="otABCalibration.FuncResidualFunctionOptimalPoint.html#otABCalibration.FuncResidualFunctionOptimalPoint" title="otABCalibration.FuncResidualFunctionOptimalPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">FuncResidualFunctionOptimalPoint</span></code></a>
+class and then wrapped in a <a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.PythonFunction.html#openturns.PythonFunction" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonFunction</span></code></a> for parallel evaluation
+using the specified number of CPUs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.computeABCCriteriaDefault">
+<span class="sig-name descname"><span class="pre">computeABCCriteriaDefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samplePrediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedVariableSample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.computeABCCriteriaDefault" title="Link to this definition">¶</a></dt>
+<dd><p>function to compute criteria that will be used for ABC calibration
+Here a default function is proposed to compute for each observedVaraible a RMSE and NMBE criteriaSelection
+The dimension of the criteria is thus twice the dimension of the observedVariableSample</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>samplePrediction</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Take as input the return sample from the evaluation of _exec function for all the point in the sample of observed parameters for a given candidate point of ParameterToCalibrate</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>pointCriteria</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd></dd>
+<dt>for a given ParamterToCalibrate Point, return a point with computed criteria (typically CvRMSE, NMBE)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.computeAdditionalModelOutput">
 <span class="sig-name descname"><span class="pre">computeAdditionalModelOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additionalOutputIndices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.computeAdditionalModelOutput" title="Link to this definition">¶</a></dt>
 <dd><p>Compute additional model output for each point of a provided posterior inputSample. additionalSample size is the size of the provided input sample times size of model input observation. For each observation, model is evaluated for each point provided in inputSample. Each point of inputSample must contains uncertainty to be added to observed parameters as well as value for parameter to be calibrated.</p>
@@ -256,6 +346,8 @@ This function returns a point (<a class="reference external" href="http://opentu
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>posterior input sample provided.</p>
+</dd>
+<dt><strong>additionalOutputIndices</strong><span class="classifier">list of int</span></dt><dd><p>additionnal output indices of the model to be compute</p>
 </dd>
 </dl>
 </dd>
@@ -276,6 +368,8 @@ This function returns a point (<a class="reference external" href="http://opentu
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>sample that has the same dimension and whose column index are identical to posteriorInputSample</p>
+</dd>
+<dt><strong>additionalOutputIndices</strong><span class="classifier">list of int</span></dt><dd><p>list of the additional model output indices to compute</p>
 </dd>
 </dl>
 </dd>
@@ -311,7 +405,7 @@ This function returns a point (<a class="reference external" href="http://opentu
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.computeModelOutputForOneObservation">
 <span class="sig-name descname"><span class="pre">computeModelOutputForOneObservation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observationIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.computeModelOutputForOneObservation" title="Link to this definition">¶</a></dt>
-<dd><p>compute model outputs for for each point of a provided inputSample for a given observation. provided inputSample must contains uncertainty to be added to the observed parameters of the chosen observation number.</p>
+<dd><p>compute model outputs for for each point of a provided inputSample for a given observation. provided inputSample must contain uncertainty to be added to the observed parameters of the chosen observation number.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
@@ -375,9 +469,38 @@ This function returns a point (<a class="reference external" href="http://opentu
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.exportCalibrationWithPickle">
+<span class="sig-name descname"><span class="pre">exportCalibrationWithPickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.exportCalibrationWithPickle" title="Link to this definition">¶</a></dt>
+<dd><p>This enables future reloading, as the object inherits from an OpenTURNS class that lacks native pickle support - a common issue when Python classes inherit from OpenTURNS classes.
+Upon reloading, the result can be regenerated using the run method, a process that is nearly instantaneous due to the caching mechanisms of the memoize function, which is exported alongside the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>pickle object filename export 
+Example : /path/to/filename.pkl</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.generateDOE">
 <span class="sig-name descname"><span class="pre">generateDOE</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.generateDOE" title="Link to this definition">¶</a></dt>
 <dd><p>method to generate a candidate set sample with a monteCarlo Expriment of <cite>doeSize</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.getDefaultABCriteria">
+<span class="sig-name descname"><span class="pre">getDefaultABCriteria</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.getDefaultABCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Acessor to default ABCCriteria associated to default ABCCriteria computation function</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>criteria</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">interval</span></code></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -428,6 +551,23 @@ This function returns a point (<a class="reference external" href="http://opentu
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.setABCCriteria">
+<span class="sig-name descname"><span class="pre">setABCCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">criteria</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.setABCCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Acessor to ABC Criteria threshold to be used with current ABCCriteria function
+criteria dimension must be equal to the dimension of the Point dimension return by
+the ABCCriteriaCompute function.
+By default, the function compute RMSE, NMBE values associated to each observed variables
+Interval dimension must be  observedVariableSample x 2 for the default ABCCriterua function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>criteria</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ABCalibration.setABCCriteriaDescription">
 <span class="sig-name descname"><span class="pre">setABCCriteriaDescription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ABCDescription</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.setABCCriteriaDescription" title="Link to this definition">¶</a></dt>
 <dd><p>Accessor to the description of the ABCCriteria vector</p>
@@ -455,6 +595,20 @@ This function returns a point (<a class="reference external" href="http://opentu
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ABCalibration.testABCCriteriaFunction">
+<span class="sig-name descname"><span class="pre">testABCCriteriaFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ABCalibration.testABCCriteriaFunction" title="Link to this definition">¶</a></dt>
+<dd><p>Test the current ABCCriteria function with prior point taken as the mean of the prior distribution marginal</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>computedCriteria</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>The computed criteria</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -473,7 +627,7 @@ This function returns a point (<a class="reference external" href="http://opentu
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="otABCalibration.Func.html" title="Func"
+          <a href="otABCalibration.ABCalibrationResult.html" title="ABCalibrationResult"
              >next</a> |</li>
         <li class="right" >
           <a href="otABCalibration.CombinedInterval.html" title="CombinedInterval"

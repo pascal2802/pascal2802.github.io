@@ -47,13 +47,13 @@ where:
     from openturns.usecases import chaboche_model
     import math
     import imp
-    import otABCalibration.ABC_ClassProto as otABCC
+    import otABCalibration as otABC
     import openturns.viewer as otv
     import matplotlib.pyplot as plt
     import openturns.viewer as otv
+    import pickle
 
-
-    imp.reload(otABCC)
+    imp.reload(otABC)
 
     # ot.Log.Show(ot.Log.NONE)
 
@@ -68,7 +68,7 @@ where:
     /home/d54380/Logiciels/OpenTURNS/otABCCalibration/doc/examples/plot_calibration_chaboche_model.py:27: DeprecationWarning: the imp module is deprecated in favour of importlib and slated for removal in Python 3.12; see the module's documentation for alternative uses
       import imp
 
-    <module 'otABCalibration.ABC_ClassProto' from '/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/ABC_ClassProto.py'>
+    <module 'otABCalibration' from '/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/__init__.py'>
 
 
 
@@ -197,7 +197,7 @@ Set the calibration criteria
 ==================================================
 modeller need to define the computation of the criteria to define a calibrated model based on the returned sample by the evaluation of all the observation point
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-126
+.. GENERATED FROM PYTHON SOURCE LINES 87-124
 
 .. code-block:: Python
 
@@ -213,8 +213,6 @@ modeller need to define the computation of the criteria to define a calibrated m
         samplePrediction : :class:`~openturns.Sample`
             Take as input the return sample from the evaluation of _exec function for all the point in the sample of observed parameters for a given candidate point of ParameterToCalibrate
 
-
-
         Returns
         -------
         pointCriteria : :class:`~openturns.Point`
@@ -224,7 +222,7 @@ modeller need to define the computation of the criteria to define a calibrated m
 
         residuals = samplePrediction - observedVariableSample
 
-        pointCriteria = ot.Point(4)
+        pointCriteria = ot.Point(2)
 
         # compute RMSE
         RMSE_stress = math.sqrt(residuals.computeRawMoment(2)[0])
@@ -232,10 +230,10 @@ modeller need to define the computation of the criteria to define a calibrated m
         CvRMSE_stress = RMSE_stress / (observedVariableSample).computeMean()[0]
         NMBE_stress = MBE_stress / (observedVariableSample).computeMean()[0]
 
-        pointCriteria[0] = RMSE_stress
-        pointCriteria[1] = MBE_stress
-        pointCriteria[2] = CvRMSE_stress
-        pointCriteria[3] = NMBE_stress
+        # pointCriteria[0] = RMSE_stress
+        # pointCriteria[1] = MBE_stress
+        pointCriteria[0] = CvRMSE_stress
+        pointCriteria[1] = NMBE_stress
 
         return pointCriteria
 
@@ -247,11 +245,11 @@ modeller need to define the computation of the criteria to define a calibrated m
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-128
+.. GENERATED FROM PYTHON SOURCE LINES 125-126
 
 test the function with the :math:`\theta_{prior}` computed above
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-135
+.. GENERATED FROM PYTHON SOURCE LINES 126-133
 
 .. code-block:: Python
 
@@ -270,18 +268,18 @@ test the function with the :math:`\theta_{prior}` computed above
 
  .. code-block:: none
 
-    [6.5104e+07,-6.09803e+07,0.0787326,-0.0737456]
+    [0.0787326,-0.0737456]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-139
+.. GENERATED FROM PYTHON SOURCE LINES 134-137
 
 Calibrate the model with ABC
 --------------------------------------------------
 The ABC method calibrate the model by sample conditioning
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-174
+.. GENERATED FROM PYTHON SOURCE LINES 137-168
 
 .. code-block:: Python
 
@@ -296,14 +294,11 @@ The ABC method calibrate the model by sample conditioning
     maxNMBE = 0.005
     n_cpus = 10
     criteriaSelection = ot.Interval(
-        [0, 0, minCvRMSE, minNMBE],
-        [0, 0, maxCvRMSE, maxNMBE],
-        [False, False, True, True],
-        [False, False, True, True],
+        [minCvRMSE, minNMBE],
+        [maxCvRMSE, maxNMBE],
     )
-    algo = otABCC.ABCalibration(
+    algo = otABC.ABCalibration(
         cm.model,
-        computeABCCriteria,
         observedParameterIndices,
         toCalibrateParameterIndices,
         observedOutputIndices,
@@ -312,12 +307,11 @@ The ABC method calibrate the model by sample conditioning
         distributionInputs,
         doeSize,
         posteriorSampleTargetedSize,
-        criteriaSelection,
-        n_cpus,
+        n_cpus=n_cpus,
+        computeABCCriteria=computeABCCriteria,
+        criteriaSelection=criteriaSelection,
     )
-    algo.setABCCriteriaDescription(
-        [r"$RMSE_{\sigma}$", r"$MBE_{\sigma}$", r"$CvRMSE_{\sigma}$", r"$NMBE_{\sigma}$"]
-    )
+    algo.setABCCriteriaDescription([r"$CvRMSE_{\sigma}$", r"$NMBE_{\sigma}$"])
     algo.run()
 
 
@@ -327,11 +321,11 @@ The ABC method calibrate the model by sample conditioning
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-176
+.. GENERATED FROM PYTHON SOURCE LINES 169-170
 
 Investigate the results
 
-.. GENERATED FROM PYTHON SOURCE LINES 176-179
+.. GENERATED FROM PYTHON SOURCE LINES 170-173
 
 .. code-block:: Python
 
@@ -358,13 +352,13 @@ Investigate the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-183
+.. GENERATED FROM PYTHON SOURCE LINES 174-177
 
 draw posterior input distribution to analyse calibration
-it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with 
-the two other parameters are present. 
+it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with
+the two other parameters are present.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-187
+.. GENERATED FROM PYTHON SOURCE LINES 177-181
 
 .. code-block:: Python
 
@@ -376,7 +370,7 @@ the two other parameters are present.
 
 
 .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
-   :alt: Conditional Sample : 160 out of 15000   0.000 < v2 < 0.025   -0.005 < v3 < 0.005 , Spearman : -0.10, Spearman : 0.02, Spearman : 0.08, Spearman : -0.10, Spearman : -0.92, Spearman : -0.20, Spearman : 0.02, Spearman : -0.92, Spearman : 0.51, Spearman : 0.08, Spearman : -0.20, Spearman : 0.51
+   :alt: Conditional Sample : 160 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.10, Spearman : 0.02, Spearman : 0.08, Spearman : -0.10, Spearman : -0.92, Spearman : -0.20, Spearman : 0.02, Spearman : -0.92, Spearman : 0.51, Spearman : 0.08, Spearman : -0.20, Spearman : 0.51
    :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
    :class: sphx-glr-single-img
 
@@ -384,12 +378,12 @@ the two other parameters are present.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-190
+.. GENERATED FROM PYTHON SOURCE LINES 182-184
 
-on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed. 
+on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
 the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-197
+.. GENERATED FROM PYTHON SOURCE LINES 184-192
 
 .. code-block:: Python
 
@@ -398,8 +392,9 @@ the figure suggets that the discrepencies between model prediction and observed 
     fig = otv.View(grid)
     fig.show()
     grid = result.drawObservationsVsPredictions()
-    fig = otv.View(grid) 
+    fig = otv.View(grid)
     fig.show()
+
 
 
 
@@ -430,10 +425,158 @@ the figure suggets that the discrepencies between model prediction and observed 
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 193-194
+
+Display the calibration results in a dataframe, including confidence intervals for the parameters
+
+.. GENERATED FROM PYTHON SOURCE LINES 194-198
+
+.. code-block:: Python
+
+    dfCalibration = result.getThetaMAPAsDataFrame()
+    print(dfCalibration)
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+               Parameter      Optimal point            0.95 CI interval
+    0  $U_{\varepsilon}$          -0.000092   [-0.00208594, 0.00193333]
+    1                  R   745749121.946141  [7.09509e+08, 7.83453e+08]
+    2                  C  2855873853.889481    [1.4506e+09, 4.3161e+09]
+    3           $\gamma$           8.349015           [1.6179, 14.4793]
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 199-208
+
+Cross validate the calibration
+++++++++++++++++++++++++++++++++++++++++++++++++++
+The objective is to perform cross-validation of the calibration.
+The global design of experiment is evaluated with the provided model,
+and the ABC criteria are computed using only the observations provided within the indexTrain list.
+This approach allows for the validation of the model's predictive performance on observations
+that were not used during the calibration process.
+The cross-validation does not require additional model evaluations, making it an efficient method
+for assessing the model's generalization capabilities.
+
+.. GENERATED FROM PYTHON SOURCE LINES 208-222
+
+.. code-block:: Python
+
+    indexTrain = list(range(numberOfObservations))
+    validationIndice = 0
+    indexTrain.pop(
+        validationIndice
+    )  # Remove the first obervation from the train set to use it as validation point
+    resultValidation = algo.crossValidationABC(indexTrain)
+    grid = algo.drawCrossValidationObvservationsVsPrediciton(
+        resultValidation, validationIndice
+    )
+    grid.setTitle(f"Obsersation used as validation : {validationIndice}")
+    fig = otv.View(grid)
+    graph = resultValidation.drawObservationsVsPredictions()
+    fig = otv.View(graph)
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_004.png
+         :alt: Obsersation used as validation : 0, Sigma PDF
+         :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_005.png
+         :alt: plot calibration chaboche model
+         :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_005.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 223-225
+
+Display statistics for model function calls
+CacheHits represents the number of calls that were served from the cache
+
+.. GENERATED FROM PYTHON SOURCE LINES 225-229
+
+.. code-block:: Python
+
+    print(algo.model.getCallsNumber())
+    print(algo.model.getCacheHits())
+    print(algo.model.getCacheInput().getSize())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    288260
+    138251
+    150000
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 230-233
+
+Export
+++++++++++++++++++++++++++++++++++++++++++++++++++
+Export the model for futur Reuse
+
+.. GENERATED FROM PYTHON SOURCE LINES 233-245
+
+.. code-block:: Python
+
+    algo.exportCalibrationWithPickle("algo.pkl")
+    with open("algo.pkl", "rb") as f:
+        calibration = pickle.load(f)
+    # Test another criteria
+    calibration.setABCCriteria(ot.Interval([0, -0.02], [0.1, 0.02]))
+    # Cache Size before running again the run method
+    print(calibration.model.getCacheInput().getSize())
+    calibration.run()  # No computational cost thanks to the Cache mechanism of the memoize function
+    result = calibration.getResult()
+    print(result.getParameterMAP())
+    # No additional model function evaluation
+    print(calibration.model.getCacheInput().getSize())
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    150000
+    [-4.08992e-05,7.13601e+08,3.90941e+09,8.15313]
+    150000
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.821 seconds)
+   **Total running time of the script:** (0 minutes 10.704 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_calibration_chaboche_model.py:
