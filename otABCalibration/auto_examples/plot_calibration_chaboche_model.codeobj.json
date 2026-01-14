@@ -632,6 +632,38 @@
    "name": "function"
   }
  ],
+ "conditionalSample": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample"
+  }
+ ],
+ "conditionalSample.drawPosteriorInputDistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.drawPosteriorInputDistribution"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.drawPosteriorInputDistribution"
+  }
+ ],
  "criteriaSelection": [
   {
    "is_class": false,
@@ -1858,22 +1890,6 @@
    "name": "ABCalibrationResult"
   }
  ],
- "result.conditionalSample.drawPosteriorInputDistribution": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "otABCalibration.Base",
-   "module_short": "otABCalibration",
-   "name": "ConditionalSample.drawPosteriorInputDistribution"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "otABCalibration",
-   "module_short": "otABCalibration",
-   "name": "ConditionalSample.drawPosteriorInputDistribution"
-  }
- ],
  "result.drawObservationsVsPredictions": [
   {
    "is_class": false,
@@ -1988,6 +2004,64 @@
    "module": "openturns",
    "module_short": "openturns",
    "name": "Object.drawResiduals"
+  }
+ ],
+ "result.getConditionalSample": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.bayesian",
+   "module_short": "openturns.bayesian",
+   "name": "CalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "CalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "PersistentObject.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.getConditionalSample"
   }
  ],
  "result.getParameterMAP": [

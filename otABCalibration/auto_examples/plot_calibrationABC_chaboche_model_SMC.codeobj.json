@@ -1,0 +1,1021 @@
+{
+ "Cdistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.dist_bundle3",
+   "module_short": "openturns",
+   "name": "Uniform"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Uniform"
+  }
+ ],
+ "Rdistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.dist_bundle3",
+   "module_short": "openturns",
+   "name": "Uniform"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Uniform"
+  }
+ ],
+ "algo": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration"
+  }
+ ],
+ "algo.autoAdjustABCCriteria": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.autoAdjustABCCriteria"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.autoAdjustABCCriteria"
+  }
+ ],
+ "algo.getResult": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.getResult"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.getResult"
+  }
+ ],
+ "algo.run": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.run"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.run"
+  }
+ ],
+ "algo.setABCCriteriaDescription": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.setABCCriteriaDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration.setABCCriteriaDescription"
+  }
+ ],
+ "chaboche_model.ChabocheModel": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.usecases.chaboche_model",
+   "module_short": "openturns.usecases.chaboche_model",
+   "name": "ChabocheModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.usecases",
+   "module_short": "openturns.usecases",
+   "name": "ChabocheModel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "ChabocheModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.usecases.chaboche_model",
+   "module_short": "openturns.usecases.chaboche_model",
+   "name": "ChabocheModel"
+  }
+ ],
+ "cm": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.usecases.chaboche_model",
+   "module_short": "openturns.usecases.chaboche_model",
+   "name": "ChabocheModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.usecases",
+   "module_short": "openturns.usecases",
+   "name": "ChabocheModel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "ChabocheModel"
+  }
+ ],
+ "cm.data": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.typ",
+   "module_short": "openturns",
+   "name": "Sample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Sample"
+  }
+ ],
+ "cm.data.getSize": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.typ",
+   "module_short": "openturns",
+   "name": "Sample.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Sample.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.typ",
+   "module_short": "openturns.typ",
+   "name": "_SampleImplementationTypedInterfaceObject.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "_SampleImplementationTypedInterfaceObject.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "InterfaceObject.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "InterfaceObject.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.getSize"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.getSize"
+  }
+ ],
+ "cm.model": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.func",
+   "module_short": "openturns",
+   "name": "Function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Function"
+  }
+ ],
+ "conditionalSample": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample"
+  }
+ ],
+ "conditionalSample.drawPosteriorInputDistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.drawPosteriorInputDistribution"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.drawPosteriorInputDistribution"
+  }
+ ],
+ "conditionalSample.getPosteriorInputDistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.getPosteriorInputDistribution"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ConditionalSample.getPosteriorInputDistribution"
+  }
+ ],
+ "dfCalibration": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core.frame",
+   "module_short": "pandas.core.frame",
+   "name": "DataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas.core",
+   "module_short": "pandas.core",
+   "name": "DataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pandas",
+   "module_short": "pandas",
+   "name": "DataFrame"
+  }
+ ],
+ "distributionParameters": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "Distribution"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "Distribution"
+  }
+ ],
+ "distributionParameters.setDescription": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "Distribution.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "Distribution.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "Distribution.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Distribution.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns.model_copula",
+   "name": "_DistributionImplementationTypedInterfaceObject.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "_DistributionImplementationTypedInterfaceObject.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "InterfaceObject.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "InterfaceObject.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.setDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.setDescription"
+  }
+ ],
+ "doeSize": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "fig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.viewer",
+   "module_short": "openturns.viewer",
+   "name": "View"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "View"
+  }
+ ],
+ "gammaDistribution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.dist_bundle3",
+   "module_short": "openturns",
+   "name": "Uniform"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Uniform"
+  }
+ ],
+ "grid": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.graph",
+   "module_short": "openturns",
+   "name": "GridLayout"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "GridLayout"
+  }
+ ],
+ "i": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "imp.reload": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "imp",
+   "module_short": "imp",
+   "name": "reload"
+  }
+ ],
+ "n_cpus": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "numberOfIteration": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "numberOfObservations": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "observedOutputIndices": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "observedParameterIndices": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "observedParameters": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.typ",
+   "module_short": "openturns",
+   "name": "Sample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Sample"
+  }
+ ],
+ "observedVariables": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.typ",
+   "module_short": "openturns",
+   "name": "Sample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Sample"
+  }
+ ],
+ "openturns.Sample.ImportFromCSVFile": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "openturns.Sample",
+   "module_short": "openturns.Sample",
+   "name": "ImportFromCSVFile"
+  }
+ ],
+ "openturns.usecases.chaboche_model.ChabocheModel": [
+  {
+   "is_class": false,
+   "is_explicit": true,
+   "module": "openturns.usecases.chaboche_model",
+   "module_short": "openturns.usecases.chaboche_model",
+   "name": "ChabocheModel"
+  }
+ ],
+ "ot.ComposedDistribution": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "ComposedDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "ComposedDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "JointDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "JointDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "DistributionImplementation"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "DistributionImplementation"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns",
+   "name": "PersistentObject"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns",
+   "name": "Object"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "ComposedDistribution"
+  }
+ ],
+ "ot.Uniform": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.dist_bundle3",
+   "module_short": "openturns",
+   "name": "Uniform"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Uniform"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "ContinuousDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "ContinuousDistribution"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.model_copula",
+   "module_short": "openturns",
+   "name": "DistributionImplementation"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "DistributionImplementation"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns",
+   "name": "PersistentObject"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns",
+   "name": "Object"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Uniform"
+  }
+ ],
+ "otABC": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "otABCalibration"
+  }
+ ],
+ "otABC.ABCalibration": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibration"
+  }
+ ],
+ "otv.View": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns.viewer",
+   "module_short": "openturns.viewer",
+   "name": "View"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "View"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.viewer",
+   "module_short": "openturns.viewer",
+   "name": "View"
+  }
+ ],
+ "posteriorSampleTargetedSize": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "result": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult"
+  }
+ ],
+ "result.drawObservationsVsPredictions": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.bayesian",
+   "module_short": "openturns",
+   "name": "CalibrationResult.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "CalibrationResult.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "PersistentObject.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.drawObservationsVsPredictions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.drawObservationsVsPredictions"
+  }
+ ],
+ "result.getConditionalSample": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.bayesian",
+   "module_short": "openturns.bayesian",
+   "name": "CalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "CalibrationResult.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "PersistentObject.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.getConditionalSample"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.getConditionalSample"
+  }
+ ],
+ "result.getThetaMAPAsDataFrame": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration.Base",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "otABCalibration",
+   "module_short": "otABCalibration",
+   "name": "ABCalibrationResult.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.bayesian",
+   "module_short": "openturns.bayesian",
+   "name": "CalibrationResult.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "CalibrationResult.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "PersistentObject.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "PersistentObject.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns.common",
+   "module_short": "openturns.common",
+   "name": "Object.getThetaMAPAsDataFrame"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "openturns",
+   "module_short": "openturns",
+   "name": "Object.getThetaMAPAsDataFrame"
+  }
+ ],
+ "toCalibrateParameterIndices": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ]
+}

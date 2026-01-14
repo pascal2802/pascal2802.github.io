@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Developer guide" href="../developer_guide/developer_guide.html" />
-    <link rel="prev" title="Examples" href="index.html" />
+    <link rel="prev" title="Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration" href="plot_calibrationABC_chaboche_model_getStarted.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -51,7 +51,7 @@
           <a href="../developer_guide/developer_guide.html" title="Developer guide"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Examples"
+          <a href="plot_calibrationABC_chaboche_model_getStarted.html" title="Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
@@ -73,8 +73,8 @@
 
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="index.html"
-                          title="previous chapter">Examples</a></p>
+    <p class="topless"><a href="plot_calibrationABC_chaboche_model_getStarted.html"
+                          title="previous chapter">Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -141,10 +141,7 @@ We recall that the Chaboche model is the following :</p>
 <span class="c1"># ot.Log.Show(ot.Log.NONE)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/d54380/Logiciels/OpenTURNS/otABCCalibration/doc/examples/plot_calibration_chaboche_model.py:27: DeprecationWarning: the imp module is deprecated in favour of importlib and slated for removal in Python 3.12; see the module&#39;s documentation for alternative uses
-  import imp
-
-&lt;module &#39;otABCalibration&#39; from &#39;/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/__init__.py&#39;&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;otABCalibration&#39; from &#39;/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/__init__.py&#39;&gt;
 </pre></div>
 </div>
 <section id="define-the-observations">
@@ -297,24 +294,25 @@ random uncertainty will be add to the observed parameters sample while evaluated
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>        [ $U_{\varepsilon}$ R                 C                 $\gamma$          ]
-    0 : [  0.000608202       5.87782e+08       6.27061e+09       4.45299          ]
-    1 : [ -0.00126617        7.96724e+08       1.51582e+09      11.1298           ]
-    2 : [ -0.000438266       6.61966e+08       4.67719e+09      14.2451           ]
+    0 : [ -0.00114974        5.21093e+08       6.40373e+09       1.20536          ]
+    1 : [  0.000600577       7.47121e+08       4.48555e+09       6.2699           ]
+    2 : [  0.000819312       6.49947e+08       5.34688e+09      10.417            ]
 ...
-14997 : [ -8.48901e-05       7.95249e+08       1.30474e+09       5.64843          ]
-14998 : [  0.000363987       7.52842e+08       3.72107e+09       8.93627          ]
-14999 : [  0.000211898       5.65989e+08       3.66711e+09       1.57779          ]
+14997 : [  0.000858578       5.83749e+08       1.66285e+09      12.1844           ]
+14998 : [  0.00158465        5.08021e+08       6.84592e+09      14.8044           ]
+14999 : [  0.000933636       6.835e+08         2.61789e+09       3.19822          ]
 </pre></div>
 </div>
 <p>draw posterior input distribution to analyse calibration
 it can be seen that <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTEuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPSc2LjcyMjIyOHB0JyBoZWlnaHQ9JzcuNDcxOThwdCcgdmlld0JveD0nMCAtNS4xNDczNzMgNi43MjIyMjggNy40NzE5OCc+CjxkZWZzPgo8cGF0aCBpZD0nZzAtMTMnIGQ9J000LjUxOTA1NC0xLjQ1ODUzMUM0LjQ5NTE0My0yLjA0NDMzNCA0LjQ3MTIzMy0yLjk2NDg4MiA0LjAxNjkzNi00LjA0MDg0N0MzLjc3NzgzMy00LjYzODYwNSAzLjM3MTM1Ny01LjI3MjIyOSAyLjQ5ODYzLTUuMjcyMjI5QzEuMDI4MTQ0LTUuMjcyMjI5IC4yMjcxNDgtMy4zOTUyNjggLjIyNzE0OC0zLjA4NDQzM0MuMjI3MTQ4LTIuOTc2ODM3IC4zMTA4MzQtMi45NzY4MzcgLjM0NjctMi45NzY4MzdDLjQ1NDI5Ni0yLjk3NjgzNyAuNDU0Mjk2LTMuMDAwNzQ3IC41MTQwNzItMy4xNTYxNjRDLjc2NTEzMS0zLjg5NzM4NSAxLjUzMDI2Mi00LjQ4MzE4OCAyLjM1NTE2OC00LjQ4MzE4OEM0LjAxNjkzNi00LjQ4MzE4OCA0LjI1NjA0LTIuNjMwMTM3IDQuMjU2MDQtMS40NDY1NzVDNC4yNTYwNC0uNjkzNCA0LjE3MjM1NC0uNDQyMzQxIDQuMTAwNjIzLS4yMDMyMzhDMy44NzM0NzQgLjUzNzk4MyAzLjQ3ODk1NCAyLjAyMDQyMyAzLjQ3ODk1NCAyLjM1NTE2OEMzLjQ3ODk1NCAyLjQ1MDgwOSAzLjUxNDgxOSAyLjU1ODQwNiAzLjYxMDQ2MSAyLjU1ODQwNkMzLjc4OTc4OCAyLjU1ODQwNiAzLjg5NzM4NSAyLjE2Mzg4NSA0LjAyODg5MiAxLjY4NTY3OUM0LjMxNTgxNiAuNjMzNjI0IDQuMzg3NTQ3IC4xMDc1OTcgNC40NDczMjMtLjM3MDYxQzQuNDgzMTg4LS42NTc1MzQgNS4xNjQ2MzMtMi42MzAxMzcgNi4xMDkwOTEtNC41MDcwOThDNi4xOTI3NzctNC42OTgzODEgNi4zNjAxNDktNS4wMjExNzEgNi4zNjAxNDktNS4wNTcwMzZDNi4zNjAxNDktNS4wNjg5OTEgNi4zNDgxOTQtNS4xNTI2NzcgNi4yNDA1OTgtNS4xNTI2NzdDNi4yMTY2ODctNS4xNTI2NzcgNi4xNTY5MTItNS4xNTI2NzcgNi4xMzMwMDEtNS4xMDQ4NTdDNi4xMDkwOTEtNS4wODA5NDYgNS42OTA2Ni00LjI2Nzk5NSA1LjMzMjAwNS0zLjQ1NTA0NEM1LjE1MjY3Ny0zLjA0ODU2OCA0LjkxMzU3NC0yLjUxMDU4NSA0LjUxOTA1NC0xLjQ1ODUzMVonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMC0xMycvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTMgLS0+" alt="\gamma" style="vertical-align: -3px"/> cannot be idenfied accurately but that some correlation with
 the two other parameters are present.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">conditionalSample</span><span class="o">.</span><span class="n">drawPosteriorInputDistribution</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">conditionalSample</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getConditionalSample</span><span class="p">()</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">conditionalSample</span><span class="o">.</span><span class="n">drawPosteriorInputDistribution</span><span class="p">()</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">otv</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_calibration_chaboche_model_001.png" srcset="../_images/sphx_glr_plot_calibration_chaboche_model_001.png" alt="Conditional Sample : 160 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.10, Spearman : 0.02, Spearman : 0.08, Spearman : -0.10, Spearman : -0.92, Spearman : -0.20, Spearman : 0.02, Spearman : -0.92, Spearman : 0.51, Spearman : 0.08, Spearman : -0.20, Spearman : 0.51" class = "sphx-glr-single-img"/><p>on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
+<img src="../_images/sphx_glr_plot_calibration_chaboche_model_001.png" srcset="../_images/sphx_glr_plot_calibration_chaboche_model_001.png" alt="Conditional Sample : 146 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.16, Spearman : 0.05, Spearman : 0.01, Spearman : -0.16, Spearman : -0.92, Spearman : -0.13, Spearman : 0.05, Spearman : -0.92, Spearman : 0.46, Spearman : 0.01, Spearman : -0.13, Spearman : 0.46" class = "sphx-glr-single-img"/><p>on the next picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
 the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getParameterMAP</span><span class="p">())</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">drawResiduals</span><span class="p">()</span>
@@ -329,7 +327,7 @@ the figure suggets that the discrepencies between model prediction and observed 
 <li><img src="../_images/sphx_glr_plot_calibration_chaboche_model_002.png" srcset="../_images/sphx_glr_plot_calibration_chaboche_model_002.png" alt="Residual analysis" class = "sphx-glr-multi-img"/></li>
 <li><img src="../_images/sphx_glr_plot_calibration_chaboche_model_003.png" srcset="../_images/sphx_glr_plot_calibration_chaboche_model_003.png" alt="plot calibration chaboche model" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[-9.1923e-05,7.45749e+08,2.85587e+09,8.34902]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[1.28789e-05,7.45496e+08,2.85645e+09,8.64247]
 </pre></div>
 </div>
 <p>Display the calibration results in a dataframe, including confidence intervals for the parameters</p>
@@ -338,10 +336,10 @@ the figure suggets that the discrepencies between model prediction and observed 
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>           Parameter      Optimal point            0.95 CI interval
-0  $U_{\varepsilon}$          -0.000092   [-0.00208594, 0.00193333]
-1                  R   745749121.946141  [7.09509e+08, 7.83453e+08]
-2                  C  2855873853.889481    [1.4506e+09, 4.3161e+09]
-3           $\gamma$           8.349015           [1.6179, 14.4793]
+0  $U_{\varepsilon}$           0.000013   [-0.00201214, 0.00197738]
+1                  R   745496305.474667  [7.04771e+08, 7.84339e+08]
+2                  C  2856445565.449549  [1.43141e+09, 4.45496e+09]
+3           $\gamma$           8.642468           [1.61965, 14.543]
 </pre></div>
 </div>
 </section>
@@ -382,8 +380,8 @@ CacheHits represents the number of calls that were served from the cache</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">algo</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">getCacheInput</span><span class="p">()</span><span class="o">.</span><span class="n">getSize</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>288260
-138251
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>288320
+138311
 150000
 </pre></div>
 </div>
@@ -406,11 +404,11 @@ CacheHits represents the number of calls that were served from the cache</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>150000
-[-4.08992e-05,7.13601e+08,3.90941e+09,8.15313]
+[1.19424e-05,7.12594e+08,3.93142e+09,7.9751]
 150000
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 10.704 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.191 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-calibration-chaboche-model-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/afd801e4b52dbb576605162af88fc24f/plot_calibration_chaboche_model.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_calibration_chaboche_model.ipynb</span></code></a></p>
@@ -441,7 +439,7 @@ CacheHits represents the number of calls that were served from the cache</p>
           <a href="../developer_guide/developer_guide.html" title="Developer guide"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Examples"
+          <a href="plot_calibrationABC_chaboche_model_getStarted.html" title="Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">otABCalibration 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>

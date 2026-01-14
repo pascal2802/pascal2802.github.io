@@ -12,6 +12,40 @@ Examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Calibrate Chaboche Model Calibration with an ABCalibration SMC approach">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_calibrationABC_chaboche_model_SMC_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_calibrationABC_chaboche_model_SMC.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Calibrate Chaboche Model Calibration with an ABCalibration SMC approach</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_calibrationABC_chaboche_model_getStarted_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_calibrationABC_chaboche_model_getStarted.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Getting Started with Chaboche Model Calibration: Minimal Setup using ABCalibration</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Calibrate Chaboche model using ABCalibration Class">
 
 .. only:: html
@@ -37,6 +71,8 @@ Examples
 .. toctree::
    :hidden:
 
+   /auto_examples/plot_calibrationABC_chaboche_model_SMC
+   /auto_examples/plot_calibrationABC_chaboche_model_getStarted
    /auto_examples/plot_calibration_chaboche_model
 
 

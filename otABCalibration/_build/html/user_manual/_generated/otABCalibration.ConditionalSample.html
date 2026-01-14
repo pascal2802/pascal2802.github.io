@@ -131,15 +131,15 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>sample</strong><span class="classifier">class Sample</span></dt><dd><p>the sample to be conditionned</p>
+<dt><strong>sample</strong><span class="classifier">class Sample</span></dt><dd><p>the sample to be conditioned</p>
 </dd>
 <dt><strong>intervalCriteria</strong><span class="classifier">class Interval</span></dt><dd><p>Interval value to filter the sample, interval dimension has to be equal to sample one</p>
 </dd>
-<dt><strong>inputcolumnsId</strong><span class="classifier">sequence of int</span></dt><dd><p>Sample column id to be considered as input</p>
+<dt><strong>inputColumnsId</strong><span class="classifier">sequence of int</span></dt><dd><p>List of column id to be considered as input</p>
 </dd>
-<dt><strong>distributionInput</strong><span class="classifier">class Distribution, optionnal</span></dt><dd><p>distribution associated to inputSample (identified by its column input id), default will estimate the input distribution with kernelSmoothing</p>
+<dt><strong>distributionInput</strong><span class="classifier">class Distribution, optional</span></dt><dd><p>distribution associated to inputSample (identified by its column input id), default will estimate the input distribution with kernelSmoothing</p>
 </dd>
-<dt><strong>outputColumns</strong><span class="classifier">sequence of int, optionnal</span></dt><dd><p>Sample columns id used to build outputSamle, defaut will consider no outputs</p>
+<dt><strong>outputColumns</strong><span class="classifier">sequence of int, optional</span></dt><dd><p>Sample columns id used to build outputSample, defaut will consider no output</p>
 </dd>
 </dl>
 </dd>
@@ -159,17 +159,23 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getNanPointSample" title="otABCalibration.ConditionalSample.getNanPointSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNanPointSample</span></code></a>()</p></td>
 <td><p>Accessor to points with at least one Nan value in the provided Sample</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorGlobalSample" title="otABCalibration.ConditionalSample.getPosteriorGlobalSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorGlobalSample</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getNanSize" title="otABCalibration.ConditionalSample.getNanSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNanSize</span></code></a>()</p></td>
+<td><p>Get number of nan points in the sample</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorGlobalSample" title="otABCalibration.ConditionalSample.getPosteriorGlobalSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorGlobalSample</span></code></a>()</p></td>
 <td><p>Accessor to posteriorGlobalSample</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorInputDistribution" title="otABCalibration.ConditionalSample.getPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputDistribution</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorInputDistribution" title="otABCalibration.ConditionalSample.getPosteriorInputDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputDistribution</span></code></a>()</p></td>
 <td><p>Return infered posterior input distribution</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorInputSample" title="otABCalibration.ConditionalSample.getPosteriorInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputSample</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorInputSample" title="otABCalibration.ConditionalSample.getPosteriorInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorInputSample</span></code></a>()</p></td>
 <td><p>Return sample build from input sample and criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorOutputSample" title="otABCalibration.ConditionalSample.getPosteriorOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorOutputSample</span></code></a>()</p></td>
-<td><p>Return sample build from input sample and criteria</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorOutputSample" title="otABCalibration.ConditionalSample.getPosteriorOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorOutputSample</span></code></a>()</p></td>
+<td><p>Return sample build from output sample and criteria</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otABCalibration.ConditionalSample.getPosteriorSampleRealSize" title="otABCalibration.ConditionalSample.getPosteriorSampleRealSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosteriorSampleRealSize</span></code></a>()</p></td>
+<td><p>Accessor to posterior Sample size If posterior Sample size is lower than 3, no filetering is applied, posterior sample size is thus prior sample size.</p></td>
 </tr>
 </tbody>
 </table>
@@ -252,6 +258,19 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getNanSize">
+<span class="sig-name descname"><span class="pre">getNanSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getNanSize" title="Link to this definition">¶</a></dt>
+<dd><p>Get number of nan points in the sample</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nanSize</strong><span class="classifier">int</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getPosteriorGlobalSample">
 <span class="sig-name descname"><span class="pre">getPosteriorGlobalSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getPosteriorGlobalSample" title="Link to this definition">¶</a></dt>
 <dd><p>Accessor to posteriorGlobalSample</p>
@@ -287,7 +306,22 @@ ConditionalSample(sample,intervalCriteria,inputColumnsId,distributionInput,outpu
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getPosteriorOutputSample">
 <span class="sig-name descname"><span class="pre">getPosteriorOutputSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getPosteriorOutputSample" title="Link to this definition">¶</a></dt>
-<dd><p>Return sample build from input sample and criteria</p>
+<dd><p>Return sample build from output sample and criteria</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otABCalibration.ConditionalSample.getPosteriorSampleRealSize">
+<span class="sig-name descname"><span class="pre">getPosteriorSampleRealSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.ConditionalSample.getPosteriorSampleRealSize" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to posterior Sample size
+If posterior Sample size is lower than 3, no filetering is applied, posterior sample size is thus prior sample size.
+This method enables to access to the size applying the initial criteria</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>realSize</strong><span class="classifier">int</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

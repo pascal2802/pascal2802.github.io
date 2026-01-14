@@ -65,8 +65,6 @@ where:
 
  .. code-block:: none
 
-    /home/d54380/Logiciels/OpenTURNS/otABCCalibration/doc/examples/plot_calibration_chaboche_model.py:27: DeprecationWarning: the imp module is deprecated in favour of importlib and slated for removal in Python 3.12; see the module's documentation for alternative uses
-      import imp
 
     <module 'otABCalibration' from '/home/d54380/Logiciels/OpenTURNS/otABCCalibration/otABCalibration/__init__.py'>
 
@@ -341,13 +339,13 @@ Investigate the results
  .. code-block:: none
 
             [ $U_{\varepsilon}$ R                 C                 $\gamma$          ]
-        0 : [  0.000608202       5.87782e+08       6.27061e+09       4.45299          ]
-        1 : [ -0.00126617        7.96724e+08       1.51582e+09      11.1298           ]
-        2 : [ -0.000438266       6.61966e+08       4.67719e+09      14.2451           ]
+        0 : [ -0.00114974        5.21093e+08       6.40373e+09       1.20536          ]
+        1 : [  0.000600577       7.47121e+08       4.48555e+09       6.2699           ]
+        2 : [  0.000819312       6.49947e+08       5.34688e+09      10.417            ]
     ...
-    14997 : [ -8.48901e-05       7.95249e+08       1.30474e+09       5.64843          ]
-    14998 : [  0.000363987       7.52842e+08       3.72107e+09       8.93627          ]
-    14999 : [  0.000211898       5.65989e+08       3.66711e+09       1.57779          ]
+    14997 : [  0.000858578       5.83749e+08       1.66285e+09      12.1844           ]
+    14998 : [  0.00158465        5.08021e+08       6.84592e+09      14.8044           ]
+    14999 : [  0.000933636       6.835e+08         2.61789e+09       3.19822          ]
 
 
 
@@ -358,11 +356,12 @@ draw posterior input distribution to analyse calibration
 it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with
 the two other parameters are present.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-181
+.. GENERATED FROM PYTHON SOURCE LINES 177-182
 
 .. code-block:: Python
 
-    grid = result.conditionalSample.drawPosteriorInputDistribution()
+    conditionalSample = result.getConditionalSample()
+    grid = conditionalSample.drawPosteriorInputDistribution()
     fig = otv.View(grid)
     fig.show()
 
@@ -370,7 +369,7 @@ the two other parameters are present.
 
 
 .. image-sg:: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
-   :alt: Conditional Sample : 160 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.10, Spearman : 0.02, Spearman : 0.08, Spearman : -0.10, Spearman : -0.92, Spearman : -0.20, Spearman : 0.02, Spearman : -0.92, Spearman : 0.51, Spearman : 0.08, Spearman : -0.20, Spearman : 0.51
+   :alt: Conditional Sample : 146 out of 15000   0.000 < $CvRMSE_{\sigma}$ < 0.025   -0.005 < $NMBE_{\sigma}$ < 0.005 , Spearman : -0.16, Spearman : 0.05, Spearman : 0.01, Spearman : -0.16, Spearman : -0.92, Spearman : -0.13, Spearman : 0.05, Spearman : -0.92, Spearman : 0.46, Spearman : 0.01, Spearman : -0.13, Spearman : 0.46
    :srcset: /auto_examples/images/sphx_glr_plot_calibration_chaboche_model_001.png
    :class: sphx-glr-single-img
 
@@ -378,12 +377,12 @@ the two other parameters are present.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-184
+.. GENERATED FROM PYTHON SOURCE LINES 183-185
 
-on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
+on the next picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
 the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-192
+.. GENERATED FROM PYTHON SOURCE LINES 185-193
 
 .. code-block:: Python
 
@@ -420,16 +419,16 @@ the figure suggets that the discrepencies between model prediction and observed 
 
  .. code-block:: none
 
-    [-9.1923e-05,7.45749e+08,2.85587e+09,8.34902]
+    [1.28789e-05,7.45496e+08,2.85645e+09,8.64247]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-194
+.. GENERATED FROM PYTHON SOURCE LINES 194-195
 
 Display the calibration results in a dataframe, including confidence intervals for the parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-198
+.. GENERATED FROM PYTHON SOURCE LINES 195-199
 
 .. code-block:: Python
 
@@ -446,15 +445,15 @@ Display the calibration results in a dataframe, including confidence intervals f
  .. code-block:: none
 
                Parameter      Optimal point            0.95 CI interval
-    0  $U_{\varepsilon}$          -0.000092   [-0.00208594, 0.00193333]
-    1                  R   745749121.946141  [7.09509e+08, 7.83453e+08]
-    2                  C  2855873853.889481    [1.4506e+09, 4.3161e+09]
-    3           $\gamma$           8.349015           [1.6179, 14.4793]
+    0  $U_{\varepsilon}$           0.000013   [-0.00201214, 0.00197738]
+    1                  R   745496305.474667  [7.04771e+08, 7.84339e+08]
+    2                  C  2856445565.449549  [1.43141e+09, 4.45496e+09]
+    3           $\gamma$           8.642468           [1.61965, 14.543]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-208
+.. GENERATED FROM PYTHON SOURCE LINES 200-209
 
 Cross validate the calibration
 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -466,7 +465,7 @@ that were not used during the calibration process.
 The cross-validation does not require additional model evaluations, making it an efficient method
 for assessing the model's generalization capabilities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-222
+.. GENERATED FROM PYTHON SOURCE LINES 209-223
 
 .. code-block:: Python
 
@@ -508,12 +507,12 @@ for assessing the model's generalization capabilities.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-225
+.. GENERATED FROM PYTHON SOURCE LINES 224-226
 
 Display statistics for model function calls
 CacheHits represents the number of calls that were served from the cache
 
-.. GENERATED FROM PYTHON SOURCE LINES 225-229
+.. GENERATED FROM PYTHON SOURCE LINES 226-230
 
 .. code-block:: Python
 
@@ -529,20 +528,20 @@ CacheHits represents the number of calls that were served from the cache
 
  .. code-block:: none
 
-    288260
-    138251
+    288320
+    138311
     150000
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-233
+.. GENERATED FROM PYTHON SOURCE LINES 231-234
 
 Export
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 Export the model for futur Reuse
 
-.. GENERATED FROM PYTHON SOURCE LINES 233-245
+.. GENERATED FROM PYTHON SOURCE LINES 234-246
 
 .. code-block:: Python
 
@@ -567,7 +566,7 @@ Export the model for futur Reuse
  .. code-block:: none
 
     150000
-    [-4.08992e-05,7.13601e+08,3.90941e+09,8.15313]
+    [1.19424e-05,7.12594e+08,3.93142e+09,7.9751]
     150000
 
 
@@ -576,7 +575,7 @@ Export the model for futur Reuse
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 10.704 seconds)
+   **Total running time of the script:** (0 minutes 11.191 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_calibration_chaboche_model.py:
