@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:10.704** total execution time for 1 file **from auto_examples**:
+**00:05.408** total execution time for 3 files **from auto_examples**:
 
 .. container::
 
@@ -32,6 +32,12 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_auto_examples_plot_calibrationABC_chaboche_model_SMC.py` (``plot_calibrationABC_chaboche_model_SMC.py``)
+     - 00:05.408
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plot_calibrationABC_chaboche_model_getStarted.py` (``plot_calibrationABC_chaboche_model_getStarted.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_calibration_chaboche_model.py` (``plot_calibration_chaboche_model.py``)
-     - 00:10.704
+     - 00:00.000
      - 0.0

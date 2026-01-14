@@ -117,7 +117,7 @@
 <h1>FuncResidualFunctionOptimalPoint<a class="headerlink" href="#funcresidualfunctionoptimalpoint" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="otABCalibration.FuncResidualFunctionOptimalPoint">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FuncResidualFunctionOptimalPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.FuncResidualFunctionOptimalPoint" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FuncResidualFunctionOptimalPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrateUXObs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.FuncResidualFunctionOptimalPoint" title="Link to this definition">¶</a></dt>
 <dd><p>A class to compute residuals between model predictions and observed outputs for ABC calibration.</p>
 <p>This class extends OpenTURNS Python function to compute residuals between model predictions
 and observed outputs for Approximate Bayesian Computation (ABC) calibration purposes.
@@ -136,6 +136,8 @@ It takes observed parameters and parameters to calibrate as input and returns re
 <dt><strong>inputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of observed input data</p>
 </dd>
 <dt><strong>outputObservations</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.22/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of observed output data</p>
+</dd>
+<dt><strong>calibrateUXObs</strong><span class="classifier">Boolean</span></dt><dd><p>State if X contains uncertainty to be added to observed parameters</p>
 </dd>
 </dl>
 </dd>
@@ -182,13 +184,13 @@ It takes observed parameters and parameters to calibrate as input and returns re
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create the residual function</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">residual_func</span> <span class="o">=</span> <span class="n">FuncResidualFunctionOptimalPoint</span><span class="p">(</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">model</span><span class="p">,</span> <span class="n">obs_param_indices</span><span class="p">,</span> <span class="n">calib_param_indices</span><span class="p">,</span> <span class="n">obs_output_indices</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">input_obs</span><span class="p">,</span> <span class="n">output_obs</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">input_obs</span><span class="p">,</span> <span class="n">output_obs</span><span class="p">,</span><span class="kc">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="otABCalibration.FuncResidualFunctionOptimalPoint.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.FuncResidualFunctionOptimalPoint.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toCalibrateParameterIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observedOutputIndices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputObservations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrateUXObs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otABCalibration.FuncResidualFunctionOptimalPoint.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

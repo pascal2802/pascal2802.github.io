@@ -174,12 +174,13 @@ print(algo.getPriorDOE())
 # draw posterior input distribution to analyse calibration
 # it can be seen that :math:`\gamma` cannot be idenfied accurately but that some correlation with
 # the two other parameters are present.
-grid = result.conditionalSample.drawPosteriorInputDistribution()
+conditionalSample = result.getConditionalSample()
+grid = conditionalSample.drawPosteriorInputDistribution()
 fig = otv.View(grid)
 fig.show()
 
 # %%
-# on the new picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
+# on the next picture, the residuals distribution of the computed optimal point (the point that maximise the posterior input distribution infered from the empiric posterior sample) is analysed.
 # the figure suggets that the discrepencies between model prediction and observed output are mostly due to measurment erros as the residuals are gaussian and centered.
 print(result.getParameterMAP())
 grid = result.drawResiduals()
