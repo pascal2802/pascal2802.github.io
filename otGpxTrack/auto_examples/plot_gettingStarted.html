@@ -186,19 +186,71 @@ to download the full example code.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>AR-1 Simulation Results:
   Best 500m segment (AR-1):
-    Mean speed: 8.86 knots
-    95% CI: [8.01, 9.76] knots
+    Mean speed: 8.87 knots
+    95% CI: [7.96, 9.74] knots
   Best 10s segment (AR-1):
-    Mean speed: 8.88 knots
-    95% CI: [7.99, 9.77] knots
+    Mean speed: 8.89 knots
+    95% CI: [8.02, 9.80] knots
+</pre></div>
+</div>
+<p>Generate stochastic process realizations for instantaneous speeds</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Generating stochastic process realizations...&quot;</span><span class="p">)</span>
+<span class="n">process_sample</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">processSample</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ar1&#39;</span><span class="p">,</span> <span class="n">sigma_tot</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Generating stochastic process realizations...
+</pre></div>
+</div>
+<p>Plot instantaneous speeds with 95% confidence interval using OpenTURNS methods</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Plotting instantaneous speeds with confidence intervals...&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Extract time values and observed speeds</span>
+<span class="n">time_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">observed_speeds</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">points</span><span class="p">):</span>
+    <span class="n">time_value</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> <span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+    <span class="n">time_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time_value</span><span class="p">)</span>
+    <span class="n">observed_speeds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.94384</span><span class="p">)</span>  <span class="c1"># Convert to knots</span>
+
+<span class="c1"># Use OpenTURNS computeQuantilePerComponent method directly on ProcessSample</span>
+<span class="n">quantiles</span> <span class="o">=</span> <span class="n">process_sample</span><span class="o">.</span><span class="n">computeQuantilePerComponent</span><span class="p">([</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.975</span><span class="p">])</span>
+<span class="c1"># Extract quantile values - each quantile is a Sample in the ProcessSample</span>
+<span class="n">quantile_025</span> <span class="o">=</span> <span class="p">[</span><span class="n">quantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.94384</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">points</span><span class="p">))]</span> <span class="c1"># With conversion to knots</span>
+<span class="n">quantile_975</span> <span class="o">=</span> <span class="p">[</span><span class="n">quantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.94384</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">points</span><span class="p">))]</span> <span class="c1"># With conversion to knots</span>
+
+<span class="c1"># Plot observed speeds</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_values</span><span class="p">,</span> <span class="n">observed_speeds</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observed Speed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plot confidence interval</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">time_values</span><span class="p">,</span> <span class="n">quantile_025</span><span class="p">,</span> <span class="n">quantile_975</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% Confidence Interval&#39;</span><span class="p">)</span>
+
+<span class="c1"># Customize the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Instantaneous Speeds with 95% Confidence Interval (AR-1 Process)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (seconds since epoch)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Speed (knots)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Save the speed plot</span>
+<span class="n">speed_plot_path</span> <span class="o">=</span> <span class="s1">&#39;instantaneous_speeds_with_ci.png&#39;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">speed_plot_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Speed plot saved to: </span><span class="si">{</span><span class="n">speed_plot_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_gettingStarted_001.png" srcset="../_images/sphx_glr_plot_gettingStarted_001.png" alt="Instantaneous Speeds with 95% Confidence Interval (AR-1 Process)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Plotting instantaneous speeds with confidence intervals...
+Speed plot saved to: instantaneous_speeds_with_ci.png
 </pre></div>
 </div>
 <p>Plot the track with speed in knots</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Generating plot...&quot;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Generating track plot...&quot;</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">plot_track</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Example GPX Track&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">speed_unit</span><span class="o">=</span><span class="s2">&quot;knots&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_gettingStarted_001.png" srcset="../_images/sphx_glr_plot_gettingStarted_001.png" alt="Example GPX Track" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Generating plot...
+<img src="../_images/sphx_glr_plot_gettingStarted_002.png" srcset="../_images/sphx_glr_plot_gettingStarted_002.png" alt="Example GPX Track" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Generating track plot...
 </pre></div>
 </div>
 <p>Save the plot</p>
@@ -218,7 +270,7 @@ plt.show()</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Example completed successfully!
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.346 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 59.530 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-gettingstarted-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e65ed39a3bac338daced626e135f5497/plot_gettingStarted.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_gettingStarted.ipynb</span></code></a></p>

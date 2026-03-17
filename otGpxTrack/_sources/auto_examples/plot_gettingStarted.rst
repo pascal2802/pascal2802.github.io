@@ -200,31 +200,91 @@ AR-1 Simulation for best segments
 
     AR-1 Simulation Results:
       Best 500m segment (AR-1):
-        Mean speed: 8.86 knots
-        95% CI: [8.01, 9.76] knots
+        Mean speed: 8.87 knots
+        95% CI: [7.96, 9.74] knots
       Best 10s segment (AR-1):
-        Mean speed: 8.88 knots
-        95% CI: [7.99, 9.77] knots
+        Mean speed: 8.89 knots
+        95% CI: [8.02, 9.80] knots
 
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 63-64
 
-Plot the track with speed in knots
+Generate stochastic process realizations for instantaneous speeds
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: Python
 
-    print("\nGenerating plot...")
-    fig = track.plot_track(title="Example GPX Track", figsize=(12, 8), speed_unit="knots")
+    print("\nGenerating stochastic process realizations...")
+    process_sample = track.processSample(sample_size=1000, method='ar1', sigma_tot=2.5, phi=0.9)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Generating stochastic process realizations...
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
+
+Plot instantaneous speeds with 95% confidence interval using OpenTURNS methods
+
+.. GENERATED FROM PYTHON SOURCE LINES 69-107
+
+.. code-block:: Python
+
+    import matplotlib.pyplot as plt
+
+    print("\nPlotting instantaneous speeds with confidence intervals...")
+    fig, ax = plt.subplots(figsize=(14, 6))
+
+    # Extract time values and observed speeds
+    time_values = []
+    observed_speeds = []
+    for i, point in enumerate(track.points):
+        time_value = point.time.timestamp() if point.time is not None else 0.0
+        time_values.append(time_value)
+        observed_speeds.append(track.data[i][4] * 1.94384)  # Convert to knots
+
+    # Use OpenTURNS computeQuantilePerComponent method directly on ProcessSample
+    quantiles = process_sample.computeQuantilePerComponent([0.025, 0.975])
+    # Extract quantile values - each quantile is a Sample in the ProcessSample
+    quantile_025 = [quantiles[0][i][0] * 1.94384 for i in range(len(track.points))] # With conversion to knots
+    quantile_975 = [quantiles[1][i][0] * 1.94384 for i in range(len(track.points))] # With conversion to knots
+
+    # Plot observed speeds
+    ax.plot(time_values, observed_speeds, 'b-', label='Observed Speed', linewidth=2)
+
+    # Plot confidence interval
+    ax.fill_between(time_values, quantile_025, quantile_975, 
+                     alpha=0.3, color='blue', label='95% Confidence Interval')
+
+    # Customize the plot
+    ax.set_title('Instantaneous Speeds with 95% Confidence Interval (AR-1 Process)', fontsize=14)
+    ax.set_xlabel('Time (seconds since epoch)', fontsize=12)
+    ax.set_ylabel('Speed (knots)', fontsize=12)
+    ax.grid(True, alpha=0.3)
+    ax.legend(fontsize=10)
+
+    # Save the speed plot
+    speed_plot_path = 'instantaneous_speeds_with_ci.png'
+    fig.savefig(speed_plot_path, dpi=300, bbox_inches='tight')
+    print(f"Speed plot saved to: {speed_plot_path}")
 
 
 
 
 .. image-sg:: /auto_examples/images/sphx_glr_plot_gettingStarted_001.png
-   :alt: Example GPX Track
+   :alt: Instantaneous Speeds with 95% Confidence Interval (AR-1 Process)
    :srcset: /auto_examples/images/sphx_glr_plot_gettingStarted_001.png
    :class: sphx-glr-single-img
 
@@ -234,16 +294,47 @@ Plot the track with speed in knots
  .. code-block:: none
 
 
-    Generating plot...
+    Plotting instantaneous speeds with confidence intervals...
+    Speed plot saved to: instantaneous_speeds_with_ci.png
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-69
+.. GENERATED FROM PYTHON SOURCE LINES 108-109
+
+Plot the track with speed in knots
+
+.. GENERATED FROM PYTHON SOURCE LINES 109-112
+
+.. code-block:: Python
+
+    print("\nGenerating track plot...")
+    fig = track.plot_track(title="Example GPX Track", figsize=(12, 8), speed_unit="knots")
+
+
+
+
+.. image-sg:: /auto_examples/images/sphx_glr_plot_gettingStarted_002.png
+   :alt: Example GPX Track
+   :srcset: /auto_examples/images/sphx_glr_plot_gettingStarted_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Generating track plot...
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 Save the plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-73
+.. GENERATED FROM PYTHON SOURCE LINES 114-118
 
 .. code-block:: Python
 
@@ -264,12 +355,12 @@ Save the plot
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 119-121
 
 Show the plot (in interactive environments)
 plt.show()
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-78
+.. GENERATED FROM PYTHON SOURCE LINES 121-123
 
 .. code-block:: Python
 
@@ -292,7 +383,7 @@ plt.show()
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.346 seconds)
+   **Total running time of the script:** (0 minutes 59.530 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_gettingStarted.py:
