@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GpxTrack &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="../../auto_examples/index.html" />
+    <link rel="prev" title="API Reference" href="../user_manual.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../user_manual.html">Doc</a></li>
+    <li><a href="../../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otGpxTrack
+    </h1>
+    <h2> Module otGpxTrack </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../auto_examples/index.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../user_manual.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GpxTrack</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GpxTrack</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../user_manual.html"
+                          title="previous chapter">API Reference</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../auto_examples/index.html"
+                          title="next chapter">Examples</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otGpxTrack.GpxTrack.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gpxtrack">
+<h1>GpxTrack<a class="headerlink" href="#gpxtrack" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GpxTrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpx_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack" title="Link to this definition">¶</a></dt>
+<dd><p>A class to represent and analyze a GPX track using OpenTURNS.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>gpx (gpxpy.gpx.GPX): The parsed GPX object.
+points (list): List of track points.
+data (ot.Sample): OpenTURNS sample containing track data.</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_average_speed" title="otGpxTrack.GpxTrack.get_average_speed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_average_speed</span></code></a>()</p></td>
+<td><p>Calculate the average speed of the track.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_best_segment_for_distance" title="otGpxTrack.GpxTrack.get_best_segment_for_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_best_segment_for_distance</span></code></a>(target_distance)</p></td>
+<td><p>Find the best segment of the track for a given target distance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_best_segment_for_time" title="otGpxTrack.GpxTrack.get_best_segment_for_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_best_segment_for_time</span></code></a>(target_time)</p></td>
+<td><p>Find the best segment of the track for a given target time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_distance" title="otGpxTrack.GpxTrack.get_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_distance</span></code></a>()</p></td>
+<td><p>Calculate the total distance of the track.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_duration" title="otGpxTrack.GpxTrack.get_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_duration</span></code></a>()</p></td>
+<td><p>Calculate the total duration of the track.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.get_openturns_sample" title="otGpxTrack.GpxTrack.get_openturns_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_openturns_sample</span></code></a>()</p></td>
+<td><p>Get the OpenTURNS sample containing the track data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.plot_track" title="otGpxTrack.GpxTrack.plot_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_track</span></code></a>([figsize, title, save_path, ...])</p></td>
+<td><p>Plot the GPX track with points colored by speed using a jet colormap.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otGpxTrack.GpxTrack.simulate_ar1_speeds" title="otGpxTrack.GpxTrack.simulate_ar1_speeds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_ar1_speeds</span></code></a>(segment_indices[, ...])</p></td>
+<td><p>Simulate speeds using AR-1 model for a segment of the track.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpx_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize the GpxTrack with a GPX file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>gpx_file_path (str): Path to the GPX file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_average_speed">
+<span class="sig-name descname"><span class="pre">get_average_speed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_average_speed" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the average speed of the track.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>float: Average speed in meters per second.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_best_segment_for_distance">
+<span class="sig-name descname"><span class="pre">get_best_segment_for_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_distance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_best_segment_for_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Find the best segment of the track for a given target distance.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>target_distance (float): Target distance in meters.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: Start index, end index, observed speed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_best_segment_for_time">
+<span class="sig-name descname"><span class="pre">get_best_segment_for_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_best_segment_for_time" title="Link to this definition">¶</a></dt>
+<dd><p>Find the best segment of the track for a given target time.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>target_time (float): Target time in seconds.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: Start index, end index, observed speed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_distance">
+<span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the total distance of the track.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>float: Total distance in meters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_duration">
+<span class="sig-name descname"><span class="pre">get_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_duration" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the total duration of the track.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>float: Total duration in seconds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.get_openturns_sample">
+<span class="sig-name descname"><span class="pre">get_openturns_sample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.get_openturns_sample" title="Link to this definition">¶</a></dt>
+<dd><p>Get the OpenTURNS sample containing the track data.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>ot.Sample: OpenTURNS sample.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.plot_track">
+<span class="sig-name descname"><span class="pre">plot_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GPX</span> <span class="pre">Track'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m/s'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.plot_track" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the GPX track with points colored by speed using a jet colormap.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>figsize (tuple): Figure size (width, height).
+title (str): Plot title.
+save_path (str): Optional path to save the plot.
+speed_unit (str): Unit for speed display (‘m/s’, ‘km/h’, or ‘knots’).</p>
+</dd>
+<dt>Returns:</dt><dd><p>matplotlib.figure.Figure: The created figure.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otGpxTrack.GpxTrack.simulate_ar1_speeds">
+<span class="sig-name descname"><span class="pre">simulate_ar1_speeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_tot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.simulate_ar1_speeds" title="Link to this definition">¶</a></dt>
+<dd><p>Simulate speeds using AR-1 model for a segment of the track.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>segment_indices (tuple): Start and end indices of the segment.
+sigma_tot (float): Total standard deviation for AR-1 process.
+phi (float): Autoregressive coefficient.
+n_sims (int): Number of simulations.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: Mean speed, lower percentile, upper percentile, OpenTURNS sample of all simulated speeds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../auto_examples/index.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../user_manual.html" title="API Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GpxTrack</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
