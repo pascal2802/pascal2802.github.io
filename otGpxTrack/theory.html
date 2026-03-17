@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AR-1 Process Theory &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "inlineMath": [["$", "$"], ["\\(", "\\)"]], "displayMath": [["$$", "$$"], ["\\[", "\\]"]], "packages": {"[+]": ["base", "ams", "noerrors", "noundefined"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Getting Started with GpxTrack" href="auto_examples/plot_gettingStarted.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="user_manual/user_manual.html">Doc</a></li>
+    <li><a href="examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="index.html">
+    <h1>
+      <img src="_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otGpxTrack
+    </h1>
+    <h2> Module otGpxTrack </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="auto_examples/plot_gettingStarted.html" title="Getting Started with GpxTrack"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AR-1 Process Theory</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/user_manual.html">API Reference</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AR-1 Process Theory</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="auto_examples/plot_gettingStarted.html"
+                          title="previous chapter">Getting Started with GpxTrack</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/theory.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="ar-1-process-theory">
+<h1>AR-1 Process Theory<a class="headerlink" href="#ar-1-process-theory" title="Link to this heading">¶</a></h1>
+<section id="autoregressive-model-of-order-1-ar1">
+<h2>Autoregressive model of order 1 (AR‑1)<a class="headerlink" href="#autoregressive-model-of-order-1-ar1" title="Link to this heading">¶</a></h2>
+<p>An AR‑1 process <span class="math notranslate nohighlight">\(X_t\)</span> satisfies</p>
+<div class="math notranslate nohighlight">
+\[X_t = \phi X_{t-1} + \varepsilon_t,\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">phi</span></code> (<code class="docutils literal notranslate"><span class="pre">phi</span></code>) is the autoregressive coefficient with <code class="docutils literal notranslate"><span class="pre">|phi|</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> for stationarity and <code class="docutils literal notranslate"><span class="pre">\varepsilon_t</span></code> is a white‑noise term, typically Gaussian with variance</p>
+<div class="math notranslate nohighlight">
+\[\sigma_\varepsilon^2 = \sigma_{\text{tot}}^2\,(1-\phi^2).\]</div>
+<p>The process has zero mean, variance <code class="docutils literal notranslate"><span class="pre">sigma_tot**2</span></code> and autocorrelation function</p>
+<div class="math notranslate nohighlight">
+\[\rho(k) = \phi^{|k|}.\]</div>
+<p>In the context of GPX tracks the AR‑1 model is used to generate correlated position errors (<code class="docutils literal notranslate"><span class="pre">err_x</span></code> and <code class="docutils literal notranslate"><span class="pre">err_y</span></code>) that mimic realistic GPS drift.  The function <code class="xref py py-func docutils literal notranslate"><span class="pre">generate_ar1_error()</span></code> implements the recursion above using OpenTURNS <code class="docutils literal notranslate"><span class="pre">Normal</span></code> distribution for the noise term.</p>
+</section>
+<section id="measurement-ensemble">
+<h2>Measurement ensemble<a class="headerlink" href="#measurement-ensemble" title="Link to this heading">¶</a></h2>
+<p>For a track with <code class="docutils literal notranslate"><span class="pre">n</span></code> points the error vectors are generated independently for the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">err_x</span> <span class="o">=</span> <span class="n">generate_ar1_error</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sigma_tot</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">err_y</span> <span class="o">=</span> <span class="n">generate_ar1_error</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sigma_tot</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The noisy positions are then</p>
+<div class="math notranslate nohighlight">
+\[x^{\text{noisy}}_t = x_t + \varepsilon^x_t,
+\quad y^{\text{noisy}}_t = y_t + \varepsilon^y_t,\]</div>
+<p>and instantaneous speed is computed from the Euclidean distance between consecutive noisy points divided by the time step.  This yields a stochastic speed field that can be sampled many times (<code class="docutils literal notranslate"><span class="pre">processSample</span></code>) to obtain confidence intervals for speed estimates.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Box, G. E. P., Jenkins, G. M., &amp; Reinsel, G. C. (2015). <em>Time Series Analysis: Forecasting and Control</em>.</p></li>
+<li><p>OpenTURNS documentation – <code class="docutils literal notranslate"><span class="pre">ARMA</span></code> and <code class="docutils literal notranslate"><span class="pre">ProcessSample</span></code> classes.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="auto_examples/plot_gettingStarted.html" title="Getting Started with GpxTrack"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AR-1 Process Theory</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

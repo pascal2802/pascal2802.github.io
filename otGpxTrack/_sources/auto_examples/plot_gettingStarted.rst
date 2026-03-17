@@ -292,7 +292,7 @@ plt.show()
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.390 seconds)
+   **Total running time of the script:** (0 minutes 2.346 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_gettingStarted.py:
