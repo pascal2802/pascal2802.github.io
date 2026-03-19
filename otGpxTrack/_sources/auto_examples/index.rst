@@ -27,6 +27,23 @@ Examples
     </div>
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the use of Gaussian Process for modeling error in GPX tracks, comparing it with the AR-1 process approach.">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_modelErrorWithGP_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/plot_modelErrorWithGP`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Model Error with Gaussian Process</div>
+    </div>
+
+
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -38,6 +55,7 @@ Examples
    :hidden:
 
    /auto_examples/plot_gettingStarted
+   /auto_examples/plot_modelErrorWithGP
 
 
 .. only:: html

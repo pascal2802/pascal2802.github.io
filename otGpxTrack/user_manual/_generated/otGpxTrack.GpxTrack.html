@@ -243,13 +243,15 @@ speed_unit (str): Unit for speed display (‘m/s’, ‘km/h’, or ‘knots’)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="otGpxTrack.GpxTrack.processSample">
-<span class="sig-name descname"><span class="pre">processSample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ar1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_tot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.processSample" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">processSample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ar1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_tot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otGpxTrack.GpxTrack.processSample" title="Link to this definition">¶</a></dt>
 <dd><p>Generate stochastic process realizations for instantaneous speeds.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>sample_size (int): Number of realizations to generate (default: 1000).
-method (str): Method for generating the process (‘ar1’ for AR-1 process).
+method (str): Method for generating the process (‘ar1’ for AR-1 process, ‘gaussian’ for Gaussian process).
 sigma_tot (float): Total standard deviation for AR-1 process.
-phi (float): Autoregressive coefficient for AR-1 process.</p>
+phi (float): Autoregressive coefficient for AR-1 process.
+amplitude (float): Amplitude parameter for Gaussian process covariance model.
+scale (float): Scale/length of correlation parameter for Gaussian process covariance model.</p>
 </dd>
 <dt>Returns:</dt><dd><p>ot.ProcessSample: Stochastic process sample with realizations of instantaneous speeds.</p>
 </dd>
