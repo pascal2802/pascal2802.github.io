@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Gaussian Process Theory &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "inlineMath": [["$", "$"], ["\\(", "\\)"]], "displayMath": [["$$", "$$"], ["\\[", "\\]"]], "packages": {"[+]": ["base", "ams", "noerrors", "noundefined"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="AR-1 Process Theory" href="theory.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="user_manual/user_manual.html">Doc</a></li>
+    <li><a href="examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="index.html">
+    <h1>
+      <img src="_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otGpxTrack
+    </h1>
+    <h2> Module otGpxTrack </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="theory.html" title="AR-1 Process Theory"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Gaussian Process Theory</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/user_manual.html">API Reference</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="theory.html">AR-1 Process Theory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gaussian Process Theory</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="theory.html"
+                          title="previous chapter">AR-1 Process Theory</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/gaussian_process.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gaussian-process-theory">
+<h1>Gaussian Process Theory<a class="headerlink" href="#gaussian-process-theory" title="Link to this heading">¶</a></h1>
+<section id="gaussian-process-for-position-errors">
+<h2>Gaussian Process for Position Errors<a class="headerlink" href="#gaussian-process-for-position-errors" title="Link to this heading">¶</a></h2>
+<p>A Gaussian process (GP) is a collection of random variables, any finite number of which have a joint Gaussian distribution. In the context of GPX tracks, we use a Gaussian process to model correlated position errors that mimic realistic GPS drift.</p>
+<p>The Gaussian process <span class="math notranslate nohighlight">\(X(t)\)</span> is defined by:
+- A mean function <span class="math notranslate nohighlight">\(m(t) = \mathbb{E}[X(t)]\)</span> (typically zero)
+- A covariance function <span class="math notranslate nohighlight">\(k(t, t') = \text{Cov}(X(t), X(t'))\)</span></p>
+<p>For stationary processes, the covariance depends only on the time difference <span class="math notranslate nohighlight">\(\tau = t - t'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[k(\tau) = \sigma^2 \cdot \rho(|\tau|)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma^2\)</span> is the variance and <span class="math notranslate nohighlight">\(\rho(|\tau|)\)</span> is the correlation function.</p>
+</section>
+<section id="absolute-exponential-covariance-model">
+<h2>Absolute Exponential Covariance Model<a class="headerlink" href="#absolute-exponential-covariance-model" title="Link to this heading">¶</a></h2>
+<p>We use the Absolute Exponential (also called Laplacian) covariance model:</p>
+<div class="math notranslate nohighlight">
+\[k(\tau) = \sigma^2 \exp\left(-\frac{|\tau|}{\ell}\right)\]</div>
+<p>where:
+- <span class="math notranslate nohighlight">\(\sigma^2\)</span> is the <strong>amplitude</strong> (variance parameter)
+- <span class="math notranslate nohighlight">\(\ell\)</span> is the <strong>scale</strong> (correlation length in time)</p>
+<p>The correlation function is:</p>
+<div class="math notranslate nohighlight">
+\[\rho(|\tau|) = \exp\left(-\frac{|\tau|}{\ell}\right)\]</div>
+<p>Key properties:
+- At <span class="math notranslate nohighlight">\(\tau = 0\)</span>: <span class="math notranslate nohighlight">\(\rho(0) = 1\)</span> (perfect correlation with itself)
+- At <span class="math notranslate nohighlight">\(\tau = \ell\)</span>: <span class="math notranslate nohighlight">\(\rho(\ell) = 1/e \approx 0.37\)</span> (correlation drops to ~37%)
+- As <span class="math notranslate nohighlight">\(\tau \to \infty\)</span>: <span class="math notranslate nohighlight">\(\rho(\tau) \to 0\)</span> (uncorrelated for large time differences)</p>
+<p>In OpenTURNS, this is implemented as <cite>AbsoluteExponential([scale], [amplitude])</cite>.</p>
+</section>
+<section id="measurement-ensemble">
+<h2>Measurement Ensemble<a class="headerlink" href="#measurement-ensemble" title="Link to this heading">¶</a></h2>
+<p>For a track with <span class="math notranslate nohighlight">\(n\)</span> points acquired at times <span class="math notranslate nohighlight">\(t_1, t_2, \dots, t_n\)</span>, we generate error processes for both coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create time mesh</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">BuildFromPoint</span><span class="p">(</span><span class="n">time_values</span><span class="p">))</span>
+
+<span class="c1"># Create covariance model</span>
+<span class="n">cov_model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="n">scale</span><span class="p">],</span> <span class="p">[</span><span class="n">amplitude</span><span class="p">])</span>
+
+<span class="c1"># Create Gaussian processes for X and Y errors</span>
+<span class="n">gp_x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GaussianProcess</span><span class="p">(</span><span class="n">cov_model</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+<span class="n">gp_y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GaussianProcess</span><span class="p">(</span><span class="n">cov_model</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+
+<span class="c1"># Generate realizations</span>
+<span class="n">err_x_field</span> <span class="o">=</span> <span class="n">gp_x</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<span class="n">err_y_field</span> <span class="o">=</span> <span class="n">gp_y</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The noisy positions are then:</p>
+<div class="math notranslate nohighlight">
+\[x^{\text{noisy}}_i = x_i + \varepsilon^x_i,
+\quad y^{\text{noisy}}_i = y_i + \varepsilon^y_i,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon^x_i\)</span> and <span class="math notranslate nohighlight">\(\varepsilon^y_i\)</span> are samples from the Gaussian processes at the measurement times.</p>
+</section>
+<section id="instantaneous-speed-calculation">
+<h2>Instantaneous Speed Calculation<a class="headerlink" href="#instantaneous-speed-calculation" title="Link to this heading">¶</a></h2>
+<p>The instantaneous speed between consecutive points is computed from the Euclidean distance between noisy positions divided by the time step:</p>
+<div class="math notranslate nohighlight">
+\[v_i = \frac{\sqrt{(x^{\text{noisy}}_i - x^{\text{noisy}}_{i-1})^2 + (y^{\text{noisy}}_i - y^{\text{noisy}}_{i-1})^2}}{t_i - t_{i-1}}\]</div>
+<p>This yields a stochastic speed field that can be sampled many times using <cite>processSample()</cite> to obtain confidence intervals for speed estimates.</p>
+</section>
+<section id="parameter-selection-for-gps-data">
+<h2>Parameter Selection for GPS Data<a class="headerlink" href="#parameter-selection-for-gps-data" title="Link to this heading">¶</a></h2>
+<p>For GPS grand public data acquired at 1 Hz, the following parameters are recommended:</p>
+<p><strong>Amplitude (σ)</strong>: 1.5 meters
+- Ensures 95% of position errors are within a 3-meter radius
+- Based on the property that 95% of Gaussian values fall within ±1.96σ
+- <span class="math notranslate nohighlight">\(1.96 \times 1.5 \approx 3\)</span> meters</p>
+<p><strong>Scale (ℓ)</strong>: 5.0 seconds
+- Appropriate for 1 Hz acquisition rate
+- Captures correlation over ~5 measurement points
+- Models realistic GPS drift patterns
+- Shorter scales would create overly erratic errors; longer scales would over-smooth</p>
+</section>
+<section id="comparison-with-ar-1-process">
+<h2>Comparison with AR-1 Process<a class="headerlink" href="#comparison-with-ar-1-process" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Both methods generate correlated errors on X and Y coordinates and compute speeds from noisy trajectories.</p></li>
+<li><p>Gaussian process provides a more flexible and mathematically rigorous framework for modeling continuous-time stochastic processes.</p></li>
+</ul>
+<section id="key-differences">
+<h3>Key differences<a class="headerlink" href="#key-differences" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Correlation structure</strong>: AR-1 uses <span class="math notranslate nohighlight">\(\phi^{|k|}\)</span>, GP uses <span class="math notranslate nohighlight">\(\exp(-|\tau|/\ell)\)</span></p></li>
+<li><p><strong>Parameters</strong>: AR-1 uses <code class="docutils literal notranslate"><span class="pre">phi</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma_tot</span></code>, GP uses <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p></li>
+<li><p><strong>Stationarity</strong>: AR-1 requires <span class="math notranslate nohighlight">\(|\phi| &lt; 1\)</span>, GP is always stationary</p></li>
+<li><p><strong>Implementation</strong>: AR-1 uses recursive formula, GP uses covariance model + Cholesky decomposition</p></li>
+<li><p><strong>Temporal resolution</strong>: AR-1 uses discrete time steps, GP models continuous time (discretized)</p></li>
+<li><p><strong>Computational cost</strong>: AR-1 is O(n), GP is O(n³) for Cholesky decomposition</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Rasmussen, C. E., &amp; Williams, C. K. I. (2006). <em>Gaussian Processes for Machine Learning</em>. MIT Press.</p></li>
+<li><p>OpenTURNS documentation - <cite>GaussianProcess</cite> and <cite>AbsoluteExponential</cite> classes.</p></li>
+<li><p>Papoulis, A., &amp; Pillai, S. U. (2002). <em>Probability, Random Variables and Stochastic Processes</em>. McGraw-Hill.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="theory.html" title="AR-1 Process Theory"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Gaussian Process Theory</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
