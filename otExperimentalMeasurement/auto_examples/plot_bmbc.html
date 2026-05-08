@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Batch Mean Batch Correlation on a correlated time series &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer guide" href="../developer_guide/developer_guide.html" />
+    <link rel="prev" title="Example : Using otExperimentalMeasurementpython module" href="plot_basic.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otExperimentalMeasurement
+    </h1>
+    <h2> Module otExperimentalMeasurement </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../developer_guide/developer_guide.html" title="Developer guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_basic.html" title="Example : Using otExperimentalMeasurementpython module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Batch Mean Batch Correlation on a correlated time series</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../theory/index.html">Theoretical Foundations</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/user_manual.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plot_basic.html">Example : Using otExperimentalMeasurementpython module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Batch Mean Batch Correlation on a correlated time series</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="plot_basic.html"
+                          title="previous chapter">Example : Using otExperimentalMeasurementpython module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../developer_guide/developer_guide.html"
+                          title="next chapter">Developer guide</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_examples/plot_bmbc.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plot-bmbc-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="batch-mean-batch-correlation-on-a-correlated-time-series">
+<span id="sphx-glr-auto-examples-plot-bmbc-py"></span><h1>Batch Mean Batch Correlation on a correlated time series<a class="headerlink" href="#batch-mean-batch-correlation-on-a-correlated-time-series" title="Link to this heading">¶</a></h1>
+<p>This example demonstrates the Batch Mean Batch Correlation (BMBC) method
+to compute uncertainty of empirical mean estimator when samples are not i.i.d.</p>
+<section id="setup-and-imports">
+<h2>Setup and imports<a class="headerlink" href="#setup-and-imports" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">openturns</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">otExperimentalMeasurement</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">otEM</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-correlated-time-series">
+<h2>Generate correlated time series<a class="headerlink" href="#generate-correlated-time-series" title="Link to this heading">¶</a></h2>
+<p>Create a correlated time series with N=100000 points</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">BuildFromPoint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Generate autocorrelated data with coefficient 0.9</span>
+<span class="n">autoCorrelationCoeff</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">distR</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">RSample</span> <span class="o">=</span> <span class="n">distR</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">autoCorrelationCoeff</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">autoCorrelationCoeff</span><span class="p">)</span> <span class="o">*</span> <span class="n">RSample</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualize-the-time-series">
+<h2>Visualize the time series<a class="headerlink" href="#visualize-the-time-series" title="Link to this heading">¶</a></h2>
+<p>Plot a subset of the time series to show the correlation structure</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_ts</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax_ts</span> <span class="o">=</span> <span class="n">fig_ts</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot first 1000 points to show the autocorrelation structure</span>
+<span class="n">subset_size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">subset_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:</span><span class="n">subset_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time index&#39;</span><span class="p">)</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Autocorrelated Time Series (first </span><span class="si">{</span><span class="n">subset_size</span><span class="si">}</span><span class="s1"> points)&#39;</span><span class="p">)</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Add mean line</span>
+<span class="n">y_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">computeMean</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mean = </span><span class="si">{</span><span class="n">y_mean</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ax_ts</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Save time series plot</span>
+<span class="n">ts_output_file</span> <span class="o">=</span> <span class="s1">&#39;/tmp/bmbc_time_series.png&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">ts_output_file</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series plot saved to </span><span class="si">{</span><span class="n">ts_output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_bmbc_001.png" srcset="../_images/sphx_glr_plot_bmbc_001.png" alt="Autocorrelated Time Series (first 1000 points)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Time series plot saved to /tmp/bmbc_time_series.png
+</pre></div>
+</div>
+</section>
+<section id="apply-batch-mean-batch-correlation">
+<h2>Apply Batch Mean Batch Correlation<a class="headerlink" href="#apply-batch-mean-batch-correlation" title="Link to this heading">¶</a></h2>
+<p>Initialize BMBC with adaptive batch sizing</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># Initial batch size</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Lower threshold for S1/S0 ratio</span>
+<span class="n">upperThreshold</span> <span class="o">=</span> <span class="mf">0.6</span>  <span class="c1"># Upper threshold for S1/S0 ratio</span>
+
+<span class="n">bmbc</span> <span class="o">=</span> <span class="n">otEM</span><span class="o">.</span><span class="n">BatchMeanBatchCorrelation</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span>
+    <span class="n">upperThreshold</span><span class="o">=</span><span class="n">upperThreshold</span><span class="p">,</span>
+    <span class="n">fixedBatchSize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">startBatchSize</span><span class="o">=</span><span class="n">M</span><span class="p">,</span>
+    <span class="n">sortSample</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the algorithm</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bmbc</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">bmbc</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Compute and display variance of mean estimator</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">var_mu</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">computeMeanEstimatorVariance</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Variance of mean estimator: $N \sigma^2_{\mu}$ = </span><span class="si">%.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">var_mu</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value for comparison: ~0.0834&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Variance of mean estimator: $N \sigma^2_{\mu}$ = 0.0804
+Expected value for comparison: ~0.0834
+</pre></div>
+</div>
+</section>
+<section id="compute-95-confidence-interval-for-the-mean">
+<h2>Compute 95% confidence interval for the mean<a class="headerlink" href="#compute-95-confidence-interval-for-the-mean" title="Link to this heading">¶</a></h2>
+<p>Calculate 95% confidence interval using the variance estimate</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">std_mu</span> <span class="o">=</span> <span class="n">var_mu</span><span class="o">**</span><span class="mf">0.5</span>  <span class="c1"># Standard error of the mean</span>
+<span class="n">z_score</span> <span class="o">=</span> <span class="mf">1.96</span>  <span class="c1"># 95% confidence interval for normal distribution</span>
+<span class="n">confidence_interval</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_mean</span> <span class="o">-</span> <span class="n">z_score</span> <span class="o">*</span> <span class="n">std_mu</span><span class="p">,</span> <span class="n">y_mean</span> <span class="o">+</span> <span class="n">z_score</span> <span class="o">*</span> <span class="n">std_mu</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">95% Confidence Interval for the Mean:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Point estimate: </span><span class="si">{</span><span class="n">y_mean</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Standard error: </span><span class="si">{</span><span class="n">std_mu</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Lower bound:    </span><span class="si">{</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Upper bound:    </span><span class="si">{</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Margin of error: </span><span class="si">{</span><span class="p">(</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Relative error: </span><span class="si">{</span><span class="p">(</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">y_mean</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>95% Confidence Interval for the Mean:
+  Point estimate: 0.499707
+  Standard error: 0.000283
+  Lower bound:    0.499151
+  Upper bound:    0.500262
+  Margin of error: 0.000556
+  Relative error: 0.11%
+</pre></div>
+</div>
+</section>
+<section id="visualize-confidence-interval">
+<h2>Visualize confidence interval<a class="headerlink" href="#visualize-confidence-interval" title="Link to this heading">¶</a></h2>
+<p>Create a visualization showing the mean estimate with confidence interval</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_ci</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax_ci</span> <span class="o">=</span> <span class="n">fig_ci</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot the mean estimate</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mean estimate = </span><span class="si">{</span><span class="n">y_mean</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot confidence interval</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+              <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;95% Confidence Interval&#39;</span><span class="p">)</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Fill confidence interval area</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># Formatting</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">confidence_interval</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">std_mu</span><span class="p">,</span> <span class="n">confidence_interval</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">std_mu</span><span class="p">)</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;95% Confidence Interval for the Mean Estimate&#39;</span><span class="p">)</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Remove y-axis ticks as they&#39;re not meaningful here</span>
+<span class="n">ax_ci</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Save confidence interval plot</span>
+<span class="n">ci_output_file</span> <span class="o">=</span> <span class="s1">&#39;/tmp/bmbc_confidence_interval.png&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">ci_output_file</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confidence interval plot saved to </span><span class="si">{</span><span class="n">ci_output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_bmbc_002.png" srcset="../_images/sphx_glr_plot_bmbc_002.png" alt="95% Confidence Interval for the Mean Estimate" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Confidence interval plot saved to /tmp/bmbc_confidence_interval.png
+</pre></div>
+</div>
+</section>
+<section id="analyze-iteration-results">
+<h2>Analyze iteration results<a class="headerlink" href="#analyze-iteration-results" title="Link to this heading">¶</a></h2>
+<p>Get iteration results</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">resultSample</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getBatchIteration</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Number of iterations: </span><span class="si">{</span><span class="n">resultSample</span><span class="o">.</span><span class="n">getSize</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result columns:&quot;</span><span class="p">,</span> <span class="n">resultSample</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Number of iterations: 8
+Result columns: [iteration,M,S0,S1,$S_1/S_0$]
+</pre></div>
+</div>
+<p>Display detailed iteration information</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iteration details:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">resultSample</span><span class="o">.</span><span class="n">getSize</span><span class="p">()):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">resultSample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">: M=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">, S0=</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, S1=</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, S1/S0=</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Iteration details:
+Iteration 0: M=300, S0=0.872, S1=-0.018, S1/S0=-0.0212
+Iteration 2: M=210, S0=1.795, S1=-0.015, S1/S0=-0.0086
+Iteration 3: M=147, S0=3.568, S1=0.056, S1/S0=0.0158
+Iteration 4: M=102, S0=7.270, S1=0.217, S1/S0=0.0298
+Iteration 5: M=71, S0=14.241, S1=0.971, S1/S0=0.0682
+Iteration 6: M=49, S0=28.052, S1=3.069, S1/S0=0.1094
+Iteration 7: M=34, S0=52.761, S1=9.080, S1/S0=0.1721
+Iteration 8: M=23, S0=98.340, S1=26.769, S1/S0=0.2722
+</pre></div>
+</div>
+</section>
+<section id="visualize-s1-s0-evolution">
+<h2>Visualize S1/S0 evolution<a class="headerlink" href="#visualize-s1-s0-evolution" title="Link to this heading">¶</a></h2>
+<p>Create the plot</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot S1/S0 ratio evolution</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">resultSample</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">resultSample</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;S1/S0 ratio&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add threshold lines</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Lower threshold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">upperThreshold</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Upper threshold&#39;</span><span class="p">)</span>
+
+<span class="c1"># Formatting</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Iteration&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;S1/S0 ratio&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Convergence of S1/S0 Ratio in BMBC Algorithm&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_bmbc_003.png" srcset="../_images/sphx_glr_plot_bmbc_003.png" alt="Convergence of S1/S0 Ratio in BMBC Algorithm" class = "sphx-glr-single-img"/><p>Save the plot</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="s1">&#39;/tmp/bmbc_s1_s0_evolution.png&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Plot saved to </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_bmbc_004.png" srcset="../_images/sphx_glr_plot_bmbc_004.png" alt="plot bmbc" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Plot saved to /tmp/bmbc_s1_s0_evolution.png
+</pre></div>
+</div>
+</section>
+<section id="block-bootstrap-demonstration">
+<h2>Block Bootstrap demonstration<a class="headerlink" href="#block-bootstrap-demonstration" title="Link to this heading">¶</a></h2>
+<p>Generate bootstrap sample using optimal batch size</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bootstrapSample</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getBlockBoostrapSample</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Block bootstrap sample generated with </span><span class="si">{</span><span class="n">bootstrapSample</span><span class="o">.</span><span class="n">getSize</span><span class="p">()</span><span class="si">}</span><span class="s2"> points&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 5 values:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">bootstrapSample</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Last 5 values:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">bootstrapSample</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Block bootstrap sample generated with 999994 points
+First 5 values: [0.4908951210193917, 0.4679752576855539, 0.494726168125481, 0.46916975537227334, 0.4240190621493513]
+Last 5 values: [0.5496838111619834, 0.5110502430591896, 0.5527676061088337, 0.596905114757615, 0.5431608692259351]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.319 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-bmbc-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/37a4d3cd5281f3e99a13722885d693bf/plot_bmbc.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_bmbc.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/a66abd7b35934a123058260897f4bf3e/plot_bmbc.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_bmbc.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/8d37e6c54e672e93d438df0193bde889/plot_bmbc.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_bmbc.zip</span></code></a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../developer_guide/developer_guide.html" title="Developer guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_basic.html" title="Example : Using otExperimentalMeasurementpython module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Batch Mean Batch Correlation on a correlated time series</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

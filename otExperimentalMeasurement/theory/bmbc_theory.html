@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Batch Mean Batch Correlation (BMBC) Theory &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "inlineMath": [["$", "$"], ["\\(", "\\)"]], "displayMath": [["$$", "$$"], ["\\[", "\\]"]], "packages": {"[+]": ["base", "ams", "noerrors", "noundefined"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Reference" href="../user_manual/user_manual.html" />
+    <link rel="prev" title="Theoretical Foundations" href="index.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otExperimentalMeasurement
+    </h1>
+    <h2> Module otExperimentalMeasurement </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../user_manual/user_manual.html" title="API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Theoretical Foundations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Theoretical Foundations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Batch Mean Batch Correlation (BMBC) Theory</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Theoretical Foundations</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/user_manual.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Theoretical Foundations</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../user_manual/user_manual.html"
+                          title="next chapter">API Reference</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/theory/bmbc_theory.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="batch-mean-batch-correlation-bmbc-theory">
+<h1>Batch Mean Batch Correlation (BMBC) Theory<a class="headerlink" href="#batch-mean-batch-correlation-bmbc-theory" title="Link to this heading">¶</a></h1>
+<p>This page explains the theoretical foundations of the Batch Mean Batch Correlation (BMBC) algorithm
+for estimating the variance of the mean estimator in correlated time series.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>The BMBC algorithm is designed to compute the uncertainty of empirical mean estimators when dealing
+with correlated data, particularly in time series analysis. Traditional methods assume independent and
+identically distributed (i.i.d.) samples, but real-world data often exhibits temporal correlation that
+must be accounted for in uncertainty quantification.</p>
+</section>
+<section id="theoretical-background">
+<h2>Theoretical Background<a class="headerlink" href="#theoretical-background" title="Link to this heading">¶</a></h2>
+<p>For a time series <span class="math notranslate nohighlight">\(Y_1, Y_2, \ldots, Y_N\)</span> with temporal correlation, the empirical mean is:</p>
+<div class="math notranslate nohighlight">
+\[\bar{Y} = \frac{1}{N} \sum_{i=1}^N Y_i\]</div>
+<p>The variance of this mean estimator <span class="math notranslate nohighlight">\(\sigma^2_{\mu}\)</span> is not simply <span class="math notranslate nohighlight">\(\sigma^2/N\)</span> as in the
+i.i.d. case, but must account for the correlation structure.</p>
+</section>
+<section id="batch-means-method">
+<h2>Batch Means Method<a class="headerlink" href="#batch-means-method" title="Link to this heading">¶</a></h2>
+<p>The batch means method divides the time series into <span class="math notranslate nohighlight">\(K\)</span> batches of size <span class="math notranslate nohighlight">\(M\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[K = \left\lfloor \frac{N}{M} \right\rfloor\]</div>
+<p>For each batch <span class="math notranslate nohighlight">\(b\)</span> (where <span class="math notranslate nohighlight">\(b = 1, 2, \ldots, K\)</span>), we compute the batch mean:</p>
+<div class="math notranslate nohighlight">
+\[\bar{Y}_b = \frac{1}{M} \sum_{i=(b-1)M + 1}^{bM} Y_i\]</div>
+<p>The variance between batch means provides an estimate of the variance of the overall mean.</p>
+</section>
+<section id="batch-correlation-analysis">
+<h2>Batch Correlation Analysis<a class="headerlink" href="#batch-correlation-analysis" title="Link to this heading">¶</a></h2>
+<p>The BMBC algorithm extends the batch means method by analyzing the correlation between consecutive
+batches. We compute two key quantities:</p>
+<ol class="arabic simple">
+<li><p><strong>S₀ - Independent variance component</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[S_0 = \frac{1}{K-1} \sum_{b=1}^K (\bar{Y}_b - \bar{\bar{Y}})^2\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>S₁ - Correlated variance component</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[S_1 = \frac{1}{K-1} \sum_{b=1}^{K-1} (\bar{Y}_b - \bar{\bar{Y}})(\bar{Y}_{b+1} - \bar{\bar{Y}})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{\bar{Y}}\)</span> is the mean of the batch means.</p>
+</section>
+<section id="optimal-batch-size-selection">
+<h2>Optimal Batch Size Selection<a class="headerlink" href="#optimal-batch-size-selection" title="Link to this heading">¶</a></h2>
+<p>The algorithm adaptively selects the batch size <span class="math notranslate nohighlight">\(M\)</span> to achieve a target ratio <span class="math notranslate nohighlight">\(S_1/S_0\)</span>
+that indicates appropriate decorrelation between batches. The target range is typically between 0.2 and 0.6.</p>
+</section>
+<section id="variance-estimation">
+<h2>Variance Estimation<a class="headerlink" href="#variance-estimation" title="Link to this heading">¶</a></h2>
+<p>The final variance estimate of the mean is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\sigma}^2_{\mu} = \frac{1}{(K-1)(K-2)} (S_0 + 2S_1)\]</div>
+<p>This estimator accounts for both the independent and correlated components of variance.</p>
+</section>
+<section id="block-bootstrap">
+<h2>Block Bootstrap<a class="headerlink" href="#block-bootstrap" title="Link to this heading">¶</a></h2>
+<p>For uncertainty quantification, the algorithm provides a block bootstrap method that resamples entire
+batches rather than individual observations, preserving the correlation structure.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<p>The BMBC algorithm is based on the following reference <a class="reference internal" href="#bmbc2023" id="id1"><span>[BMBC2023]</span></a>.</p>
+<div role="list" class="citation-list">
+<div class="citation" id="bmbc2023" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">BMBC2023</a><span class="fn-bracket">]</span></span>
+<p>Russo, S., Luchini, P., 2017. A fast algorithm for the estimation of statistical error in DNS (or experimental) time averages. Journal of Computational Physics 347, 328–340. <a class="reference external" href="https://doi.org/10.1016/j.jcp.2017.07.005">https://doi.org/10.1016/j.jcp.2017.07.005</a></p>
+</div>
+</div>
+</section>
+<section id="implementation-details">
+<h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Link to this heading">¶</a></h2>
+<p>The OpenTURNS implementation provides:</p>
+<ul class="simple">
+<li><p>Adaptive batch size selection</p></li>
+<li><p>Automatic correlation detection</p></li>
+<li><p>Block bootstrap resampling</p></li>
+<li><p>Integration with OpenTURNS statistical framework</p></li>
+</ul>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../user_manual/_generated/otExperimentalMeasurement.BatchMeanBatchCorrelation.html#otExperimentalMeasurement.BatchMeanBatchCorrelation" title="otExperimentalMeasurement.BatchMeanBatchCorrelation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BatchMeanBatchCorrelation</span></code></a> - Main implementation class</p></li>
+<li><p><a class="reference internal" href="../user_manual/_generated/otExperimentalMeasurement.BMBCResult.html#otExperimentalMeasurement.BMBCResult" title="otExperimentalMeasurement.BMBCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BMBCResult</span></code></a> - Result storage and analysis</p></li>
+<li><p><a class="reference internal" href="../auto_examples/plot_bmbc.html"><span class="doc">Batch Mean Batch Correlation on a correlated time series</span></a> - Practical example with code</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../user_manual/user_manual.html" title="API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Theoretical Foundations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Theoretical Foundations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Batch Mean Batch Correlation (BMBC) Theory</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Validation &#8212; otGpxTrack 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "inlineMath": [["$", "$"], ["\\(", "\\)"]], "displayMath": [["$$", "$$"], ["\\[", "\\]"]], "packages": {"[+]": ["base", "ams", "noerrors", "noundefined"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Architecture considerations" href="../architecture/architecture.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otExperimentalMeasurement
+    </h1>
+    <h2> Module otExperimentalMeasurement </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture considerations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../developer_guide.html" accesskey="U">Developer guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Validation</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/index.html">Theoretical Foundations</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/user_manual.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../developer_guide.html">Developer guide</a></li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../architecture/architecture.html"
+                          title="previous chapter">Architecture considerations</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/developer_guide/validation/validation.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="validation">
+<h1>Validation<a class="headerlink" href="#validation" title="Link to this heading">¶</a></h1>
+<section id="test-case-1-xxxxxx">
+<h2>Test case 1: XXXXXX<a class="headerlink" href="#test-case-1-xxxxxx" title="Link to this heading">¶</a></h2>
+<p>The purpose of this example is to estimate the risk…</p>
+<section id="problem-statement">
+<h3>1- Problem statement<a class="headerlink" href="#problem-statement" title="Link to this heading">¶</a></h3>
+<section id="a-inputs">
+<h4>a- Inputs<a class="headerlink" href="#a-inputs" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Stochastics variables:</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Distribution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Q</p></td>
+<td><p>A1</p></td>
+<td><p>Normal(10200, 100)</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
+<td><p>A2</p></td>
+<td><p>Normal(3000, 15)</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>C1</p></td>
+<td><p>Normal(4000, 60)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Deterministic independent variables:</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>t</p></td>
+<td><p>Loss rate</p></td>
+<td><p>0.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nelec</p></td>
+<td><p>Reference efficiency</p></td>
+<td><p>0.54</p></td>
+</tr>
+<tr class="row-even"><td><p>Nth</p></td>
+<td><p>Reference efficiency</p></td>
+<td><p>0.8</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="b-output">
+<h4>b- Output<a class="headerlink" href="#b-output" title="Link to this heading">¶</a></h4>
+<p>Primary energy savings <span class="math notranslate nohighlight">\(E_p\)</span></p>
+<div class="math notranslate nohighlight">
+\[B = 1-\frac{Q}{\frac{F}{(1-u)2}+\frac{L}{M}}\]</div>
+</section>
+</section>
+<section id="deterministic-parametric-analysis">
+<h3>2- Deterministic parametric analysis<a class="headerlink" href="#deterministic-parametric-analysis" title="Link to this heading">¶</a></h3>
+<section id="id1">
+<h4>a- Inputs<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Step</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Q</p></td>
+<td><p>10033.1</p></td>
+<td><p>10364.6</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
+<td><p>2975</p></td>
+<td><p>3024.99</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>3901.33</p></td>
+<td><p>4097.74</p></td>
+<td><p>60</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="b-results">
+<h4>b- Results<a class="headerlink" href="#b-results" title="Link to this heading">¶</a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Q</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>Ep</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10030</p></td>
+<td><p>2975</p></td>
+<td><p>3900</p></td>
+<td><p>0.06035</p></td>
+</tr>
+<tr class="row-odd"><td><p>10365</p></td>
+<td><p>2995</p></td>
+<td><p>4100</p></td>
+<td><p>0.05456</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture considerations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otGpxTrack 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../developer_guide.html" >Developer guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Validation</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
