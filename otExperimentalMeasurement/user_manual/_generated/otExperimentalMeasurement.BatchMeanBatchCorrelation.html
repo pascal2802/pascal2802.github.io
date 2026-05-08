@@ -117,25 +117,40 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">BatchMeanBatchCorrelation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'L2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startBatchSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperThreshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixedBatchSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sortSample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation" title="Link to this definition">¶</a></dt>
-<dd><p>Base class for batch mean batch correlation</p>
+<dd><p>Estimate the variance of the mean for correlated data using the Batch Mean method.</p>
+<p>This method partitions the sample into batches and adjusts the batch size
+to minimize correlation between batches, enabling consistent variance estimation.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>X</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of position associated to each measurement. It can be a 1d sample if it is a time series or a 2d if it is a spatial series. larger dimension ar also handled.</p>
+<dt><strong>X</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of positions (e.g., time or spatial coordinates) of shape (n_samples, n_dims).</p>
 </dd>
-<dt><strong>Y</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of Measurment - Dimension must be 1</p>
+<dt><strong>Y</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Measurement sample of shape (n_samples, 1). Must be 1-dimensional.</p>
 </dd>
-<dt><strong>Metrics: str, optional</strong></dt><dd><p>metrics used to compute distance between points. Can be “L1” or “L2”. default : “L2”</p>
+<dt><strong>metrics</strong><span class="classifier">{“L1”, “L2”}, optional</span></dt><dd><p>Distance metric for sorting the sample. Default is “L2”.</p>
 </dd>
-<dt><strong>startBatchSize</strong><span class="classifier">int, optional</span></dt><dd><p>intial batch size. Default : 2</p>
+<dt><strong>startBatchSize</strong><span class="classifier">int, optional</span></dt><dd><p>Initial batch size. Default is 2.</p>
 </dd>
-<dt><strong>threshold</strong><span class="classifier">float, optional</span></dt><dd><p>S_1 / S_0 - default 0.3</p>
+<dt><strong>threshold</strong><span class="classifier">float, optional</span></dt><dd><p>Lower threshold for the ratio <code class="docutils literal notranslate"><span class="pre">S1/S0</span></code> (correlated vs. uncorrelated variance).
+If <code class="docutils literal notranslate"><span class="pre">S1/S0</span> <span class="pre">&lt;</span> <span class="pre">threshold</span></code>, the batch size is reduced. Default is 0.3.</p>
 </dd>
-<dt><strong>upperThreshold</strong><span class="classifier">float, optional</span></dt><dd><p>S_1 / S_0 - default 0.6</p>
+<dt><strong>upperThreshold</strong><span class="classifier">float, optional</span></dt><dd><p>Upper threshold for <code class="docutils literal notranslate"><span class="pre">S1/S0</span></code>. If <code class="docutils literal notranslate"><span class="pre">S1/S0</span> <span class="pre">&gt;</span> <span class="pre">upperThreshold</span></code>, the batch size is increased.
+Default is 0.6.</p>
 </dd>
-<dt><strong>fixedBatchSize</strong><span class="classifier">bool, optional</span></dt><dd><p>if true, optimal batch size to have the desired uncorrelation is not computed. default : False</p>
+<dt><strong>fixedBatchSize</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the batch size is fixed to <code class="docutils literal notranslate"><span class="pre">startBatchSize</span></code> and not optimized.
+Default is False.</p>
 </dd>
-<dt><strong>sortSample</strong><span class="classifier">bool, optional</span></dt><dd><p>if true, provided X and Y sample are sorted according to provided norm. First point is arbritary, then next is the closest one. Defaul : true</p>
+<dt><strong>sortSample</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the sample is sorted by distance before batching. Default is True.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>result</strong><span class="classifier"><a class="reference internal" href="otExperimentalMeasurement.BMBCResult.html#otExperimentalMeasurement.BMBCResult" title="otExperimentalMeasurement.BMBCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BMBCResult</span></code></a></span></dt><dd><p>Result object containing batch statistics (available after calling <a class="reference internal" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.run" title="otExperimentalMeasurement.BatchMeanBatchCorrelation.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>).</p>
+</dd>
+<dt><strong>sampleXsorted</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sorted positions (if <code class="docutils literal notranslate"><span class="pre">sortSample=True</span></code>).</p>
+</dd>
+<dt><strong>sampleYsorted</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sorted measurements (if <code class="docutils literal notranslate"><span class="pre">sortSample=True</span></code>).</p>
 </dd>
 </dl>
 </dd>
@@ -144,19 +159,24 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.computeDistance" title="otExperimentalMeasurement.BatchMeanBatchCorrelation.computeDistance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDistance</span></code></a>(i, j)</p></td>
-<td><p>Compute distance between point i and j according to specified norm</p></td>
+<td><p>Compute distance between point i and j according to specified norm.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.computeS0S1" title="otExperimentalMeasurement.BatchMeanBatchCorrelation.computeS0S1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeS0S1</span></code></a>(M)</p></td>
-<td><p>Compute S0S1 for a given batch size</p></td>
+<td><p>Compute S0 and S1 for a given batch size.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.getResult" title="otExperimentalMeasurement.BatchMeanBatchCorrelation.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</p></td>
-<td><p>accessor to BMBC result</p></td>
+<td><p>Accessor to BMBC result.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.run" title="otExperimentalMeasurement.BatchMeanBatchCorrelation.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
-<td><p>create the samples of batches</p></td>
+<td><p>Compute the optimal batch size and estimate the mean variance.</p></td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>The method is based on the batch means approach for correlated data.
+The optimal batch size <code class="docutils literal notranslate"><span class="pre">M</span></code> is determined iteratively to satisfy:
+<code class="docutils literal notranslate"><span class="pre">threshold</span> <span class="pre">&lt;=</span> <span class="pre">S1/S0</span> <span class="pre">&lt;=</span> <span class="pre">upperThreshold</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">S0</span></code> is the uncorrelated variance and <code class="docutils literal notranslate"><span class="pre">S1</span></code> is the correlated variance.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'L2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startBatchSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperThreshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixedBatchSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sortSample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.__init__" title="Link to this definition">¶</a></dt>
@@ -165,19 +185,19 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation.computeDistance">
 <span class="sig-name descname"><span class="pre">computeDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.computeDistance" title="Link to this definition">¶</a></dt>
-<dd><p>Compute distance between point i and j according to specified norm</p>
+<dd><p>Compute distance between point i and j according to specified norm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>i</strong><span class="classifier">int</span></dt><dd><p>point i index</p>
+<dt><strong>i</strong><span class="classifier">int</span></dt><dd><p>Index of point i.</p>
 </dd>
-<dt><strong>j</strong><span class="classifier">int</span></dt><dd><p>point j index</p>
+<dt><strong>j</strong><span class="classifier">int</span></dt><dd><p>Index of point j.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>d</strong><span class="classifier">float</span></dt><dd><p>distance between i and j</p>
+<dt><strong>d</strong><span class="classifier">float</span></dt><dd><p>Distance between points i and j.</p>
 </dd>
 </dl>
 </dd>
@@ -187,15 +207,19 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation.computeS0S1">
 <span class="sig-name descname"><span class="pre">computeS0S1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.computeS0S1" title="Link to this definition">¶</a></dt>
-<dd><p>Compute S0S1 for a given batch size</p>
-<dl class="simple">
-<dt>M<span class="classifier">int</span></dt><dd><p>Size of batch</p>
+<dd><p>Compute S0 and S1 for a given batch size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>M</strong><span class="classifier">int</span></dt><dd><p>Size of batch.</p>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt>S0, S1: float</dt><dd><p>Independant and correlated variance of mean estimator</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>S0</strong><span class="classifier">float</span></dt><dd><p>Independent (uncorrelated) variance of mean estimator.</p>
+</dd>
+<dt><strong>S1</strong><span class="classifier">float</span></dt><dd><p>Correlated variance of mean estimator.</p>
 </dd>
 </dl>
 </dd>
@@ -205,11 +229,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation.getResult">
 <span class="sig-name descname"><span class="pre">getResult</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.getResult" title="Link to this definition">¶</a></dt>
-<dd><p>accessor to BMBC result</p>
+<dd><p>Accessor to BMBC result.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>result</strong><span class="classifier"><a class="reference internal" href="otExperimentalMeasurement.BMBCResult.html#otExperimentalMeasurement.BMBCResult" title="otExperimentalMeasurement.BMBCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BMBCResult</span></code></a></span></dt><dd></dd>
+<dt><strong>result</strong><span class="classifier"><a class="reference internal" href="otExperimentalMeasurement.BMBCResult.html#otExperimentalMeasurement.BMBCResult" title="otExperimentalMeasurement.BMBCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BMBCResult</span></code></a></span></dt><dd><p>Result object containing batch statistics.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -218,7 +243,22 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BatchMeanBatchCorrelation.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BatchMeanBatchCorrelation.run" title="Link to this definition">¶</a></dt>
-<dd><p>create the samples of batches</p>
+<dd><p>Compute the optimal batch size and estimate the mean variance.</p>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">sortSample=True</span></code>, sort the sample by distance.</p></li>
+<li><p>Iteratively adjust the batch size <code class="docutils literal notranslate"><span class="pre">M</span></code> until <code class="docutils literal notranslate"><span class="pre">S1/S0</span></code> falls within
+[<code class="docutils literal notranslate"><span class="pre">threshold</span></code>, <code class="docutils literal notranslate"><span class="pre">upperThreshold</span></code>].</p></li>
+<li><p>Store results in <code class="xref py py-attr docutils literal notranslate"><span class="pre">result</span></code> (including <code class="docutils literal notranslate"><span class="pre">S0</span></code>, <code class="docutils literal notranslate"><span class="pre">S1</span></code>, and batch sizes).</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None</dt><dd><p>Results are stored in <code class="xref py py-attr docutils literal notranslate"><span class="pre">result</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

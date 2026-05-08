@@ -16,23 +16,6 @@ Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example : Using otExperimentalMeasurementpython module">
-
-.. only:: html
-
-  .. image:: /auto_examples/images/thumb/sphx_glr_plot_basic_thumb.png
-    :alt:
-
-  :doc:`/auto_examples/plot_basic`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Example : Using otExperimentalMeasurementpython module</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the Batch Mean Batch Correlation (BMBC) method to compute uncertainty of empirical mean estimator when samples are not i.i.d.">
 
 .. only:: html
@@ -58,7 +41,6 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_basic
    /auto_examples/plot_bmbc
 
 

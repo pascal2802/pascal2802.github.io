@@ -117,26 +117,41 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BMBCResult">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">BMBCResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resultSample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BMBCResult" title="Link to this definition">¶</a></dt>
-<dd><p>Store result of BMBC algorithm</p>
-<dl>
-<dt>X<span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of position associated to each measurement. It can be a 1d sample if it is a time series or a 2d if it is a spatial series. larger dimension ar also handled.</p>
+<dd><p>Store result of the Batch Mean Batch Correlation (BMBC) algorithm.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>X</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Original positions of shape (n_samples, n_dims).</p>
 </dd>
-<dt>Y<span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample of Measurment - Dimension must be 1</p>
+<dt><strong>Y</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Original measurements of shape (n_samples, 1).</p>
 </dd>
-<dt>resultSample: <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></dt><dd><p>result sample with following columns : [“iteration”,”M”,”S0”,”S1, “S1/S0”]</p>
+<dt><strong>resultSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample containing iteration history with columns:
+[“iteration”, “M”, “S0”, “S1”, “S1/S0”].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>X</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Original positions.</p>
+</dd>
+<dt><strong>Y</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Original measurements.</p>
+</dd>
+<dt><strong>resultSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Iteration history (last row = final result).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BMBCResult.computeMeanEstimatorVariance" title="otExperimentalMeasurement.BMBCResult.computeMeanEstimatorVariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMeanEstimatorVariance</span></code></a>()</p></td>
-<td><p>compute variance of mean estimator</p></td>
+<td><p>Compute variance of mean estimator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BMBCResult.getBatchIteration" title="otExperimentalMeasurement.BMBCResult.getBatchIteration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBatchIteration</span></code></a>()</p></td>
-<td><p>Accessor to result sample</p></td>
+<td><p>Accessor to result sample.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otExperimentalMeasurement.BMBCResult.getBlockBoostrapSample" title="otExperimentalMeasurement.BMBCResult.getBlockBoostrapSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBlockBoostrapSample</span></code></a>()</p></td>
-<td><p>Get a M block bootstrap of initial provided sample</p></td>
+<td><p>Get a block bootstrap sample from the initial provided sample.</p></td>
 </tr>
 </tbody>
 </table>
@@ -148,11 +163,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BMBCResult.computeMeanEstimatorVariance">
 <span class="sig-name descname"><span class="pre">computeMeanEstimatorVariance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BMBCResult.computeMeanEstimatorVariance" title="Link to this definition">¶</a></dt>
-<dd><p>compute variance of mean estimator</p>
+<dd><p>Compute variance of mean estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>sigma2_mu</strong><span class="classifier">float</span></dt><dd></dd>
+<dt><strong>sigma2_mu</strong><span class="classifier">float</span></dt><dd><p>Estimated variance of the mean.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -161,11 +177,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BMBCResult.getBatchIteration">
 <span class="sig-name descname"><span class="pre">getBatchIteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BMBCResult.getBatchIteration" title="Link to this definition">¶</a></dt>
-<dd><p>Accessor to result sample</p>
+<dd><p>Accessor to result sample.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>SiSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample with values of S0, S1 for various M batch size</p>
+<dt><strong>resultSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Sample with values of S0, S1 for various batch sizes.</p>
 </dd>
 </dl>
 </dd>
@@ -175,11 +191,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.BMBCResult.getBlockBoostrapSample">
 <span class="sig-name descname"><span class="pre">getBlockBoostrapSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.BMBCResult.getBlockBoostrapSample" title="Link to this definition">¶</a></dt>
-<dd><p>Get a M block bootstrap of initial provided sample</p>
+<dd><p>Get a block bootstrap sample from the initial provided sample.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>Yb</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd></dd>
+<dt><strong>Yb</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Bootstrap sample constructed by resampling blocks of size M.</p>
+</dd>
 </dl>
 </dd>
 </dl>

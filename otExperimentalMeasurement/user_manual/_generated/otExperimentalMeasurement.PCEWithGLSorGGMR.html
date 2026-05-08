@@ -117,27 +117,38 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.PCEWithGLSorGGMR">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PCEWithGLSorGGMR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VYCollection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariateBasis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totalDegree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximumBasisSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedIndices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leastSquaresMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GLS'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.PCEWithGLSorGGMR" title="Link to this definition">¶</a></dt>
-<dd><p>Create a polynomial chaos by least squares with GLS or GLS-GGMR methods</p>
+<dd><p>Build a Polynomial Chaos Expansion (PCE) metamodel using Generalized Least Squares (GLS)
+or GLS with Generalized Golgi-Morse Regularization (GGMR).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The input sample.</p>
+<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Input sample of shape (n_samples, n_input_vars).</p>
 </dd>
-<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The output sample with dimension 1</p>
+<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Output sample of shape (n_samples, 1).</p>
 </dd>
-<dt><strong>distribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Distribution</span></code></a></span></dt><dd><p>The distribution of the input.</p>
+<dt><strong>distribution</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>Probability distribution of the input variables.</p>
 </dd>
-<dt><strong>VYCollection</strong><span class="classifier">sequence of <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.CovarianceMatrix</span></code></a></span></dt><dd><p>Collection of VarianceCovariance Matrix associated to each column of outputSample</p>
+<dt><strong>VYCollection</strong><span class="classifier">sequence of <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd><p>Covariance matrices for each output column (length = outputSample.getDimension()).</p>
 </dd>
-<dt><strong>multivariateBasis</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.OrthogonalBasis.html#openturns.OrthogonalBasis" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalBasis</span></code></a></span></dt><dd><p>The orthogonal basis of functions.</p>
+<dt><strong>multivariateBasis</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.OrthogonalBasis.html#openturns.OrthogonalBasis" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalBasis</span></code></a></span></dt><dd><p>Orthogonal basis for the PCE (e.g., Legendre, Hermite).</p>
 </dd>
-<dt><strong>totalDegree</strong><span class="classifier">int</span></dt><dd><p>Set the total degree of the PCE</p>
+<dt><strong>totalDegree</strong><span class="classifier">int</span></dt><dd><p>Maximum total degree of the polynomial basis.</p>
 </dd>
-<dt><strong>maximumBasisSize</strong><span class="classifier">int</span></dt><dd><p>The maximum number of coefficients in the basis. if maximumBasisSize &lt; basisSize(totalDegree), the n most significant coefficient are selected</p>
+<dt><strong>maximumBasisSize</strong><span class="classifier">int</span></dt><dd><p>Maximum number of basis functions to retain. If the total basis size
+exceeds this, the least significant coefficients are discarded.</p>
 </dd>
-<dt><strong>selectedIndices</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.IndicesCollection.html#openturns.IndicesCollection" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></a> - optional</span></dt><dd><p>indices of the basis functions used for the PCE - default None</p>
+<dt><strong>selectedIndices</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.IndicesCollection.html#openturns.IndicesCollection" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></a>, optional</span></dt><dd><p>Pre-selected indices of basis functions to use. If None, all indices
+up to <code class="docutils literal notranslate"><span class="pre">totalDegree</span></code> are considered. Default is None.</p>
 </dd>
-<dt><strong>leastSquaresMethod</strong><span class="classifier">str</span></dt><dd><p>The resolution method : “GLS” or “GGMR”</p>
+<dt><strong>leastSquaresMethod</strong><span class="classifier">{“GLS”, “GGMR”}, optional</span></dt><dd><p>Method to solve the least squares problem. Default is “GLS”.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>result</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/response_surface/_generated/openturns.FunctionalChaosResult.html#openturns.FunctionalChaosResult" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosResult</span></code></a></span></dt><dd><p>The PCE metamodel (available after calling <a class="reference internal" href="#otExperimentalMeasurement.PCEWithGLSorGGMR.run" title="otExperimentalMeasurement.PCEWithGLSorGGMR.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>).</p>
+</dd>
+<dt><strong>covMCollection</strong><span class="classifier">list of <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd><p>Covariance matrices for the PCE coefficients.</p>
 </dd>
 </dl>
 </dd>
@@ -149,10 +160,15 @@
 <td><p>Return the functional chaos result.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otExperimentalMeasurement.PCEWithGLSorGGMR.run" title="otExperimentalMeasurement.PCEWithGLSorGGMR.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
-<td><p>Create the the functional chaos metamodel</p></td>
+<td><p>Build the PCE metamodel and compute its coefficients.</p></td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>The method automatically selects the most significant basis functions
+if <code class="docutils literal notranslate"><span class="pre">maximumBasisSize</span></code> is smaller than the total basis size.
+For multi-output problems (outputSample dimension &gt; 1), only the first column
+is currently supported (see FIXME in code).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.PCEWithGLSorGGMR.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputSample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VYCollection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariateBasis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totalDegree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximumBasisSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedIndices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leastSquaresMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GLS'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.PCEWithGLSorGGMR.__init__" title="Link to this definition">¶</a></dt>
@@ -167,7 +183,8 @@
 <dd class="field-odd"><dl>
 <dt><strong>result</strong><span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/response_surface/_generated/openturns.FunctionalChaosResult.html#openturns.FunctionalChaosResult" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosResult</span></code></a></span></dt><dd><p>The metamodel.</p>
 </dd>
-<dt><strong>covMCollection</strong><span class="classifier">sequence of <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd><p>Sequence of covariance Matrix associated to each coefficient set (one per column of output Sample)</p>
+<dt><strong>covMCollection</strong><span class="classifier">sequence of <a class="reference external" href="http://openturns.github.io/openturns/1.26/user_manual/_generated/openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="(in OpenTURNS v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt><dd><p>Sequence of covariance matrices associated to each coefficient set
+(one per column of output sample).</p>
 </dd>
 </dl>
 </dd>
@@ -177,7 +194,20 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="otExperimentalMeasurement.PCEWithGLSorGGMR.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otExperimentalMeasurement.PCEWithGLSorGGMR.run" title="Link to this definition">¶</a></dt>
-<dd><p>Create the the functional chaos metamodel</p>
+<dd><p>Build the PCE metamodel and compute its coefficients.</p>
+<p>Steps:
+1. Construct the design matrix from the input sample and basis functions.
+2. Solve the GLS problem to estimate coefficients.
+3. If necessary, truncate the basis to <code class="docutils literal notranslate"><span class="pre">maximumBasisSize</span></code> and re-fit.
+4. Store the result in <code class="xref py py-attr docutils literal notranslate"><span class="pre">result</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">covMCollection</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">outputSample</span></code> has dimension &gt; 1 (not yet supported).</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
